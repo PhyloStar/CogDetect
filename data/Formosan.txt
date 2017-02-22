@@ -1,0 +1,1806 @@
+language	iso_code	gloss	global_id	local_id	transcription	cognate_class	notes
+Tsou	tsu	hand	1277	1	muTu	4
+Tsou	tsu	dirty	1230	10	Tai	19	cáʔi 19
+Tsou	tsu	wing	1257	100	eopuNu	29
+Tsou	tsu	rat	1490	102	buhTi	31
+Tsou	tsu	fat/grease	1282	104	h3s3	29
+Tsou	tsu	tail	1220	105	TivTi	42
+Tsou	tsu	snake	730	106	fkoi	29
+Tsou	tsu	louse	1392	108	teoTu	10?
+Tsou	tsu	leaf	628	114	h3N3	4
+Tsou	tsu	root	670	115	misi	3
+Tsou	tsu	earth/soil	1228	119	Teoa	30?
+Tsou	tsu	water	948	122	Thumu	1
+Tsou	tsu	moon	1313	129	feoh3	1?
+Tsou	tsu	back	1291	13	f7uhu	2
+Tsou	tsu	star	1430	130	ToNeoha	24
+Tsou	tsu	fire	221	143	puzu	1
+Tsou	tsu	smoke	778	145	feufeu	1
+Tsou	tsu	ash	646	146	fuu	1
+Tsou	tsu	white	1335	148	fueT37ia	37
+Tsou	tsu	bone	1394	15	T3eh3	1
+Tsou	tsu	yellow	1424	150	hof7oea	2
+Tsou	tsu	thin	1400	156	hipsi	1?
+Tsou	tsu	thick	1244	157	oTmoe3	21?
+Tsou	tsu	new	1231	163	faeva	1
+Tsou	tsu	bad, evil	1292	165	kui	2
+Tsou	tsu	night	1233	167	feNna	1
+Tsou	tsu	day	1225	168	hie	2
+Tsou	tsu	when?	1238	170	homna	17
+Tsou	tsu	in, inside	1606	174	aeumona	20
+Tsou	tsu	this	1214	177	eni	1
+Tsou	tsu	breast	1402	18	nun7u	3
+Tsou	tsu	far	1406	180	Tovhia	2	covhi[-a]
+Tsou	tsu	where?	1237	181	nenu	1
+Tsou	tsu	I	1209	182	ao	1
+Tsou	tsu	thou	1215	183	suu	1
+Tsou	tsu	we	1212	185	ato	1	amía 2
+Tsou	tsu	you	1213	186	muu	1
+Tsou	tsu	and	1577	192	ho	22
+Tsou	tsu	to count	1420	196	smupeu	3	spuéni 3
+Tsou	tsu	One	1493	197	Tini	3
+Tsou	tsu	Two	1498	198	euso	1?
+Tsou	tsu	Three	492	199	tueu	1
+Tsou	tsu	left	244	2	vrina	1
+Tsou	tsu	to know, be knowledgeable	1410	20	boThio	3
+Tsou	tsu	Four	1500	200	s3pt3	1
+Tsou	tsu	Five	493	201	eimo	1	rimo 1; lim\C3  1
+Tsou	tsu	Six	1703	202	nomu	1	nauma 1; nómə 1
+Tsou	tsu	Seven	1704	203	pitu	1	pitu 1; pitò 1
+Tsou	tsu	Eight	1705	204	voeu	3	woru 3; mevarou 3
+Tsou	tsu	Nine	1483	205	sio	5	siyo 5
+Tsou	tsu	Ten	1515	206	matl	2	massok 2; máskə 2; máskə 2; massok 2; matl 2?
+Tsou	tsu	Twenty	1710	207	mpusku	1
+Tsou	tsu	head	1256	24	fNuu	2
+Tsou	tsu	hair	1040	26	f73s3	1
+Tsou	tsu	nose	1221	27	N3T3	27
+Tsou	tsu	right	1019	3	vhona	1
+Tsou	tsu	tooth	1380	31	hisi	2
+Tsou	tsu	tongue	1205	32	umo	1
+Tsou	tsu	to laugh	1355	33	ToTvoi	1	cócvo[i]
+Tsou	tsu	to cry	1839	34	moNsi	1
+Tsou	tsu	to vomit	1278	35	teabuto	1
+Tsou	tsu	to spit	1440	36	tm3epos3a	33?	tmʉepósʉ[a]
+Tsou	tsu	to eat	1336	37	bon3	1	ána 1?
+Tsou	tsu	to drink	1401	40	mimo	2
+Tsou	tsu	to bite	1403	41	boeT3	1
+Tsou	tsu	to hear	1408	44	tmal3	2
+Tsou	tsu	eye	1248	45	mToo	1
+Tsou	tsu	to see	1409	46	baito	1
+Tsou	tsu	person/human being	683	53	Tou	1
+Tsou	tsu	mother	1216	59	ino	1
+Tsou	tsu	road/path	667	6	Teon3	1
+Tsou	tsu	father	1217	60	amo	1
+Tsou	tsu	house	1252	61	emoo	1
+Tsou	tsu	rope	1218	65	teesi	1
+Tsou	tsu	to sew	1457	67	tme7si	1
+Tsou	tsu	to come	1446	7	oh	3	úso 3
+Tsou	tsu	to shoot	1172	70	pono	1?	pnáa 1?
+Tsou	tsu	to die, be dead	1494	75	mToi	1
+Tsou	tsu	to swell	1573	87	euofeo3	26
+Tsou	tsu	to swim	1439	9	euhuNzu	1
+Tsou	tsu	bird	937	97	zomu	2
+Tsou	tsu	feather	1201	99	eopuNu	3
+Paiwan (Kulalao)	pwn	hand	1277	1	lima	1
+Paiwan (Kulalao)	pwn	dirty	1230	10	maqitaN	2
+Paiwan (Kulalao)	pwn	wing	1257	100	kapkap	39
+Paiwan (Kulalao)	pwn	to fly	1441	101	milaiap	2	perper 35
+Paiwan (Kulalao)	pwn	rat	1490	102	kulavaw	1
+Paiwan (Kulalao)	pwn	meat/flesh	634	103	seti	1
+Paiwan (Kulalao)	pwn	tail	1220	105	iku	1
+Paiwan (Kulalao)	pwn	louse	1392	108	kutsu	1
+Paiwan (Kulalao)	pwn	rotten	1728	112	mavuk	1
+Paiwan (Kulalao)	pwn	leaf	628	114	asaw	10
+Paiwan (Kulalao)	pwn	grass	606	118	tsemel	3
+Paiwan (Kulalao)	pwn	skin	763	12	qaLits	2
+Paiwan (Kulalao)	pwn	water	948	122	zaLum	1
+Paiwan (Kulalao)	pwn	salt	1274	125	qatia	1
+Paiwan (Kulalao)	pwn	lake	624	126	dyanaw	1
+Paiwan (Kulalao)	pwn	moon	1313	129	qiLas	2
+Paiwan (Kulalao)	pwn	star	1430	130	vityuqan	1
+Paiwan (Kulalao)	pwn	rain	658	133	qudyaL	1
+Paiwan (Kulalao)	pwn	thunder	1150	134	zuN	3
+Paiwan (Kulalao)	pwn	lightning	1654	135	ladyap	3?
+Paiwan (Kulalao)	pwn	wind	960	136	vali	2
+Paiwan (Kulalao)	pwn	belly	1251	14	tyiaL	1
+Paiwan (Kulalao)	pwn	heavy	1210	142	sadyeluN	3
+Paiwan (Kulalao)	pwn	fire	221	143	sapui	1
+Paiwan (Kulalao)	pwn	to burn	2102	144	tsmuLu	1
+Paiwan (Kulalao)	pwn	smoke	778	145	tsevuL	65
+Paiwan (Kulalao)	pwn	ash	646	146	qavu	1
+Paiwan (Kulalao)	pwn	black	163	147	qetseNel	2?
+Paiwan (Kulalao)	pwn	bone	1394	15	tsuqelaL	1
+Paiwan (Kulalao)	pwn	small	1246	152	kei	2
+Paiwan (Kulalao)	pwn	long	1203	155	lauq	1
+Paiwan (Kulalao)	pwn	thin	1400	156	Lusepit	1?
+Paiwan (Kulalao)	pwn	thick	1244	157	keemel	21
+Paiwan (Kulalao)	pwn	wide	1243	159	melava	1
+Paiwan (Kulalao)	pwn	painful, sick	2103	160	saqetyu	1?
+Paiwan (Kulalao)	pwn	shy, ashamed	487	161	masiaq	1
+Paiwan (Kulalao)	pwn	new	1231	163	vaquan	1
+Paiwan (Kulalao)	pwn	night	1233	167	veNin	1
+Paiwan (Kulalao)	pwn	day	1225	168	qadaw	1
+Paiwan (Kulalao)	pwn	year	1226	169	tsaviL	22
+Paiwan (Kulalao)	pwn	liver	1224	17	qatsai	1
+Paiwan (Kulalao)	pwn	when?	1238	170	nuNida	1
+Paiwan (Kulalao)	pwn	at	1461	173	i	1
+Paiwan (Kulalao)	pwn	above	1741	175	ivavaw	2
+Paiwan (Kulalao)	pwn	this	1214	177	aitsu	14
+Paiwan (Kulalao)	pwn	that	78	178	azua	13
+Paiwan (Kulalao)	pwn	breast	1402	18	tutu	1
+Paiwan (Kulalao)	pwn	where?	1237	181	inu	1
+Paiwan (Kulalao)	pwn	I	1209	182	tiaken	1
+Paiwan (Kulalao)	pwn	thou	1215	183	tisun	1
+Paiwan (Kulalao)	pwn	we	1212	185	tityen	1	ti-amen 2
+Paiwan (Kulalao)	pwn	you	1213	186	timun	1
+Paiwan (Kulalao)	pwn	what?	1236	188	anema	16
+Paiwan (Kulalao)	pwn	who?	1235	189	tima	2
+Paiwan (Kulalao)	pwn	shoulder	1482	19	qavan	1
+Paiwan (Kulalao)	pwn	other	197	190	zuma	1
+Paiwan (Kulalao)	pwn	if	1459	193	nu	2
+Paiwan (Kulalao)	pwn	no, not	1269	195	ini	3
+Paiwan (Kulalao)	pwn	to count	1420	196	smupu	3
+Paiwan (Kulalao)	pwn	One	1493	197	ita	1
+Paiwan (Kulalao)	pwn	Two	1498	198	usa	1
+Paiwan (Kulalao)	pwn	Three	492	199	tyelu	1
+Paiwan (Kulalao)	pwn	left	244	2	kaviri	1
+Paiwan (Kulalao)	pwn	Four	1500	200	sepaty	1
+Paiwan (Kulalao)	pwn	Five	493	201	rima7	1	rima 1
+Paiwan (Kulalao)	pwn	Six	1703	202	unum	1	ʔúnəm 1
+Paiwan (Kulalao)	pwn	Seven	1704	203	pitu7	1	piţuʔ; pitu 1
+Paiwan (Kulalao)	pwn	Eight	1705	204	7aru7	3	'áruʔ; aru 3
+Paiwan (Kulalao)	pwn	Nine	1483	205	siva7	5	siva 5
+Paiwan (Kulalao)	pwn	Ten	1515	206	puruq	5	%purrok 5
+Paiwan (Kulalao)	pwn	Twenty	1710	207	rusapuruq	3,  6
+Paiwan (Kulalao)	pwn	One Hundred	1634	209	taidai	1
+Paiwan (Kulalao)	pwn	to think	2271	21	kinemnem	34
+Paiwan (Kulalao)	pwn	blood	946	23	dyamuq	20
+Paiwan (Kulalao)	pwn	head	1256	24	qulu	1
+Paiwan (Kulalao)	pwn	neck	1333	25	liqe	1
+Paiwan (Kulalao)	pwn	right	1019	3	kanavaL	1
+Paiwan (Kulalao)	pwn	tooth	1380	31	aLis	2
+Paiwan (Kulalao)	pwn	tongue	1205	32	sema	1
+Paiwan (Kulalao)	pwn	to vomit	1278	35	mutyaq	1
+Paiwan (Kulalao)	pwn	to eat	1336	37	kman	1
+Paiwan (Kulalao)	pwn	to chew	321	38	qmelqel	2
+Paiwan (Kulalao)	pwn	to bite	1403	41	kmats	1
+Paiwan (Kulalao)	pwn	to suck	1421	42	tmeptep	1
+Paiwan (Kulalao)	pwn	ear	1247	43	tsaliNa	1
+Paiwan (Kulalao)	pwn	eye	1248	45	matsa	1
+Paiwan (Kulalao)	pwn	to yawn	1028	47	mesuaw	1
+Paiwan (Kulalao)	pwn	to sleep	1585	48	qmereN	47
+Paiwan (Kulalao)	pwn	to walk	1443	5	dyavats	23
+Paiwan (Kulalao)	pwn	to dream	1920	50	misepi	1
+Paiwan (Kulalao)	pwn	person/human being	683	53	tsautsau	1
+Paiwan (Kulalao)	pwn	man/male	1554	54	uqaLai	1
+Paiwan (Kulalao)	pwn	woman/female	962	55	vavaian	1
+Paiwan (Kulalao)	pwn	child	2099	56	aLak	1
+Paiwan (Kulalao)	pwn	mother	1216	59	kina	1	tjaina 1
+Paiwan (Kulalao)	pwn	road/path	667	6	dyalan	1
+Paiwan (Kulalao)	pwn	father	1217	60	kama	1	tjama 1
+Paiwan (Kulalao)	pwn	house	1252	61	umaq	1
+Paiwan (Kulalao)	pwn	thatch/roof	2100	62	qaLiw	2
+Paiwan (Kulalao)	pwn	name	1405	63	Nadan	1
+Paiwan (Kulalao)	pwn	rope	1218	65	tsalis	1
+Paiwan (Kulalao)	pwn	to sew	1457	67	tsmaqis	1
+Paiwan (Kulalao)	pwn	needle	1382	68	dyaum	1
+Paiwan (Kulalao)	pwn	to hunt	1435	69	qmaLup	1
+Paiwan (Kulalao)	pwn	to shoot	1172	70	pnanaq	1
+Paiwan (Kulalao)	pwn	to steal	713	73	tsakaw	1
+Paiwan (Kulalao)	pwn	to kill	1417	74	papatsai	2
+Paiwan (Kulalao)	pwn	to die, be dead	1494	75	matsai	1
+Paiwan (Kulalao)	pwn	stick/wood	1295	79	kasiw	1
+Paiwan (Kulalao)	pwn	to turn	1588	8	kipalits	3
+Paiwan (Kulalao)	pwn	dull, blunt	379	82	qilut	53
+Paiwan (Kulalao)	pwn	to work	1086	83	karakuda	27
+Paiwan (Kulalao)	pwn	to plant	1486	84	tmalem	2?
+Paiwan (Kulalao)	pwn	to choose	1750	85	pniliq	1
+Paiwan (Kulalao)	pwn	to squeeze	1414	88	kmeramet	39
+Paiwan (Kulalao)	pwn	to swim	1439	9	LaNui	1
+Paiwan (Kulalao)	pwn	to dig	1418	90	kali	1
+Paiwan (Kulalao)	pwn	to buy	1869	91	veli	1
+Paiwan (Kulalao)	pwn	to pound, beat	354	93	maisu	1?
+Paiwan (Kulalao)	pwn	to fall	1280	95	matyani	4
+Paiwan (Kulalao)	pwn	dog	2009	96	vatu	1
+Paiwan (Kulalao)	pwn	bird	937	97	qaiaqaiam	2
+Paiwan (Kulalao)	pwn	egg	744	98	qetsilu	1
+Bunun, Southern	bnn	hand	1277	1	ima7	1
+Bunun, Southern	bnn	wing	1257	100	pane7	2
+Bunun, Southern	bnn	meat/flesh	634	103	titi7	32
+Bunun, Southern	bnn	fat/grease	1282	104	simal	2
+Bunun, Southern	bnn	tail	1220	105	ikul	1	viṣviṣ 20
+Bunun, Southern	bnn	louse	1392	108	tumb3	3	kutúʔ 1
+Bunun, Southern	bnn	mosquito	1509	109	tika	26
+Bunun, Southern	bnn	spider	843	110	k3katu7	2
+Bunun, Southern	bnn	fish	227	111	7ikan	1
+Bunun, Southern	bnn	root	670	115	lami	3
+Bunun, Southern	bnn	earth/soil	1228	119	dalah	30	dārak 30?
+Bunun, Southern	bnn	stone	857	120	batu7	1
+Bunun, Southern	bnn	water	948	122	danom	1
+Bunun, Southern	bnn	salt	1274	125	7asila7	1
+Bunun, Southern	bnn	moon	1313	129	boan	1	voan 1
+Bunun, Southern	bnn	back	1291	13	iku7	1	íku'
+Bunun, Southern	bnn	star	1430	130	bintohan	1	mintokan 1
+Bunun, Southern	bnn	cloud	1489	131	l373m	2	lə'əm
+Bunun, Southern	bnn	rain	658	133	hodan	1?	koranan 1?
+Bunun, Southern	bnn	thunder	1150	134	bilva7	4?
+Bunun, Southern	bnn	to blow	175	137	ma7ip	1?	ma'íp
+Bunun, Southern	bnn	belly	1251	14	ti7an	1	ti'án; tteyan 1
+Bunun, Southern	bnn	dry	1398	140	mahaliv	2
+Bunun, Southern	bnn	fire	221	143	sapu8	1	sapos 1
+Bunun, Southern	bnn	ash	646	146	habo7	1
+Bunun, Southern	bnn	bone	1394	15	tohna8	1
+Bunun, Southern	bnn	short	1645	154	maputul	30
+Bunun, Southern	bnn	thin	1400	156	manibis	1
+Bunun, Southern	bnn	thick	1244	157	makaspal	1
+Bunun, Southern	bnn	new	1231	163	bahlo7	1
+Bunun, Southern	bnn	bad, evil	1292	165	maku7aN	2	maku'áŋ
+Bunun, Southern	bnn	night	1233	167	labian	21
+Bunun, Southern	bnn	day	1225	168	hanian	2
+Bunun, Southern	bnn	year	1226	169	hamisan	23
+Bunun, Southern	bnn	liver	1224	17	hata8	1
+Bunun, Southern	bnn	when?	1238	170	lakoa7	18?
+Bunun, Southern	bnn	in, inside	1606	174	7ilumah	18
+Bunun, Southern	bnn	above	1741	175	dada8a7	2?
+Bunun, Southern	bnn	that	78	178	saia7	3?	sáya'
+Bunun, Southern	bnn	breast	1402	18	susu7	1
+Bunun, Southern	bnn	I	1209	182	8aku7	1
+Bunun, Southern	bnn	thou	1215	183	7iu7	1
+Bunun, Southern	bnn	we	1212	185	7ata	1	ðámi' 2
+Bunun, Southern	bnn	you	1213	186	kamu7	1
+Bunun, Southern	bnn	who?	1235	189	sima7	2
+Bunun, Southern	bnn	other	197	190	ruma7tobunun	1	rumaʔ [to b̂unun]
+Bunun, Southern	bnn	all	98	191	7amin	1
+Bunun, Southern	bnn	to count	1420	196	maipul	3
+Bunun, Southern	bnn	One	1493	197	taa7	1?	tasi-a 1?
+Bunun, Southern	bnn	Two	1498	198	ua7	1	rusya 1; lusha 1
+Bunun, Southern	bnn	Three	492	199	ta7u7	1?	ta'uʔ; tāo 1?; taou 1?
+Bunun, Southern	bnn	left	244	2	tanavili7	1
+Bunun, Southern	bnn	Four	1500	200	pat	1	pā-ăt 1; p'at 1
+Bunun, Southern	bnn	Five	493	201	7ima7	1	'imaʔ; hima 1
+Bunun, Southern	bnn	Six	1703	202	noum	1	no'om 1
+Bunun, Southern	bnn	Seven	1704	203	pito7	1	pitu 1; pitò 1
+Bunun, Southern	bnn	Eight	1705	204	va7u7	3	va'uʔ; vāo 3; awou 3
+Bunun, Southern	bnn	Nine	1483	205	siva7	5	siva 5; siv\C3  5
+Bunun, Southern	bnn	Ten	1515	206	mas7an	2	massan 2
+Bunun, Southern	bnn	Twenty	1710	207	mapuan	1
+Bunun, Southern	bnn	head	1256	24	buNu7	2	vongō 2
+Bunun, Southern	bnn	hair	1040	26	holbo7	16	koruvo 16
+Bunun, Southern	bnn	to sniff, smell	375	29	akun	1
+Bunun, Southern	bnn	tooth	1380	31	nipun	1	niepon 1
+Bunun, Southern	bnn	tongue	1205	32	ma7ma7	37
+Bunun, Southern	bnn	to cry	1839	34	taNi	1
+Bunun, Southern	bnn	to vomit	1278	35	motah	1
+Bunun, Southern	bnn	to eat	1336	37	ma7un	1	ma'ún
+Bunun, Southern	bnn	leg/foot	2098	4	banta	23?	vantas 23?
+Bunun, Southern	bnn	to bite	1403	41	kalat	1
+Bunun, Southern	bnn	to suck	1421	42	supsup7un	1	supsup'ún
+Bunun, Southern	bnn	ear	1247	43	taNi7a7	1	taŋi'áʔ; tainga 1
+Bunun, Southern	bnn	to hear	1408	44	ta7a8a7	2?
+Bunun, Southern	bnn	eye	1248	45	mata7	1	mata 1
+Bunun, Southern	bnn	to walk	1443	5	mudada7an	21	mud̂ad̂á'an
+Bunun, Southern	bnn	mother	1216	59	tina7	1	tena 1
+Bunun, Southern	bnn	road/path	667	6	da7an	1	d̂a'an
+Bunun, Southern	bnn	father	1217	60	tama7	1
+Bunun, Southern	bnn	house	1252	61	lumah	1
+Bunun, Southern	bnn	name	1405	63	Na7an	1	ŋa'an
+Bunun, Southern	bnn	to sew	1457	67	matahi	1
+Bunun, Southern	bnn	to hunt	1435	69	hanop	1
+Bunun, Southern	bnn	to shoot	1172	70	manah	1
+Bunun, Southern	bnn	to kill	1417	74	pata8un	2
+Bunun, Southern	bnn	to die, be dead	1494	75	mata8	1
+Bunun, Southern	bnn	to scratch	1436	77	m3kalav	1	kəlavun 1
+Bunun, Southern	bnn	to work	1086	83	ku8aku8a7	27
+Bunun, Southern	bnn	to dig	1418	90	maka8ka8	18
+Bunun, Southern	bnn	dog	2009	96	7asu7	1	atso 1
+Bunun, Southern	bnn	bird	937	97	ha8am	2
+Bunun, Southern	bnn	feather	1201	99	pane7	2?	puláu 1?
+Kanakanabu	xnb	hand	1277	1	ramuTu	4
+Kanakanabu	xnb	wing	1257	100	apoN	29
+Kanakanabu	xnb	snake	730	106	funai	29
+Kanakanabu	xnb	louse	1392	108	kuTu	1
+Kanakanabu	xnb	fish	227	111	vutukulu	3
+Kanakanabu	xnb	leaf	628	114	ran3N3	4
+Kanakanabu	xnb	root	670	115	ramisi	3
+Kanakanabu	xnb	flower	239	116	buNabuNa	1
+Kanakanabu	xnb	fruit	1507	117	maTu7u	2
+Kanakanabu	xnb	grass	606	118	Ta3n3	5
+Kanakanabu	xnb	earth/soil	1228	119	73nai	31
+Kanakanabu	xnb	stone	857	120	vatu	1
+Kanakanabu	xnb	sand	671	121	lavuku	3
+Kanakanabu	xnb	water	948	122	Tanumu	1
+Kanakanabu	xnb	sea	1474	124	t3n3m3	2
+Kanakanabu	xnb	salt	1274	125	maaini	3
+Kanakanabu	xnb	sky	1732	128	kaNTa	1?
+Kanakanabu	xnb	moon	1313	129	vuan3	1
+Kanakanabu	xnb	rain	658	133	uTan3	1
+Kanakanabu	xnb	lightning	1654	135	aparat3	4
+Kanakanabu	xnb	fire	221	143	apulu	1
+Kanakanabu	xnb	smoke	778	145	3v3	1
+Kanakanabu	xnb	ash	646	146	abu	1
+Kanakanabu	xnb	black	163	147	ta3l3m3	27
+Kanakanabu	xnb	white	1335	148	tapunia	1
+Kanakanabu	xnb	bone	1394	15	Tuuan	1
+Kanakanabu	xnb	yellow	1424	150	tanavikar3	2
+Kanakanabu	xnb	short	1645	154	maNt3ai	2
+Kanakanabu	xnb	old	1229	162	maraNu	2?
+Kanakanabu	xnb	new	1231	163	voorua	1
+Kanakanabu	xnb	good	1035	164	maman3N3	2
+Kanakanabu	xnb	bad, evil	1292	165	aaka	1?	aráka 1?
+Kanakanabu	xnb	day	1225	168	taniara	2?
+Kanakanabu	xnb	when?	1238	170	nukanaumana	17
+Kanakanabu	xnb	that	78	178	iisa	4
+Kanakanabu	xnb	near	1942	179	haraTani	1	[h]aracani
+Kanakanabu	xnb	far	1406	180	araTaini	2
+Kanakanabu	xnb	where?	1237	181	nanu	1
+Kanakanabu	xnb	I	1209	182	Gku	1
+Kanakanabu	xnb	thou	1215	183	iikasu	1
+Kanakanabu	xnb	we	1212	185	ikita	1	iikimin 2
+Kanakanabu	xnb	you	1213	186	ikamu	1
+Kanakanabu	xnb	what?	1236	188	nein	2?	no:mani 2?
+Kanakanabu	xnb	One	1493	197	Tani	3
+Kanakanabu	xnb	Two	1498	198	Tusa	1
+Kanakanabu	xnb	Three	492	199	toro	1
+Kanakanabu	xnb	left	244	2	iiri	1
+Kanakanabu	xnb	to know, be knowledgeable	1410	20	tavala3	2
+Kanakanabu	xnb	Four	1500	200	sopata	1
+Kanakanabu	xnb	Five	493	201	rima	1
+Kanakanabu	xnb	Six	1703	202	n3m	1
+Kanakanabu	xnb	Seven	1704	203	pitu	1
+Kanakanabu	xnb	Eight	1705	204	aru	3	(h)a:ru
+Kanakanabu	xnb	Nine	1483	205	siia	5
+Kanakanabu	xnb	Ten	1515	206	man3	2	ma:nə 2
+Kanakanabu	xnb	Twenty	1710	207	mapusau	1
+Kanakanabu	xnb	blood	946	23	Tarau	1?
+Kanakanabu	xnb	head	1256	24	nabuNu	2
+Kanakanabu	xnb	hair	1040	26	v3k3se	1
+Kanakanabu	xnb	right	1019	3	anan	1	anaanan 1
+Kanakanabu	xnb	tooth	1380	31	anisi	2
+Kanakanabu	xnb	tongue	1205	32	abas3	5
+Kanakanabu	xnb	to laugh	1355	33	maaTaTa	1	pacacáən 1
+Kanakanabu	xnb	to cry	1839	34	tumaNi	1
+Kanakanabu	xnb	to spit	1440	36	Nai	3
+Kanakanabu	xnb	to eat	1336	37	kum3n	1
+Kanakanabu	xnb	leg/foot	2098	4	k3k3	1?
+Kanakanabu	xnb	to drink	1401	40	mima	2
+Kanakanabu	xnb	to hear	1408	44	timan3n	2?
+Kanakanabu	xnb	to sit	1416	51	tupuru	3
+Kanakanabu	xnb	person/human being	683	53	Tau	1
+Kanakanabu	xnb	man/male	1554	54	saronai	1
+Kanakanabu	xnb	mother	1216	59	Tina	1
+Kanakanabu	xnb	road/path	667	6	Tan3	1
+Kanakanabu	xnb	father	1217	60	Tuma	1?
+Kanakanabu	xnb	name	1405	63	Nanai	1
+Kanakanabu	xnb	rope	1218	65	talisi	1
+Kanakanabu	xnb	to sew	1457	67	tumataii	1
+Kanakanabu	xnb	to shoot	1172	70	moapana3	1
+Kanakanabu	xnb	to kill	1417	74	pepaTai	2	miapacái 2
+Kanakanabu	xnb	to die, be dead	1494	75	maTai	1	piapacái 1
+Kanakanabu	xnb	stick/wood	1295	79	kalu	1
+Kanakanabu	xnb	to swim	1439	9	makanaNuru	1
+Kanakanabu	xnb	dog	2009	96	TaTau	8
+Kanakanabu	xnb	egg	744	98	iTuuru	1
+Kanakanabu	xnb	feather	1201	99	apuNu	3
+Kanakanabu	xnb	tongue	1205	32	7avas3	5
+Thao	ssf	hand	1277	1	rima	1
+Thao	ssf	wing	1257	100	pali	2	%pali
+Thao	ssf	fat/grease	1282	104	lhimash	2
+Thao	ssf	tail	1220	105	wawishwish	44
+Thao	ssf	louse	1392	108	kuTu	1
+Thao	ssf	mosquito	1509	109	rikish	2
+Thao	ssf	spider	843	110	kakatu	2	%kakatu
+Thao	ssf	branch	1531	113	pana	22
+Thao	ssf	leaf	628	114	filhaq	2
+Thao	ssf	root	670	115	lhamiT	3
+Thao	ssf	grass	606	118	lhmir	3
+Thao	ssf	stone	857	120	fatu	1
+Thao	ssf	sand	671	121	bunaz	2
+Thao	ssf	water	948	122	sazum	1
+Thao	ssf	salt	1274	125	qtilha	1
+Thao	ssf	moon	1313	129	furaz	1?
+Thao	ssf	back	1291	13	rikus	1
+Thao	ssf	cloud	1489	131	urum	35?
+Thao	ssf	rain	658	133	qusaz	1
+Thao	ssf	wind	960	136	fari	2
+Thao	ssf	to blow	175	137	miup	1
+Thao	ssf	belly	1251	14	tiaz	1
+Thao	ssf	dry	1398	140	maqalhiw	2
+Thao	ssf	heavy	1210	142	mabriT	1?
+Thao	ssf	fire	221	143	apui	1
+Thao	ssf	ash	646	146	qafu	1
+Thao	ssf	black	163	147	maqusum	26
+Thao	ssf	white	1335	148	mapuzi	1
+Thao	ssf	narrow	1267	158	maqtit	1?
+Thao	ssf	wide	1243	159	maharan	1
+Thao	ssf	painful, sick	2103	160	makarmanabut	3
+Thao	ssf	shy, ashamed	487	161	maiaw	1?
+Thao	ssf	old	1229	162	sasaz	1?
+Thao	ssf	new	1231	163	faqlhu	1
+Thao	ssf	good	1035	164	maqitan	1?
+Thao	ssf	night	1233	167	tanlhuan	2
+Thao	ssf	day	1225	168	qali	2
+Thao	ssf	year	1226	169	kawash	2
+Thao	ssf	liver	1224	17	rishi	3
+Thao	ssf	when?	1238	170	kaiza	1
+Thao	ssf	at	1461	173	i	1
+Thao	ssf	in, inside	1606	174	i	19
+Thao	ssf	above	1741	175	ifafaw	2
+Thao	ssf	that	78	178	haia	3	huya 3
+Thao	ssf	breast	1402	18	tutu	1
+Thao	ssf	where?	1237	181	intua	23
+Thao	ssf	I	1209	182	iaku	1
+Thao	ssf	thou	1215	183	ihu	1
+Thao	ssf	we	1212	185	ita	1	yamin 2
+Thao	ssf	what?	1236	188	numa	30
+Thao	ssf	who?	1235	189	tima	2
+Thao	ssf	shoulder	1482	19	qalhafa	1
+Thao	ssf	other	197	190	suma	1
+Thao	ssf	how?	1239	194	apiakuzan	1
+Thao	ssf	no, not	1269	195	ani	3?
+Thao	ssf	to count	1420	196	shupilh	3
+Thao	ssf	One	1493	197	tata	1?
+Thao	ssf	Two	1498	198	tusha	1
+Thao	ssf	Three	492	199	turu	1
+Thao	ssf	to know, be knowledgeable	1410	20	mafazaq	2
+Thao	ssf	Four	1500	200	shpat	1	[sh]pat
+Thao	ssf	Five	493	201	rima7	1	hrima 1
+Thao	ssf	Six	1703	202	sturu	2	katú:ruʔ 2
+Thao	ssf	Seven	1704	203	pitu7	1	pitu 1
+Thao	ssf	Eight	1705	204	kapat	1	kaspat 1
+Thao	ssf	Nine	1483	205	tana3u7	6	tamaso 6
+Thao	ssf	Ten	1515	206	mak3in	2	maksin 2?
+Thao	ssf	Twenty	1710	207	mapusa8	1
+Thao	ssf	head	1256	24	punuq	34
+Thao	ssf	hair	1040	26	fukish	1
+Thao	ssf	nose	1221	27	muzin	26
+Thao	ssf	to sniff, smell	375	29	shmazik	1
+Thao	ssf	tooth	1380	31	nipin	1
+Thao	ssf	tongue	1205	32	zama	1
+Thao	ssf	to laugh	1355	33	maTaTawa	1
+Thao	ssf	to cry	1839	34	Tmanit	1
+Thao	ssf	to vomit	1278	35	mutaq	1
+Thao	ssf	to eat	1336	37	kman	1
+Thao	ssf	to chew	321	38	mapapak	2
+Thao	ssf	ear	1247	43	lharina	1
+Thao	ssf	to hear	1408	44	tunmaza	2
+Thao	ssf	eye	1248	45	maTa	1
+Thao	ssf	to yawn	1028	47	mashushuaw	1
+Thao	ssf	to stand	1442	52	ilhilhi	1
+Thao	ssf	person/human being	683	53	Taw	1
+Thao	ssf	child	2099	56	azazak	1
+Thao	ssf	mother	1216	59	ina	1
+Thao	ssf	road/path	667	6	saran	1
+Thao	ssf	father	1217	60	ama	1
+Thao	ssf	house	1252	61	taun	21
+Thao	ssf	to sew	1457	67	shmaqish	1
+Thao	ssf	needle	1382	68	lhalhum	1
+Thao	ssf	to kill	1417	74	kmaipaTai	2
+Thao	ssf	to die, be dead	1494	75	maTai	1
+Thao	ssf	to scratch	1436	77	kmulhaw	1?
+Thao	ssf	stick/wood	1295	79	kawi	1
+Thao	ssf	to swell	1573	87	lhumfawa	26
+Thao	ssf	to dig	1418	90	kmari	1
+Thao	ssf	to buy	1869	91	fariw	23
+Thao	ssf	to open, uncover	1156	92	tmana	22
+Thao	ssf	to throw	1456	94	panaq	3
+Thao	ssf	dog	2009	96	atu	1
+Squliq Atayal	tay	hand	1277	1	qba7	2	kava 2; ava 2
+Squliq Atayal	tay	wing	1257	100	pali7	2
+Squliq Atayal	tay	to fly	1441	101	mlaka7	27
+Squliq Atayal	tay	rat	1490	102	quli7	2
+Squliq Atayal	tay	meat/flesh	634	103	hi7	1
+Squliq Atayal	tay	fat/grease	1282	104	siam	3	siyam 3
+Squliq Atayal	tay	tail	1220	105	NuNu7	2
+Squliq Atayal	tay	snake	730	106	mqu7	3?
+Squliq Atayal	tay	worm (earthworm)	1219	107	kui7	26
+Squliq Atayal	tay	louse	1392	108	sumiq	2	kuhiŋ 9
+Squliq Atayal	tay	fish	227	111	quleh	29	kulikh 29
+Squliq Atayal	tay	leaf	628	114	abau	3
+Squliq Atayal	tay	root	670	115	gamil	21
+Squliq Atayal	tay	flower	239	116	hpah	2
+Squliq Atayal	tay	fruit	1507	117	buai	1	buakh 1
+Squliq Atayal	tay	grass	606	118	k7man	4
+Squliq Atayal	tay	earth/soil	1228	119	rhial	2	heyal 2
+Squliq Atayal	tay	skin	763	12	kiahil	3
+Squliq Atayal	tay	stone	857	120	btunux	1	vatúnukh 1
+Squliq Atayal	tay	sand	671	121	bnaqii	2
+Squliq Atayal	tay	water	948	122	qsia7	3	usiak 3?
+Squliq Atayal	tay	sea	1474	124	siluN	3	sílung 3
+Squliq Atayal	tay	salt	1274	125	Timu7	2
+Squliq Atayal	tay	lake	624	126	siluN	2
+Squliq Atayal	tay	woods/forest	420	127	lhlahui	1?
+Squliq Atayal	tay	sky	1732	128	kaial	2	kāyal 2
+Squliq Atayal	tay	cloud	1489	131	iuluN	35	yurum 35
+Squliq Atayal	tay	wind	960	136	bihui	3	vaihui 3
+Squliq Atayal	tay	to blow	175	137	y3mup	1?
+Squliq Atayal	tay	warm	1232	138	hrhul	2
+Squliq Atayal	tay	dry	1398	140	mahii	2?
+Squliq Atayal	tay	heavy	1210	142	7suu	2
+Squliq Atayal	tay	fire	221	143	puniq	1	hapúni 1; ponnyak 1
+Squliq Atayal	tay	to burn	2102	144	msuliN	2
+Squliq Atayal	tay	smoke	778	145	hiloq	3	hilukh 3; heilu 3
+Squliq Atayal	tay	ash	646	146	qbuli7	1
+Squliq Atayal	tay	black	163	147	qalux	3	m'kálukh 3
+Squliq Atayal	tay	red	156	149	talah	2	m'talakh 2
+Squliq Atayal	tay	bone	1394	15	qni7	21
+Squliq Atayal	tay	thick	1244	157	khamai	2
+Squliq Atayal	tay	narrow	1267	158	l3giyil	2
+Squliq Atayal	tay	wide	1243	159	labaN	22
+Squliq Atayal	tay	intestines	1991	16	gius	2
+Squliq Atayal	tay	painful, sick	2103	160	mxal	2
+Squliq Atayal	tay	bad, evil	1292	165	iaqeh	24	lakhan 24
+Squliq Atayal	tay	night	1233	167	biNi7	1	hŋan 30; r'vian 21
+Squliq Atayal	tay	day	1225	168	qlian	2
+Squliq Atayal	tay	liver	1224	17	szik	2
+Squliq Atayal	tay	when?	1238	170	knuan	2	kinuaial 2
+Squliq Atayal	tay	above	1741	175	babau	2
+Squliq Atayal	tay	below	1485	176	zik	2
+Squliq Atayal	tay	this	1214	177	qani	1	hani 1
+Squliq Atayal	tay	that	78	178	qasa	2
+Squliq Atayal	tay	near	1942	179	sobeh	2	ubeh 2
+Squliq Atayal	tay	breast	1402	18	bubu7	2	vovo 2
+Squliq Atayal	tay	far	1406	180	tuaheq	3
+Squliq Atayal	tay	where?	1237	181	inu7	1
+Squliq Atayal	tay	I	1209	182	ku7	1	sakuʔ 1
+Squliq Atayal	tay	thou	1215	183	isu7	1
+Squliq Atayal	tay	he/she	262	184	hia7	1
+Squliq Atayal	tay	we	1212	185	ita7	1	sami 2
+Squliq Atayal	tay	you	1213	186	simu	1
+Squliq Atayal	tay	they	817	187	lhga7	2	hgaʔ 2
+Squliq Atayal	tay	what?	1236	188	nanu7	2
+Squliq Atayal	tay	who?	1235	189	ima7	2
+Squliq Atayal	tay	all	98	191	kuara7	2
+Squliq Atayal	tay	and	1577	192	ru7	20
+Squliq Atayal	tay	how?	1239	194	sua7	26	hmsuaʔ 26
+Squliq Atayal	tay	to count	1420	196	lmpuu	3
+Squliq Atayal	tay	One	1493	197	qutux	2	utuk 2; koto 2
+Squliq Atayal	tay	Two	1498	198	saziN	2	rusaʔ 1; saieng 2; sajin 2
+Squliq Atayal	tay	Three	492	199	Tiugal	2	turŭl 2; tungal 2
+Squliq Atayal	tay	left	244	2	gzil	2?
+Squliq Atayal	tay	to know, be knowledgeable	1410	20	baq	2	baqun 2
+Squliq Atayal	tay	Four	1500	200	paiat	1	s'paiat 1; paiyat 1
+Squliq Atayal	tay	Five	493	201	maral	1	imagal 1; māngal 1
+Squliq Atayal	tay	Six	1703	202	teiuk	2	teyu 2; cziu 2
+Squliq Atayal	tay	Seven	1704	203	pitu7	1	pitu 1
+Squliq Atayal	tay	Eight	1705	204	spat	1	muss'pat 1; sipăt 1
+Squliq Atayal	tay	Nine	1483	205	qeru7	1	meishu 2; kairo 1
+Squliq Atayal	tay	Ten	1515	206	mappo	1	mpuu 1; mapu 1; mapu 1; mpuu 1; mappo 1
+Squliq Atayal	tay	Twenty	1710	207	pusal	1
+Squliq Atayal	tay	to think	2271	21	mnluN	2
+Squliq Atayal	tay	to fear	1419	22	NuNu7	2
+Squliq Atayal	tay	blood	946	23	ramu7	20	rammo 20
+Squliq Atayal	tay	head	1256	24	btunux	35	túnukh 35; tonnohu 35
+Squliq Atayal	tay	hair	1040	26	snonux	2	hnonux 2; yunukh 2; sinonohu 2
+Squliq Atayal	tay	nose	1221	27	Nuhuu	27	idung 1
+Squliq Atayal	tay	to sniff, smell	375	29	smok	1?
+Squliq Atayal	tay	mouth	674	30	nquaq	30	nokoak 30
+Squliq Atayal	tay	tongue	1205	32	hmali7	1	hamá-ui 1
+Squliq Atayal	tay	to laugh	1355	33	msiaq	2
+Squliq Atayal	tay	to cry	1839	34	mNilis	15
+Squliq Atayal	tay	to vomit	1278	35	mutaq	1
+Squliq Atayal	tay	to spit	1440	36	tuioq	2
+Squliq Atayal	tay	to eat	1336	37	maniq	2
+Squliq Atayal	tay	leg/foot	2098	4	qaqai	1,  32
+Squliq Atayal	tay	to drink	1401	40	mnbuu	3
+Squliq Atayal	tay	to bite	1403	41	kmat	1
+Squliq Atayal	tay	to hear	1408	44	muN	3
+Squliq Atayal	tay	eye	1248	45	loziq	2	ro-i 2; rao-i 2; raoyăk 2
+Squliq Atayal	tay	to see	1409	46	mita7	1
+Squliq Atayal	tay	to sleep	1585	48	m7abi7	2	mavi 2
+Squliq Atayal	tay	to sit	1416	51	matama7	2
+Squliq Atayal	tay	person/human being	683	53	squliq	2	s'khulikh 2
+Squliq Atayal	tay	man/male	1554	54	mlikui	30	malikwi 30; murekoi 30
+Squliq Atayal	tay	woman/female	962	55	kneril	2	kaneiril 2; kunairin 2
+Squliq Atayal	tay	child	2099	56	laqi7	34	ulakhi 34; rakei 34
+Squliq Atayal	tay	mother	1216	59	iaia7	2	aia 2; yaya 2
+Squliq Atayal	tay	road/path	667	6	tuqii	2
+Squliq Atayal	tay	father	1217	60	iaba7	14	yaba 14; yava 14; aba 14
+Squliq Atayal	tay	name	1405	63	lalu7	2
+Squliq Atayal	tay	to say	1458	64	kmaial	3
+Squliq Atayal	tay	to tie up, fasten	1094	66	mumu7	2	tmumuʔ 2
+Squliq Atayal	tay	to sew	1457	67	smaqis	1
+Squliq Atayal	tay	to hunt	1435	69	qmalup	1
+Squliq Atayal	tay	to kill	1417	74	phoqil	3
+Squliq Atayal	tay	to die, be dead	1494	75	mhoqil	2
+Squliq Atayal	tay	to live, be alive	1422	76	mqianux	22
+Squliq Atayal	tay	to cut, hack	1432	78	tlamau	2
+Squliq Atayal	tay	stick/wood	1295	79	khoniq	1	khoni 1; khahunikh 1
+Squliq Atayal	tay	to split	1437	80	mka7	2	sbkaʔ 2
+Squliq Atayal	tay	to work	1086	83	qumah	1
+Squliq Atayal	tay	to squeeze	1414	88	moq	38
+Squliq Atayal	tay	to hold	1448	89	magal	2	galan 3
+Squliq Atayal	tay	to swim	1439	9	m3l3Niiaq	1	ləməŋiyaq 1
+Squliq Atayal	tay	to dig	1418	90	kmihui	17
+Squliq Atayal	tay	to throw	1456	94	mbuliN	2
+Squliq Atayal	tay	to fall	1280	95	mhutau	2
+Squliq Atayal	tay	dog	2009	96	huzil	2	hu-il 2; hoyel 2
+Squliq Atayal	tay	bird	937	97	qhniq	3?
+Squliq Atayal	tay	egg	744	98	baiN	2
+Squliq Atayal	tay	feather	1201	99	pali7	2
+Ciuli Atayal (Bandai)	tay	hand	1277	1	7aba7	2
+Ciuli Atayal (Bandai)	tay	to fly	1441	101	mulaka7	27
+Ciuli Atayal (Bandai)	tay	rat	1490	102	7olit	2
+Ciuli Atayal (Bandai)	tay	fat/grease	1282	104	sieN	3
+Ciuli Atayal (Bandai)	tay	tail	1220	105	NuNu7	2
+Ciuli Atayal (Bandai)	tay	snake	730	106	kuia7	3
+Ciuli Atayal (Bandai)	tay	worm (earthworm)	1219	107	kui7a7	26	kui'aʔ
+Ciuli Atayal (Bandai)	tay	louse	1392	108	lumi7	2	kuhiŋ 9
+Ciuli Atayal (Bandai)	tay	rotten	1728	112	maburuk	1
+Ciuli Atayal (Bandai)	tay	leaf	628	114	7abau	3
+Ciuli Atayal (Bandai)	tay	grass	606	118	kaman	4
+Ciuli Atayal (Bandai)	tay	earth/soil	1228	119	rahal	2
+Ciuli Atayal (Bandai)	tay	skin	763	12	kuahil	3
+Ciuli Atayal (Bandai)	tay	sand	671	121	buna7i7	2	bunaʔi'
+Ciuli Atayal (Bandai)	tay	sea	1474	124	waTiluN	3
+Ciuli Atayal (Bandai)	tay	salt	1274	125	timu7	2
+Ciuli Atayal (Bandai)	tay	lake	624	126	waTiluN	2
+Ciuli Atayal (Bandai)	tay	woods/forest	420	127	lahlahu	1?
+Ciuli Atayal (Bandai)	tay	sky	1732	128	kaal	2
+Ciuli Atayal (Bandai)	tay	moon	1313	129	buatiN	3
+Ciuli Atayal (Bandai)	tay	back	1291	13	bokwi7	33
+Ciuli Atayal (Bandai)	tay	star	1430	130	haNitux	1?
+Ciuli Atayal (Bandai)	tay	cloud	1489	131	auluN	35
+Ciuli Atayal (Bandai)	tay	fog	249	132	pukukuN	2
+Ciuli Atayal (Bandai)	tay	lightning	1654	135	takaliwak	24
+Ciuli Atayal (Bandai)	tay	wind	960	136	behur	3
+Ciuli Atayal (Bandai)	tay	to blow	175	137	iumuk	1?
+Ciuli Atayal (Bandai)	tay	warm	1232	138	huhul	2
+Ciuli Atayal (Bandai)	tay	dry	1398	140	maruNu7	30?
+Ciuli Atayal (Bandai)	tay	wet	1726	141	mahui7	2
+Ciuli Atayal (Bandai)	tay	heavy	1210	142	7ausu7	2	ʔaẓusu'
+Ciuli Atayal (Bandai)	tay	fire	221	143	hapuni7	1
+Ciuli Atayal (Bandai)	tay	to burn	2102	144	matuliN	2
+Ciuli Atayal (Bandai)	tay	smoke	778	145	rahilu7	3
+Ciuli Atayal (Bandai)	tay	ash	646	146	7abulit	1
+Ciuli Atayal (Bandai)	tay	black	163	147	makalux	3
+Ciuli Atayal (Bandai)	tay	white	1335	148	malavu7	2
+Ciuli Atayal (Bandai)	tay	red	156	149	matanah	2
+Ciuli Atayal (Bandai)	tay	bone	1394	15	bani7	21
+Ciuli Atayal (Bandai)	tay	big	1202	153	iotas	32	raho 33
+Ciuli Atayal (Bandai)	tay	long	1203	155	7inluuh	1?
+Ciuli Atayal (Bandai)	tay	thick	1244	157	kahma	2
+Ciuli Atayal (Bandai)	tay	narrow	1267	158	ragiril	2
+Ciuli Atayal (Bandai)	tay	wide	1243	159	dalabaN	22
+Ciuli Atayal (Bandai)	tay	intestines	1991	16	gi	2
+Ciuli Atayal (Bandai)	tay	painful, sick	2103	160	muxal	2
+Ciuli Atayal (Bandai)	tay	bad, evil	1292	165	akeh	24
+Ciuli Atayal (Bandai)	tay	night	1233	167	malahNan	2
+Ciuli Atayal (Bandai)	tay	day	1225	168	7alen	2
+Ciuli Atayal (Bandai)	tay	year	1226	169	kawas	2
+Ciuli Atayal (Bandai)	tay	liver	1224	17	saik	2
+Ciuli Atayal (Bandai)	tay	when?	1238	170	Tikanon	2
+Ciuli Atayal (Bandai)	tay	above	1741	175	bawi7	2
+Ciuli Atayal (Bandai)	tay	below	1485	176	ik	2
+Ciuli Atayal (Bandai)	tay	this	1214	177	hani7	1	hani'
+Ciuli Atayal (Bandai)	tay	that	78	178	haTa7	2
+Ciuli Atayal (Bandai)	tay	near	1942	179	hibih	2
+Ciuli Atayal (Bandai)	tay	breast	1402	18	bubu7	2
+Ciuli Atayal (Bandai)	tay	far	1406	180	tuhiia7	3
+Ciuli Atayal (Bandai)	tay	where?	1237	181	7inu7	1
+Ciuli Atayal (Bandai)	tay	thou	1215	183	7is37	1
+Ciuli Atayal (Bandai)	tay	he/she	262	184	hi7a7	1	hí'aʔ
+Ciuli Atayal (Bandai)	tay	we	1212	185	ita7	1	cámi 2
+Ciuli Atayal (Bandai)	tay	you	1213	186	Timu7	1
+Ciuli Atayal (Bandai)	tay	they	817	187	laha7	2
+Ciuli Atayal (Bandai)	tay	who?	1235	189	ima7	2
+Ciuli Atayal (Bandai)	tay	shoulder	1482	19	haNali7	2
+Ciuli Atayal (Bandai)	tay	all	98	191	kora7	2
+Ciuli Atayal (Bandai)	tay	and	1577	192	ru7	20	cukáʔ 1
+Ciuli Atayal (Bandai)	tay	to count	1420	196	lumpu7	3	lumpu'
+Ciuli Atayal (Bandai)	tay	One	1493	197	7utuh	2
+Ciuli Atayal (Bandai)	tay	Two	1498	198	sa7iN	2	sa'iŋ
+Ciuli Atayal (Bandai)	tay	Three	492	199	tugal	2
+Ciuli Atayal (Bandai)	tay	left	244	2	il	2?
+Ciuli Atayal (Bandai)	tay	to know, be knowledgeable	1410	20	ba7un	2
+Ciuli Atayal (Bandai)	tay	Four	1500	200	paat	1
+Ciuli Atayal (Bandai)	tay	Five	493	201	ramaxal	1
+Ciuli Atayal (Bandai)	tay	Six	1703	202	ma7tu7	2
+Ciuli Atayal (Bandai)	tay	Seven	1704	203	mapitu7	1
+Ciuli Atayal (Bandai)	tay	Eight	1705	204	mapat	1
+Ciuli Atayal (Bandai)	tay	Nine	1483	205	ma7iru7	1
+Ciuli Atayal (Bandai)	tay	Ten	1515	206	malapo7	1	malapẓo'; malapẓo' 1
+Ciuli Atayal (Bandai)	tay	Twenty	1710	207	mapusal	1
+Ciuli Atayal (Bandai)	tay	to think	2271	21	luNluN	2
+Ciuli Atayal (Bandai)	tay	to fear	1419	22	maNuNu7	2
+Ciuli Atayal (Bandai)	tay	blood	946	23	ramuuh	20
+Ciuli Atayal (Bandai)	tay	head	1256	24	tunuh	35
+Ciuli Atayal (Bandai)	tay	neck	1333	25	olu7	2	haruruŋ 41
+Ciuli Atayal (Bandai)	tay	hair	1040	26	hinunuh	2
+Ciuli Atayal (Bandai)	tay	to sniff, smell	375	29	sakanux	2
+Ciuli Atayal (Bandai)	tay	right	1019	3	7anali7	1?
+Ciuli Atayal (Bandai)	tay	tooth	1380	31	7ap3nux	1?
+Ciuli Atayal (Bandai)	tay	tongue	1205	32	hamalit	1
+Ciuli Atayal (Bandai)	tay	to laugh	1355	33	me7	2
+Ciuli Atayal (Bandai)	tay	to cry	1839	34	maNilis	15
+Ciuli Atayal (Bandai)	tay	to eat	1336	37	mani7	2
+Ciuli Atayal (Bandai)	tay	leg/foot	2098	4	papak	2
+Ciuli Atayal (Bandai)	tay	to drink	1401	40	ma7abu7	3
+Ciuli Atayal (Bandai)	tay	to bite	1403	41	kumat	1
+Ciuli Atayal (Bandai)	tay	ear	1247	43	TiaN7e7	1?	ciaŋ'éʔ
+Ciuli Atayal (Bandai)	tay	to hear	1408	44	muN	3
+Ciuli Atayal (Bandai)	tay	eye	1248	45	roi7	2
+Ciuli Atayal (Bandai)	tay	to sit	1416	51	matatama7	2
+Ciuli Atayal (Bandai)	tay	person/human being	683	53	Ti7uli7	2	ci'ulíʔ
+Ciuli Atayal (Bandai)	tay	man/male	1554	54	mulikul	30
+Ciuli Atayal (Bandai)	tay	woman/female	962	55	kanil	2
+Ciuli Atayal (Bandai)	tay	mother	1216	59	iaia7	2
+Ciuli Atayal (Bandai)	tay	road/path	667	6	tu7ui	2
+Ciuli Atayal (Bandai)	tay	father	1217	60	iaba7	14
+Ciuli Atayal (Bandai)	tay	name	1405	63	ralu7	2
+Ciuli Atayal (Bandai)	tay	to say	1458	64	kumaal	3
+Ciuli Atayal (Bandai)	tay	to tie up, fasten	1094	66	mutut	30
+Ciuli Atayal (Bandai)	tay	to sew	1457	67	T3ma7is	1
+Ciuli Atayal (Bandai)	tay	to kill	1417	74	papuhil	3
+Ciuli Atayal (Bandai)	tay	to die, be dead	1494	75	mahu7il	2
+Ciuli Atayal (Bandai)	tay	to live, be alive	1422	76	maianuh	22
+Ciuli Atayal (Bandai)	tay	to cut, hack	1432	78	talamau	2
+Ciuli Atayal (Bandai)	tay	stick/wood	1295	79	kahuni7	1
+Ciuli Atayal (Bandai)	tay	to split	1437	80	m3baka7	2
+Ciuli Atayal (Bandai)	tay	dull, blunt	379	82	7inipihuri7	2
+Ciuli Atayal (Bandai)	tay	to hold	1448	89	gal3n	3
+Ciuli Atayal (Bandai)	tay	to swim	1439	9	lumaNui	1
+Ciuli Atayal (Bandai)	tay	to dig	1418	90	kmehur	17
+Ciuli Atayal (Bandai)	tay	to throw	1456	94	pabuliN	2
+Ciuli Atayal (Bandai)	tay	to fall	1280	95	masutu	2
+Ciuli Atayal (Bandai)	tay	dog	2009	96	huil	2
+Ciuli Atayal (Bandai)	tay	bird	937	97	kabahni7	3
+Ciuli Atayal (Bandai)	tay	egg	744	98	baiN	2
+Ciuli Atayal (Bandai)	tay	feather	1201	99	7alihu7	2	ʔalihu'
+Favorlang	bzg	hand	1277	1	rima	1
+Favorlang	bzg	dirty	1230	10	miaTh	40	miarar 47
+Favorlang	bzg	wing	1257	100	Thaar	11
+Favorlang	bzg	fat/grease	1282	104	hema	2?
+Favorlang	bzg	tail	1220	105	kier	40
+Favorlang	bzg	snake	730	106	ibien	4
+Favorlang	bzg	louse	1392	108	oTho	1	acho 1
+Favorlang	bzg	mosquito	1509	109	rieb	12
+Favorlang	bzg	dust	2	11	borrabor	14
+Favorlang	bzg	fish	227	111	tsi	31
+Favorlang	bzg	rotten	1728	112	maboTho	1
+Favorlang	bzg	leaf	628	114	bia	2
+Favorlang	bzg	root	670	115	bossor	22
+Favorlang	bzg	flower	239	116	tullala	3
+Favorlang	bzg	fruit	1507	117	boa	1
+Favorlang	bzg	grass	606	118	aras	21
+Favorlang	bzg	earth/soil	1228	119	ta	29	ta-os ata 38
+Favorlang	bzg	stone	857	120	bato	1
+Favorlang	bzg	sand	671	121	bonnad	2
+Favorlang	bzg	sea	1474	124	abas	4
+Favorlang	bzg	sky	1732	128	busum	21	boesum 21
+Favorlang	bzg	moon	1313	129	idas	2
+Favorlang	bzg	back	1291	13	sies	7
+Favorlang	bzg	rain	658	133	oetas	1
+Favorlang	bzg	thunder	1150	134	bioa	4
+Favorlang	bzg	wind	960	136	barri	2
+Favorlang	bzg	to blow	175	137	piop	1
+Favorlang	bzg	belly	1251	14	Thaan	1?
+Favorlang	bzg	dry	1398	140	maTha	2?
+Favorlang	bzg	ash	646	146	abo	1
+Favorlang	bzg	bone	1394	15	oot	20
+Favorlang	bzg	short	1645	154	mapappa	1?
+Favorlang	bzg	intestines	1991	16	oda	32?
+Favorlang	bzg	painful, sick	2103	160	masiTh	1?	madich 1?
+Favorlang	bzg	new	1231	163	bao	1?
+Favorlang	bzg	in, inside	1606	174	lallum	1
+Favorlang	bzg	above	1741	175	babo	2
+Favorlang	bzg	thou	1215	183	iyo	1?
+Favorlang	bzg	what?	1236	188	numma	30
+Favorlang	bzg	shoulder	1482	19	babiar	28
+Favorlang	bzg	other	197	190	roman	1?
+Favorlang	bzg	and	1577	192	a	21
+Favorlang	bzg	One	1493	197	natta	1?
+Favorlang	bzg	Two	1498	198	roa	1
+Favorlang	bzg	Three	492	199	torro	1
+Favorlang	bzg	left	244	2	kairi	1
+Favorlang	bzg	to know, be knowledgeable	1410	20	maba	44
+Favorlang	bzg	Four	1500	200	naspaat	1
+Favorlang	bzg	Five	493	201	aThab	2
+Favorlang	bzg	Seven	1704	203	ito	1	(na)ito
+Favorlang	bzg	Eight	1705	204	maaspat	1
+Favorlang	bzg	Nine	1483	205	tannaTho	6
+Favorlang	bzg	Ten	1515	206	zThiett	3
+Favorlang	bzg	Twenty	1710	207	naroatsxiet	14
+Favorlang	bzg	to fear	1419	22	mikki	42
+Favorlang	bzg	blood	946	23	taga	1?,  9
+Favorlang	bzg	head	1256	24	oeno	34
+Favorlang	bzg	hair	1040	26	tau	38
+Favorlang	bzg	nose	1221	27	not	38
+Favorlang	bzg	right	1019	3	kallamas	35
+Favorlang	bzg	tooth	1380	31	syien	7
+Favorlang	bzg	tongue	1205	32	tatsira	4
+Favorlang	bzg	to laugh	1355	33	mais	39
+Favorlang	bzg	to vomit	1278	35	mota	1
+Favorlang	bzg	to eat	1336	37	man	1	micham 2
+Favorlang	bzg	to cook	1100	39	mado	29
+Favorlang	bzg	leg/foot	2098	4	asiel	38
+Favorlang	bzg	to drink	1401	40	miTham	11
+Favorlang	bzg	to suck	1421	42	tsimipisiep	1
+Favorlang	bzg	ear	1247	43	Tharrina	1
+Favorlang	bzg	to hear	1408	44	masini	22
+Favorlang	bzg	eye	1248	45	maTha	1	magcha 1
+Favorlang	bzg	to see	1409	46	mita	1
+Favorlang	bzg	to sleep	1585	48	matorro	1
+Favorlang	bzg	to walk	1443	5	moas	3
+Favorlang	bzg	person/human being	683	53	Tho	1
+Favorlang	bzg	child	2099	56	shiem	35
+Favorlang	bzg	mother	1216	59	nai	18
+Favorlang	bzg	road/path	667	6	tarran	1
+Favorlang	bzg	father	1217	60	mau	16	m\C3 u
+Favorlang	bzg	house	1252	61	don	21
+Favorlang	bzg	name	1405	63	naan	1
+Favorlang	bzg	to sew	1457	67	summis	1
+Favorlang	bzg	to come	1446	7	mai	1
+Favorlang	bzg	to kill	1417	74	paTha	2
+Favorlang	bzg	to die, be dead	1494	75	maTha	1
+Favorlang	bzg	to live, be alive	1422	76	oriTh	1
+Favorlang	bzg	to scratch	1436	77	makos	27
+Favorlang	bzg	to fall	1280	95	miog	5
+Favorlang	bzg	bird	937	97	mampa	31
+Kavalan	ckv	hand	1277	1	lima7	1	ɣukáp 3; rukap 3; rima 1
+Kavalan	ckv	rat	1490	102	mot3n	31	mu:tún 31; mla:báw 1
+Kavalan	ckv	meat/flesh	634	103	73si7	1	ʔs:iʔ 1
+Kavalan	ckv	fat/grease	1282	104	sima	2
+Kavalan	ckv	worm (earthworm)	1219	107	kaurei	27	kourey 27
+Kavalan	ckv	mosquito	1509	109	xi7is	2	ɣi'ís; ɣeis 2
+Kavalan	ckv	fish	227	111	ba73t	27	ba'ə́t; ba:ót 27; vaūt 27
+Kavalan	ckv	leaf	628	114	vixe7	2	viri 2
+Kavalan	ckv	root	670	115	xabas	11	ravass 11
+Kavalan	ckv	stone	857	120	batu7	1	bəttóʔ 1; vato 1; vatu 1
+Kavalan	ckv	water	948	122	ranum	1	ẓa:núm 1
+Kavalan	ckv	sky	1732	128	l3an	2	ləẓəán 2; ɬəɬan 2; z'lan 2; l'zan 2; ran 2
+Kavalan	ckv	moon	1313	129	buran	1	bu:lán 1; buran 1; vulan 1
+Kavalan	ckv	rain	658	133	7ual	1	ʔu:ẓán 1; uran 1; uzan 1
+Kavalan	ckv	thunder	1150	134	3N3N	3?	zŭng-zŭng 3?
+Kavalan	ckv	lightning	1654	135	ria7ap	3	riẓa'áp; li:ẓáp 3; lirap 3
+Kavalan	ckv	wind	960	136	bari7	2	vari 2; bari 2
+Kavalan	ckv	dry	1398	140	mais3N	33
+Kavalan	ckv	fire	221	143	xama	14	amaz/lamar 14; ramah 14
+Kavalan	ckv	smoke	778	145	qixab	3	qe:ɣə́b 3; hirŭv 3
+Kavalan	ckv	ash	646	146	iibu7	1?	ʔi:búʔ 1?
+Kavalan	ckv	black	163	147	t3N3N	2	tŭngŭn 2
+Kavalan	ckv	big	1202	153	xaia7	1	raia 1
+Kavalan	ckv	thin	1400	156	7inpis	1?	ʔimpis 1?
+Kavalan	ckv	old	1229	162	baib3l3n	2?	ba:qqayán 2?; baybɬán 2?
+Kavalan	ckv	night	1233	167	tubantituhabi7	21	qa:ɣa:biʔ 21; raviti 21?
+Kavalan	ckv	day	1225	168	taxaiti7	15	taɣeiʔ 15; darri 15; darreiti 15
+Kavalan	ckv	when?	1238	170	qonian	2	qomní: 17?
+Kavalan	ckv	above	1741	175	tababau	2	[ta-]ba:báu
+Kavalan	ckv	breast	1402	18	sisu7	1
+Kavalan	ckv	I	1209	182	7aiku7	1	aiku 1
+Kavalan	ckv	thou	1215	183	7aisu7	1	ʔaysóʔ 1; -isóʔ 1; aisu 1
+Kavalan	ckv	we	1212	185	7aita7	1	-itaʔ 1; ʔaymíʔ 2; -imiʔ 2
+Kavalan	ckv	you	1213	186	7aimo7	1	-imoʔ 1
+Kavalan	ckv	to count	1420	196	bilaN	1	pasabi:ɬáŋ 1
+Kavalan	ckv	One	1493	197	7issai	1	issa 1; isa 1
+Kavalan	ckv	Two	1498	198	rusa7	1	ʔuẓusáʔ 1; lusa 1; rusa 1
+Kavalan	ckv	Three	492	199	tulu7	1	ʔutu:lóʔ 1; tulu 1; tusu 1
+Kavalan	ckv	left	244	2	kumawili7	1
+Kavalan	ckv	to know, be knowledgeable	1410	20	sup3xan	32	su:ppóɣ 32
+Kavalan	ckv	Four	1500	200	spat	1	ʔuspát 1; supat 1
+Kavalan	ckv	Five	493	201	7ulima7	1	limáʔ 1; lima 1
+Kavalan	ckv	Six	1703	202	7unn3m	1	nim 1; n'm 1; unum 1; ʔnə́m 1
+Kavalan	ckv	Seven	1704	203	pitu7	1	ʔupitóʔ 1; pitu 1
+Kavalan	ckv	Eight	1705	204	varu7	3	ʔuwalóʔ 3; waru 3; aru 3
+Kavalan	ckv	Nine	1483	205	siwa7	5	ʔusiwáʔ 5; siwa 5
+Kavalan	ckv	Ten	1515	206	st3xai	15	trai 15; tahai 15; ɣaptin 6
+Kavalan	ckv	Twenty	1710	207	7urusavtin	2	ʔuẓusaptín 2; lusa-ptin 2
+Kavalan	ckv	to think	2271	21	k3sian3m	1	ka:sianə́m 1
+Kavalan	ckv	head	1256	24	uxu7	1	ʔo:ɣóʔ 1; uru 1; uvu 1
+Kavalan	ckv	hair	1040	26	buq3s	1	vukŭss 1; vokko 1
+Kavalan	ckv	nose	1221	27	7unu7uN	1	ʔunu'úŋ; ʔu:núŋ 1; unung 1; unom 1
+Kavalan	ckv	right	1019	3	kawanan	1
+Kavalan	ckv	tongue	1205	32	lilam	3	li:ɬám 3; lilam 3
+Kavalan	ckv	to vomit	1278	35	muti7	1
+Kavalan	ckv	to spit	1440	36	tiap3s	33
+Kavalan	ckv	to eat	1336	37	kanpai	1	qmá:n 1; k'man 1; han 1
+Kavalan	ckv	leg/foot	2098	4	xapan	55	rapan 55
+Kavalan	ckv	to drink	1401	40	sixop	18	mna:núm 19
+Kavalan	ckv	to bite	1403	41	qmaxat	1
+Kavalan	ckv	to suck	1421	42	s3ps3p	1	smi:sə́p 1; smupsúp 1
+Kavalan	ckv	eye	1248	45	mata7	1	mata 1
+Kavalan	ckv	to see	1409	46	tmaita7	1?	mqita 1
+Kavalan	ckv	to walk	1443	5	s3makai	3	sma:qáy 3
+Kavalan	ckv	man/male	1554	54	unanai	1?	ɣonanáy 1?; riunanai 1?
+Kavalan	ckv	mother	1216	59	tina7	1
+Kavalan	ckv	road/path	667	6	laran	1	la:ẓán 1; zaran 1; rathan 1
+Kavalan	ckv	father	1217	60	tama7	1	tamma 1
+Kavalan	ckv	name	1405	63	naNan	1
+Kavalan	ckv	to sew	1457	67	t3ma7is	1	təma'ís
+Kavalan	ckv	to hit	1433	72	puqun	33
+Kavalan	ckv	to die, be dead	1494	75	patai	1
+Kavalan	ckv	to scratch	1436	77	kaxau	1	qa:ɣáw 1
+Kavalan	ckv	to hold	1448	89	7alai	4	ma:láʔ 4
+Kavalan	ckv	to swim	1439	9	m3naNui	1
+Kavalan	ckv	to dig	1418	90	kalkal	18?	kmutkút 13
+Kavalan	ckv	to fall	1280	95	t3mibuk	3	tmi:bóq 3
+Kavalan	ckv	dog	2009	96	wasu7	1	wasu 1
+Kavalan	ckv	bird	937	97	7aLam	2
+Kavalan	ckv	egg	744	98	tixoh	1	ti:ɣóɣ 1
+Kavalan	ckv	feather	1201	99	pak3z	18?
+Pazeh	uun	hand	1277	1	ima	1	rima 1; rimáʔ 1
+Pazeh	uun	wing	1257	100	papalit	2
+Pazeh	uun	dust	2	11	burabu7	14	b̂urab̂ú'
+Pazeh	uun	spider	843	110	kakasu7	2
+Pazeh	uun	fish	227	111	7alau	2	alao 2; ʔaláw 2
+Pazeh	uun	branch	1531	113	paNa	22	paŋáʔ 22
+Pazeh	uun	flower	239	116	tulala7	3
+Pazeh	uun	grass	606	118	s3m37	3	səmə́'; simur 3; səmə́r 3
+Pazeh	uun	earth/soil	1228	119	dax3	30	dexə́ʔ 30
+Pazeh	uun	skin	763	12	rapai	24
+Pazeh	uun	stone	857	120	batu7	1	batu 1
+Pazeh	uun	sand	671	121	bunat	2
+Pazeh	uun	water	948	122	dalum	1	dalom 1; darūm 1
+Pazeh	uun	sea	1474	124	awas	4	awass 4
+Pazeh	uun	sky	1732	128	babaukawas	3	vavao-kawas 3
+Pazeh	uun	moon	1313	129	7ilas	2	ilass 2; iras 2
+Pazeh	uun	back	1291	13	bukun	2
+Pazeh	uun	star	1430	130	bintun	1	bintul 1; mintol 1
+Pazeh	uun	cloud	1489	131	x3d3N	35	%rulung 35; %ruron 35; rulúŋ 35
+Pazeh	uun	rain	658	133	7udan	1	mudal 1; udaru 1
+Pazeh	uun	wind	960	136	ba7i7	2	ba'iʔ; varə 2
+Pazeh	uun	cold	1287	139	lamik	22?
+Pazeh	uun	belly	1251	14	ti7an	1	ti'án; tyal 1; tíal 1
+Pazeh	uun	dry	1398	140	maqa7it	2	maqa'ít
+Pazeh	uun	wet	1726	141	mapaiak	1
+Pazeh	uun	heavy	1210	142	hai3N	3
+Pazeh	uun	fire	221	143	hapui	1	hapui 1; hapoi 1
+Pazeh	uun	ash	646	146	7abu7	1
+Pazeh	uun	thin	1400	156	halipit	1?
+Pazeh	uun	old	1229	162	hak33N7asau	2
+Pazeh	uun	day	1225	168	dali	15	dalí'an 15; liahan 2
+Pazeh	uun	year	1226	169	kawas	2
+Pazeh	uun	liver	1224	17	asai	1	ʔasáy 1
+Pazeh	uun	above	1741	175	babu	2
+Pazeh	uun	below	1485	176	dadax37	25
+Pazeh	uun	this	1214	177	7imini7	1	ʔiminí'
+Pazeh	uun	that	78	178	huia7	3
+Pazeh	uun	near	1942	179	7aliahan	3	ʔaliáh 3
+Pazeh	uun	breast	1402	18	nunoh	3	nunoho 3; zəbəzə́p 25
+Pazeh	uun	I	1209	182	iaku7	1	yako 1
+Pazeh	uun	thou	1215	183	7isiu7	1	issu 1
+Pazeh	uun	we	1212	185	7ita7	1	yamí:' 2; itáʔ 1; ya:míʔ 2; amíʔ 2
+Pazeh	uun	you	1213	186	imu7	1	imu 1
+Pazeh	uun	who?	1235	189	ima7	2	ima 2
+Pazeh	uun	shoulder	1482	19	7abaxan	1	abaha 1; ʔabaxáʔ 1
+Pazeh	uun	and	1577	192	iu7	20?
+Pazeh	uun	to count	1420	196	musuNusuN	3?
+Pazeh	uun	One	1493	197	7aaN	1	ʔiżát 1; ida 1; idáʔ 1
+Pazeh	uun	Two	1498	198	dusa7	1	dusa 1
+Pazeh	uun	Three	492	199	turu7	1	turu 1
+Pazeh	uun	left	244	2	ixi7	1	ixíʔ 1
+Pazeh	uun	to know, be knowledgeable	1410	20	mubaa7	2	mabazáʔ 2
+Pazeh	uun	Four	1500	200	s3pat	1	supat 1
+Pazeh	uun	Five	493	201	hasub	2	hasuv 2; xasə́b 2; xasə́p 2
+Pazeh	uun	Six	1703	202	hasubuda	3	hasuv-da 3; xasə́b-użaʔ 3
+Pazeh	uun	Seven	1704	203	xas3bidusa7	7	hasubidusa 7
+Pazeh	uun	Eight	1705	204	xas3bituru7	2	hasubituru 2; hasuve-duro 2
+Pazeh	uun	Nine	1483	205	xas3bis3pat	4	hasubisupat 4; hasuvesupat 4
+Pazeh	uun	Ten	1515	206	7isit	3	issit 3; shid 3; is'iit 3
+Pazeh	uun	Twenty	1710	207	dusa7isit	14
+Pazeh	uun	blood	946	23	damu7	20
+Pazeh	uun	head	1256	24	punu7	34	ponō 34
+Pazeh	uun	hair	1040	26	buk3s	1	vukkus 1; bakus 1
+Pazeh	uun	nose	1221	27	muiN	26	mujing 26; mouding 26; muzíŋ 26
+Pazeh	uun	to sniff, smell	375	29	sasa3k	1
+Pazeh	uun	right	1019	3	7annan	1	anán 1
+Pazeh	uun	tooth	1380	31	l3p3N	1	rupun 1; lipeung 1
+Pazeh	uun	tongue	1205	32	dahama7	1	yohama 1
+Pazeh	uun	to laugh	1355	33	mahatan	40	mahatahatan 40; mahatan 40; mahatán 40
+Pazeh	uun	to cry	1839	34	maNit	39	mangidz 39
+Pazeh	uun	to vomit	1278	35	muta7	1
+Pazeh	uun	to eat	1336	37	m3k3n	1	kakanai 1
+Pazeh	uun	to cook	1100	39	mutal3k	1	tatalek 1; tataluk 1; mutalə́k 1
+Pazeh	uun	to suck	1421	42	333p	1
+Pazeh	uun	ear	1247	43	sa7iNa7	1	sa'íŋaʔ; sangira 1; sangera 1; saŋiráʔ 1
+Pazeh	uun	to hear	1408	44	taumala7	2	tumaláʔ 2
+Pazeh	uun	eye	1248	45	dau7ik	2	dau'ík; dourik 2; daorek 2; darik 2; daurík 2
+Pazeh	uun	to see	1409	46	mukita7	1	mikitáʔ 1
+Pazeh	uun	to sleep	1585	48	mid3m	27	mudamai 3
+Pazeh	uun	to walk	1443	5	muakai	3	dzadzakai 3; muzakáy 3
+Pazeh	uun	to stand	1442	52	mitun	36
+Pazeh	uun	person/human being	683	53	sau	1	sanh 1
+Pazeh	uun	child	2099	56	laqihan	34	rakehal 34; rakihal 34; rakihán 34
+Pazeh	uun	mother	1216	59	7ina7	1	ina 1
+Pazeh	uun	road/path	667	6	daran	1
+Pazeh	uun	father	1217	60	aba7	14	ʔabáʔ 14
+Pazeh	uun	house	1252	61	humaq	1	huma 1; xumáʔ 1
+Pazeh	uun	to say	1458	64	kakawas	4	makakawasai 4; kakawás 4
+Pazeh	uun	rope	1218	65	sa7is	1	sa'ís; sariss 1
+Pazeh	uun	to sew	1457	67	sasa7is	1	sasa'is
+Pazeh	uun	to come	1446	7	mupuah	3	mopuzan 3
+Pazeh	uun	to steal	713	73	masakaw	1
+Pazeh	uun	to scratch	1436	77	kaikaxau	1
+Pazeh	uun	to cut, hack	1432	78	tatatak	39
+Pazeh	uun	stick/wood	1295	79	kahui	1	kahoi 1
+Pazeh	uun	to work	1086	83	maukukusa7	27?
+Pazeh	uun	to hold	1448	89	mara7	4
+Pazeh	uun	to swim	1439	9	lalaNui7	1
+Pazeh	uun	to buy	1869	91	mubariw	23
+Pazeh	uun	to throw	1456	94	mupana7	3
+Pazeh	uun	dog	2009	96	wau7	1	wadzu 1; wazzo 1
+Pazeh	uun	bird	937	97	7aiam	2	aiam 2
+Pazeh	uun	feather	1201	99	b3k3s	18?	bukuss 18?
+Puyuma (Chihpen)	pyu	hand	1277	1	lima7	1	darukap 3; rima 1
+Puyuma (Chihpen)	pyu	wing	1257	100	pakpak	33
+Puyuma (Chihpen)	pyu	tail	1220	105	ikur	1
+Puyuma (Chihpen)	pyu	worm (earthworm)	1219	107	qul38	36
+Puyuma (Chihpen)	pyu	fish	227	111	vulau	2?
+Puyuma (Chihpen)	pyu	leaf	628	114	vi3raq	2
+Puyuma (Chihpen)	pyu	root	670	115	rami7	3
+Puyuma (Chihpen)	pyu	fruit	1507	117	vu7aq	1	vu'áq̂
+Puyuma (Chihpen)	pyu	earth/soil	1228	119	8ar3q	30
+Puyuma (Chihpen)	pyu	water	948	122	anum	1	ane 1; nnai 1
+Puyuma (Chihpen)	pyu	salt	1274	125	qat3ri7	1?
+Puyuma (Chihpen)	pyu	woods/forest	420	127	kawikawi7	2
+Puyuma (Chihpen)	pyu	moon	1313	129	qilas	2	aburan 1
+Puyuma (Chihpen)	pyu	back	1291	13	rikuan	1
+Puyuma (Chihpen)	pyu	star	1430	130	vituq3n	1
+Puyuma (Chihpen)	pyu	rain	658	133	qual	1	udan 1; mandal 1
+Puyuma (Chihpen)	pyu	thunder	1150	134	d3ruN	3	drung 3
+Puyuma (Chihpen)	pyu	wind	960	136	vali7	2	vare 2
+Puyuma (Chihpen)	pyu	to blow	175	137	mi7up	1	mi'úp
+Puyuma (Chihpen)	pyu	belly	1251	14	ti7aL	1	ti'áɬ; tteyal 1
+Puyuma (Chihpen)	pyu	dry	1398	140	marum	30	tarantáŋ 1?; taŋkár 32
+Puyuma (Chihpen)	pyu	heavy	1210	142	7aruun	3
+Puyuma (Chihpen)	pyu	fire	221	143	apui	1	apui 1; apoi 1
+Puyuma (Chihpen)	pyu	to burn	2102	144	miv3rv3r	23
+Puyuma (Chihpen)	pyu	ash	646	146	qavu7	1	aabu 1
+Puyuma (Chihpen)	pyu	black	163	147	qoqo3m	26	ududŭm 26
+Puyuma (Chihpen)	pyu	bone	1394	15	7okak	19
+Puyuma (Chihpen)	pyu	big	1202	153	maqiaN	2
+Puyuma (Chihpen)	pyu	thin	1400	156	7alipi	1?
+Puyuma (Chihpen)	pyu	thick	1244	157	k33m3L	21
+Puyuma (Chihpen)	pyu	narrow	1267	158	l3qtip	1?
+Puyuma (Chihpen)	pyu	wide	1243	159	7arawai	1?
+Puyuma (Chihpen)	pyu	intestines	1991	16	inaqi7	1
+Puyuma (Chihpen)	pyu	old	1229	162	maqiaN	2
+Puyuma (Chihpen)	pyu	bad, evil	1292	165	ku7a3N	2?	ku'aṭə́ŋ
+Puyuma (Chihpen)	pyu	day	1225	168	wari7	17
+Puyuma (Chihpen)	pyu	year	1226	169	hami	23
+Puyuma (Chihpen)	pyu	liver	1224	17	qaai	1
+Puyuma (Chihpen)	pyu	when?	1238	170	qai8an	1
+Puyuma (Chihpen)	pyu	to hide	602	171	venavuli	1
+Puyuma (Chihpen)	pyu	above	1741	175	7ia	1?
+Puyuma (Chihpen)	pyu	this	1214	177	7ini7a7	1	ʔini'áʔ; i-di 13
+Puyuma (Chihpen)	pyu	that	78	178	7iu7a7	13	ʔiẓu'á'
+Puyuma (Chihpen)	pyu	breast	1402	18	susu7	1
+Puyuma (Chihpen)	pyu	far	1406	180	7a8awil	2
+Puyuma (Chihpen)	pyu	I	1209	182	ti7aq3n	1	ti'áqən; -áqən 1
+Puyuma (Chihpen)	pyu	we	1212	185	7inta7	1	ʔiniam 2; itai 1
+Puyuma (Chihpen)	pyu	you	1213	186	7inmu7	1
+Puyuma (Chihpen)	pyu	who?	1235	189	7i7man	2
+Puyuma (Chihpen)	pyu	other	197	190	ruma7natau	1
+Puyuma (Chihpen)	pyu	how?	1239	194	ku8aiau	1
+Puyuma (Chihpen)	pyu	no, not	1269	195	hazi	1
+Puyuma (Chihpen)	pyu	One	1493	197	7isa7	1	sha 1; sa 1
+Puyuma (Chihpen)	pyu	Two	1498	198	ru7a7	1	ru'aʔ; lua 1; rua 1; lusa 1
+Puyuma (Chihpen)	pyu	Three	492	199	t3ru7	1	tilu 1; tero 1; taloh 1
+Puyuma (Chihpen)	pyu	left	244	2	tamawiri7	1
+Puyuma (Chihpen)	pyu	to know, be knowledgeable	1410	20	maalam	38
+Puyuma (Chihpen)	pyu	Four	1500	200	7pat	1	pat 1; spat 1; sepat 1
+Puyuma (Chihpen)	pyu	Five	493	201	rima	1	limaʔ 1; lima 1
+Puyuma (Chihpen)	pyu	Six	1703	202	num	1	unum 1; onam 1; ʔúnə́m 1
+Puyuma (Chihpen)	pyu	Seven	1704	203	pitu7	1	pitu 1
+Puyuma (Chihpen)	pyu	Eight	1705	204	waru7	3	waro 3; alou 3
+Puyuma (Chihpen)	pyu	Nine	1483	205	7iwa7	5	'iwáʔ; iwa 5; siva 5
+Puyuma (Chihpen)	pyu	Ten	1515	206	puluq	5	pulu 5; purru 5
+Puyuma (Chihpen)	pyu	blood	946	23	8araq	1	damok 20; modomok 20
+Puyuma (Chihpen)	pyu	head	1256	24	aNuruq	36	tangaro 36; tangal 37; tungrow 36
+Puyuma (Chihpen)	pyu	neck	1333	25	niq3n	1?
+Puyuma (Chihpen)	pyu	hair	1040	26	qarvo	16	aruvo 16
+Puyuma (Chihpen)	pyu	to breathe	1407	28	m3Na	28
+Puyuma (Chihpen)	pyu	right	1019	3	tarawalan	1
+Puyuma (Chihpen)	pyu	tooth	1380	31	wali7	2	ware 2
+Puyuma (Chihpen)	pyu	tongue	1205	32	sema	1
+Puyuma (Chihpen)	pyu	to cry	1839	34	3maaNis	1
+Puyuma (Chihpen)	pyu	to vomit	1278	35	mutaq	1
+Puyuma (Chihpen)	pyu	to eat	1336	37	7emkan	1	amkan 1
+Puyuma (Chihpen)	pyu	to bite	1403	41	kmarat	1
+Puyuma (Chihpen)	pyu	ear	1247	43	taliNa7	1	tangira 1; rangera 1; tungila 1
+Puyuma (Chihpen)	pyu	eye	1248	45	maa7	1	mata 1
+Puyuma (Chihpen)	pyu	to sleep	1585	48	7al3p3q	48	medŭng 49
+Puyuma (Chihpen)	pyu	to walk	1443	5	k3makawan	48 ?
+Puyuma (Chihpen)	pyu	person/human being	683	53	au	1	atou 1
+Puyuma (Chihpen)	pyu	woman/female	962	55	vavaian	1
+Puyuma (Chihpen)	pyu	child	2099	56	7alak	1
+Puyuma (Chihpen)	pyu	mother	1216	59	ta7ina7	1	ta'ínaʔ; ʔináʔ 1
+Puyuma (Chihpen)	pyu	road/path	667	6	8a8alan	1
+Puyuma (Chihpen)	pyu	father	1217	60	t3mama7	1	ʔamaʔ 1
+Puyuma (Chihpen)	pyu	house	1252	61	rumaq	1	aruma 1
+Puyuma (Chihpen)	pyu	name	1405	63	Na8an	1
+Puyuma (Chihpen)	pyu	rope	1218	65	ali7	1	ṭáli'; atali 1
+Puyuma (Chihpen)	pyu	to sew	1457	67	3mqi	1
+Puyuma (Chihpen)	pyu	to shoot	1172	70	p3nanaq	1
+Puyuma (Chihpen)	pyu	to steal	713	73	tematakaw	1
+Puyuma (Chihpen)	pyu	to kill	1417	74	p3natai	2
+Puyuma (Chihpen)	pyu	to die, be dead	1494	75	minatai	1
+Puyuma (Chihpen)	pyu	stick/wood	1295	79	kawi7	1
+Puyuma (Chihpen)	pyu	to turn	1588	8	mulius	2	muliulius 2
+Puyuma (Chihpen)	pyu	to swell	1573	87	vareh	1
+Puyuma (Chihpen)	pyu	to squeeze	1414	88	p3rqau	40
+Puyuma (Chihpen)	pyu	to fall	1280	95	mutani7	4
+Puyuma (Chihpen)	pyu	bird	937	97	qaiam	2	aiam 2
+Rukai (Budai)	dru	hand	1277	1	7arima7	1	arema 1
+Rukai (Budai)	dru	fat/grease	1282	104	sima7	2	simá'
+Rukai (Budai)	dru	tail	1220	105	taw3s	41
+Rukai (Budai)	dru	louse	1392	108	daT37	10	da:coʔ 10; ko:co: 1
+Rukai (Budai)	dru	spider	843	110	tak3raravat7	1?	takəraravat'
+Rukai (Budai)	dru	fruit	1507	117	mad37	2	madə́'
+Rukai (Budai)	dru	earth/soil	1228	119	da7e7	30	da'éʔ
+Rukai (Budai)	dru	sand	671	121	73nai	1
+Rukai (Budai)	dru	salt	1274	125	timo7	2
+Rukai (Budai)	dru	rain	658	133	7udal7	1	ʔudál'
+Rukai (Budai)	dru	thunder	1150	134	d3rd3r7	3?	dərdə́r'
+Rukai (Budai)	dru	lightning	1654	135	rikaT7	1	rikác'
+Rukai (Budai)	dru	wind	960	136	varig7	2?	várig'
+Rukai (Budai)	dru	cold	1287	139	mak3T3r7	2	makəcə́r'
+Rukai (Budai)	dru	fire	221	143	a7oi	1	apoulu 1; apoy 1
+Rukai (Budai)	dru	smoke	778	145	73b3l7	1	ʔəbə́l'
+Rukai (Budai)	dru	ash	646	146	7abu7	1
+Rukai (Budai)	dru	black	163	147	maiT3l3N7	2	maicələ́ŋ'
+Rukai (Budai)	dru	short	1645	154	73d3kai	2?
+Rukai (Budai)	dru	long	1203	155	mataN3la7	2?
+Rukai (Budai)	dru	thin	1400	156	mal3biri7	1	maləbíri'
+Rukai (Budai)	dru	thick	1244	157	makid3m3l	21
+Rukai (Budai)	dru	old	1229	162	mar3daN	2?
+Rukai (Budai)	dru	new	1231	163	ba7o7a7	1	ba'o'a'
+Rukai (Budai)	dru	night	1233	167	ma7uN	2?	ma'úŋ
+Rukai (Budai)	dru	day	1225	168	vaian	17
+Rukai (Budai)	dru	year	1226	169	Taili	22
+Rukai (Budai)	dru	liver	1224	17	7atai	1
+Rukai (Budai)	dru	when?	1238	170	k3iga7	1	ləígaʔ 1
+Rukai (Budai)	dru	below	1485	176	dauda37	25
+Rukai (Budai)	dru	near	1942	179	wad387	1?	wadə́:ð'
+Rukai (Budai)	dru	breast	1402	18	toto7	1?
+Rukai (Budai)	dru	far	1406	180	7adail7	2	ʔadáil'
+Rukai (Budai)	dru	where?	1237	181	iaka7inu7	1	yaká'inuʔ
+Rukai (Budai)	dru	I	1209	182	kunako7	1
+Rukai (Budai)	dru	thou	1215	183	k3so7	1	kəsó:'
+Rukai (Budai)	dru	what?	1236	188	man3ma7	16
+Rukai (Budai)	dru	to count	1420	196	wasipi7	3
+Rukai (Budai)	dru	One	1493	197	737a7	1?	ʔə'aʔ
+Rukai (Budai)	dru	Two	1498	198	rusa7	1	nousa 1
+Rukai (Budai)	dru	Three	492	199	turu7	1	toro 1
+Rukai (Budai)	dru	left	244	2	viri7	1
+Rukai (Budai)	dru	Four	1500	200	spat7	1	spa:t'; patù 1
+Rukai (Budai)	dru	Five	493	201	rima7	1	lim\C3  1
+Rukai (Budai)	dru	Six	1703	202	neum	1	neuma 1; ʔənə́m' 1
+Rukai (Budai)	dru	Seven	1704	203	pitu7	1	pitò 1
+Rukai (Budai)	dru	Eight	1705	204	varo7	3	mevarou 3
+Rukai (Budai)	dru	Nine	1483	205	baNat7	8	baŋát'; bangato 8; bangatu 8
+Rukai (Budai)	dru	Ten	1515	206	porok7	5	%porók'; %pouroukou 5
+Rukai (Budai)	dru	Twenty	1710	207	mapusal7	1	mapusál'
+Rukai (Budai)	dru	One Hundred	1634	209	7idai	1
+Rukai (Budai)	dru	to think	2271	21	kiar3m7r3m7	1	kiarəm'rə́m'
+Rukai (Budai)	dru	head	1256	24	7aolo7	1	%kapallu 45
+Rukai (Budai)	dru	neck	1333	25	r3737	1	rə'əʔ
+Rukai (Budai)	dru	nose	1221	27	NuNu7a	28	ŋuŋu'á; ongoho 2
+Rukai (Budai)	dru	to sniff, smell	375	29	wasabali7	3
+Rukai (Budai)	dru	right	1019	3	vanal	1
+Rukai (Budai)	dru	tooth	1380	31	valis7	2	valis'
+Rukai (Budai)	dru	tongue	1205	32	ridam7	3	ridám'
+Rukai (Budai)	dru	to laugh	1355	33	maTaTawa7	1
+Rukai (Budai)	dru	to spit	1440	36	Nalai	3
+Rukai (Budai)	dru	to eat	1336	37	wakan7	1	wakan'
+Rukai (Budai)	dru	leg/foot	2098	4	dapal7	55	dapal'; daʔal' 55
+Rukai (Budai)	dru	to bite	1403	41	wakaT7	1	wakác'
+Rukai (Budai)	dru	ear	1247	43	TaliNa7	1	charinga 1
+Rukai (Budai)	dru	eye	1248	45	maTa7	1	macha 1
+Rukai (Budai)	dru	to walk	1443	5	udadawaT7	23	udadawác'
+Rukai (Budai)	dru	to stand	1442	52	waidi7	1	wáidi:'; wá'iri: 1
+Rukai (Budai)	dru	woman/female	962	55	7ababai	1	abaia 1
+Rukai (Budai)	dru	child	2099	56	rola7i	34?	rola'i; lalak' 1
+Rukai (Budai)	dru	mother	1216	59	tina7	1
+Rukai (Budai)	dru	father	1217	60	tama7	1
+Rukai (Budai)	dru	name	1405	63	nagan7	1	nagán'
+Rukai (Budai)	dru	to sew	1457	67	waTaiTaisi	1?
+Rukai (Budai)	dru	to hunt	1435	69	walup	1
+Rukai (Budai)	dru	to die, be dead	1494	75	wa7aTai	1	opacai 1
+Rukai (Budai)	dru	to turn	1588	8	maliulius	2
+Rukai (Budai)	dru	sharp	1396	81	magaraN	41
+Rukai (Budai)	dru	dull, blunt	379	82	mailut7	53	mailút'
+Rukai (Budai)	dru	to hold	1448	89	mala7a7	4?
+Rukai (Budai)	dru	to swim	1439	9	walaNui	1
+Rukai (Budai)	dru	bird	937	97	a8a8am	2
+Rukai (Budai)	dru	feather	1201	99	paridi7	2	paridi'
+Saaroa	sxr	hand	1277	1	ramoTo	4	ramucho 4
+Saaroa	sxr	rat	1490	102	taloboTo	31
+Saaroa	sxr	fat/grease	1282	104	7imar3	2
+Saaroa	sxr	tail	1220	105	7isisi	43	isiisi 43
+Saaroa	sxr	snake	730	106	buLi7i	29
+Saaroa	sxr	worm (earthworm)	1219	107	kuli7i	2
+Saaroa	sxr	louse	1392	108	TaraT3	10	kucoʔo 1
+Saaroa	sxr	mosquito	1509	109	Latikas3	26
+Saaroa	sxr	fish	227	111	butukuLo	3
+Saaroa	sxr	leaf	628	114	laL3N3	4
+Saaroa	sxr	root	670	115	rami7i	3
+Saaroa	sxr	fruit	1507	117	maso7o	2
+Saaroa	sxr	grass	606	118	s3s3N3	5
+Saaroa	sxr	earth/soil	1228	119	sar3	48
+Saaroa	sxr	stone	857	120	bato7o	1
+Saaroa	sxr	sand	671	121	laboko	3	rabúku 3
+Saaroa	sxr	water	948	122	saLomo	1	satloum 1
+Saaroa	sxr	sea	1474	124	t3n3m3	2
+Saaroa	sxr	salt	1274	125	maiLi	3	[m]áiɬi 3
+Saaroa	sxr	woods/forest	420	127	kikiu7ua	2
+Saaroa	sxr	sky	1732	128	laNiTa	1
+Saaroa	sxr	moon	1313	129	bulaL3	1	vu:laɬ[i] 1
+Saaroa	sxr	back	1291	13	likoso	1
+Saaroa	sxr	star	1430	130	7aTaN3raLa	24
+Saaroa	sxr	rain	658	133	usaL3	1
+Saaroa	sxr	thunder	1150	134	sululuNa	3
+Saaroa	sxr	lightning	1654	135	7apalata	4
+Saaroa	sxr	fire	221	143	apoLo	1	apuɬ[u] 1; apouth 1
+Saaroa	sxr	to burn	2102	144	muaTuLo	1
+Saaroa	sxr	smoke	778	145	bubula	1
+Saaroa	sxr	ash	646	146	7abo7o	1
+Saaroa	sxr	black	163	147	maliT3T3	2?
+Saaroa	sxr	white	1335	148	mapoLi	1
+Saaroa	sxr	bone	1394	15	TulaL3	1
+Saaroa	sxr	short	1645	154	manit3k3	2
+Saaroa	sxr	thin	1400	156	maLipi	1?
+Saaroa	sxr	thick	1244	157	makisumuru	21?
+Saaroa	sxr	wide	1243	159	malanar3	1?	[m]alanarə
+Saaroa	sxr	painful, sick	2103	160	maTar3m3	3
+Saaroa	sxr	new	1231	163	baro7o	1
+Saaroa	sxr	good	1035	164	mabaTaN3	2
+Saaroa	sxr	day	1225	168	ari	2
+Saaroa	sxr	liver	1224	17	7aTi7i	1?
+Saaroa	sxr	when?	1238	170	kiLaumaNe	17?	cuɬaumaŋə 17?
+Saaroa	sxr	in, inside	1606	174	ruruman3	20
+Saaroa	sxr	above	1741	175	ibabo	2
+Saaroa	sxr	this	1214	177	kani7i	1
+Saaroa	sxr	near	1942	179	masaLi	1
+Saaroa	sxr	breast	1402	18	7ususu	1	usə́usu 1
+Saaroa	sxr	far	1406	180	masaiLa	2
+Saaroa	sxr	where?	1237	181	ninau	11	ani 11
+Saaroa	sxr	I	1209	182	ako	1	-ɨako 1
+Saaroa	sxr	thou	1215	183	iLao	1?
+Saaroa	sxr	he/she	262	184	iLaisa	1?	-isa[na] 1?
+Saaroa	sxr	we	1212	185	iLata	1	-ita 1; iɬaɬamo 2; -amo 2
+Saaroa	sxr	you	1213	186	iLamo	1	-mo 1
+Saaroa	sxr	they	817	187	iLaisa	3	-isa[na] 3
+Saaroa	sxr	other	197	190	usuman3	1?
+Saaroa	sxr	and	1577	192	La	22
+Saaroa	sxr	One	1493	197	Tani	3	ucani 3
+Saaroa	sxr	Two	1498	198	sua	1	usua 1; sou 1
+Saaroa	sxr	Three	492	199	tolo	1	utolo 1; toro 1
+Saaroa	sxr	to know, be knowledgeable	1410	20	maTaLia	3	takuacaɬia 3
+Saaroa	sxr	Four	1500	200	pat3	1	upatə 1; pati 1
+Saaroa	sxr	Five	493	201	ulima	1	rima 1; kulima 1
+Saaroa	sxr	Six	1703	202	3n3m3	1	neum 1; kənəmə 1
+Saaroa	sxr	Seven	1704	203	kupito	1	upito 1; pitò 1
+Saaroa	sxr	Eight	1705	204	kualo	3	ualo 3; mivarou 3
+Saaroa	sxr	Nine	1483	205	kusia	5	usia 5; siwá 5
+Saaroa	sxr	Ten	1515	206	maL3	2	kuma:ɬə 2; koumath 2; koumath 2; kuma:ɬə 2; ma:ɬə 2
+Saaroa	sxr	Twenty	1710	207	mapuaL	1	mapoaɬə 1
+Saaroa	sxr	blood	946	23	Tara73	1
+Saaroa	sxr	head	1256	24	boNo7o	2	bangou 2?
+Saaroa	sxr	hair	1040	26	b3k3	1
+Saaroa	sxr	nose	1221	27	NoNoro	28	ngoun-goro 28
+Saaroa	sxr	to sniff, smell	375	29	umabali	3
+Saaroa	sxr	right	1019	3	aLan3	1
+Saaroa	sxr	mouth	674	30	Nuso	2
+Saaroa	sxr	tooth	1380	31	aLi	2
+Saaroa	sxr	tongue	1205	32	7abas3	5
+Saaroa	sxr	to laugh	1355	33	maTaTa	1
+Saaroa	sxr	to cry	1839	34	tumataNi	1
+Saaroa	sxr	to vomit	1278	35	taruta	1
+Saaroa	sxr	leg/foot	2098	4	sapaL3	55	saptl 55
+Saaroa	sxr	to drink	1401	40	miama	2
+Saaroa	sxr	to bite	1403	41	umaraT3	1
+Saaroa	sxr	ear	1247	43	TaliNa	1	charunga 1
+Saaroa	sxr	to hear	1408	44	tumimaLa	2
+Saaroa	sxr	to see	1409	46	kumakita	1
+Saaroa	sxr	to sleep	1585	48	matatusoro	50
+Saaroa	sxr	to walk	1443	5	muasasala	24?
+Saaroa	sxr	to sit	1416	51	tuaparo	3
+Saaroa	sxr	to stand	1442	52	muasiri	1
+Saaroa	sxr	person/human being	683	53	TuTo7o	1
+Saaroa	sxr	woman/female	962	55	aLaina	30	atlain 30
+Saaroa	sxr	mother	1216	59	ina7a	1
+Saaroa	sxr	road/path	667	6	sala7a	1
+Saaroa	sxr	father	1217	60	ama7a	1
+Saaroa	sxr	name	1405	63	NaLa	1
+Saaroa	sxr	rope	1218	65	Likitalia	1
+Saaroa	sxr	to shoot	1172	70	uapana	1
+Saaroa	sxr	to kill	1417	74	papapaTi	2
+Saaroa	sxr	to die, be dead	1494	75	mamaTi	1
+Saaroa	sxr	to scratch	1436	77	kararo	1
+Saaroa	sxr	stick/wood	1295	79	kio7o	?
+Saaroa	sxr	to swim	1439	9	makaLaNolo	1
+Saaroa	sxr	to dig	1418	90	kumakali	1
+Saaroa	sxr	to throw	1456	94	matapono	3
+Saaroa	sxr	dog	2009	96	tasau	8
+Saaroa	sxr	bird	937	97	aLam3	2?
+Saaroa	sxr	feather	1201	99	7alapoNo	3
+Saisiat	xsy	hand	1277	1	ima7	1
+Saisiat	xsy	to fly	1441	101	omaiap	2
+Saisiat	xsy	fat/grease	1282	104	sima7	2	ŝima'
+Saisiat	xsy	tail	1220	105	kiko7	1	kiko'
+Saisiat	xsy	louse	1392	108	somh	3	kosoʔ 1
+Saisiat	xsy	fish	227	111	7alaw	2
+Saisiat	xsy	leaf	628	114	bii7	2
+Saisiat	xsy	root	670	115	am3s	3
+Saisiat	xsy	flower	239	116	poNh	1
+Saisiat	xsy	fruit	1507	117	bowai	1
+Saisiat	xsy	earth/soil	1228	119	r7i7	30	rä'iʔ
+Saisiat	xsy	skin	763	12	baN3s	26
+Saisiat	xsy	stone	857	120	bato7	1
+Saisiat	xsy	sand	671	121	bonaz	2
+Saisiat	xsy	water	948	122	ralom	1
+Saisiat	xsy	to flow	2003	123	l7lor	1?
+Saisiat	xsy	salt	1274	125	timo7	2
+Saisiat	xsy	sky	1732	128	kawas	3
+Saisiat	xsy	moon	1313	129	7ilas	2
+Saisiat	xsy	back	1291	13	ikor	1
+Saisiat	xsy	star	1430	130	bint7n	1
+Saisiat	xsy	cloud	1489	131	3m3m	2
+Saisiat	xsy	rain	658	133	77ral	1
+Saisiat	xsy	thunder	1150	134	bi7wa7	4	bi'waʔ
+Saisiat	xsy	wind	960	136	ba7i7	2	ba'iʔ
+Saisiat	xsy	to blow	175	137	hmiiop	1
+Saisiat	xsy	cold	1287	139	mask3s	2?
+Saisiat	xsy	belly	1251	14	tiil	1
+Saisiat	xsy	dry	1398	140	777iw	2?	ʔäʔä'iw
+Saisiat	xsy	fire	221	143	hapoi	1
+Saisiat	xsy	to burn	2102	144	solh	1
+Saisiat	xsy	smoke	778	145	kasbol	65
+Saisiat	xsy	ash	646	146	7b7	1
+Saisiat	xsy	long	1203	155	7inaro7	1
+Saisiat	xsy	thin	1400	156	lihlihpihan	1?
+Saisiat	xsy	night	1233	167	hawan	2
+Saisiat	xsy	when?	1238	170	ka7inowan	2	ʔinowan 2
+Saisiat	xsy	above	1741	175	babaw	2
+Saisiat	xsy	this	1214	177	hini7	1	hini'
+Saisiat	xsy	near	1942	179	7al7alihan	3
+Saisiat	xsy	breast	1402	18	hh7	1
+Saisiat	xsy	where?	1237	181	haino7	1
+Saisiat	xsy	I	1209	182	iako7	1	yako'; ya'o' 1
+Saisiat	xsy	thou	1215	183	so7o7	1?	ŝoʔo'
+Saisiat	xsy	he/she	262	184	siia7	1
+Saisiat	xsy	we	1212	185	7ita	1	ta 1; yami' 2
+Saisiat	xsy	you	1213	186	moio7	1?	moyo'
+Saisiat	xsy	what?	1236	188	kano7	2
+Saisiat	xsy	shoulder	1482	19	7ba7a7	1	ʔäba'aʔ
+Saisiat	xsy	and	1577	192	ki	1?
+Saisiat	xsy	to count	1420	196	som3p37	3?	ŝoməpə'
+Saisiat	xsy	One	1493	197	7h7	1?
+Saisiat	xsy	Two	1498	198	rosa7	1?
+Saisiat	xsy	Three	492	199	to7o7	1?	to'oʔ
+Saisiat	xsy	left	244	2	kai7i7	1	kay'iʔ
+Saisiat	xsy	to know, be knowledgeable	1410	20	ra7am	38	ra'am
+Saisiat	xsy	Four	1500	200	s3pat	1
+Saisiat	xsy	Five	493	201	7as3b	2	'asəb
+Saisiat	xsy	Six	1703	202	boi7	3	boŝi'
+Saisiat	xsy	Seven	1704	203	i7h7	3
+Saisiat	xsy	Eight	1705	204	maikapat	1
+Saisiat	xsy	Ten	1515	206	laNp3z	7
+Saisiat	xsy	to think	2271	21	e7az7az3m	1
+Saisiat	xsy	to fear	1419	22	imatiktikot	1?
+Saisiat	xsy	blood	946	23	ramo7	20
+Saisiat	xsy	head	1256	24	ta7lh	1
+Saisiat	xsy	hair	1040	26	bok3s	1
+Saisiat	xsy	to sniff, smell	375	29	saz3k3n	1
+Saisiat	xsy	tooth	1380	31	n3p3n	1
+Saisiat	xsy	tongue	1205	32	khma7	1?
+Saisiat	xsy	to laugh	1355	33	sawa7	1
+Saisiat	xsy	to cry	1839	34	hmaNih	1
+Saisiat	xsy	to vomit	1278	35	mot7	1
+Saisiat	xsy	to cook	1100	39	tomal3k	1
+Saisiat	xsy	leg/foot	2098	4	77i	1
+Saisiat	xsy	to bite	1403	41	koma7as	1?	koma'as
+Saisiat	xsy	eye	1248	45	masa7	1
+Saisiat	xsy	to see	1409	46	kita7	1
+Saisiat	xsy	to sleep	1585	48	m7r3m	27
+Saisiat	xsy	to walk	1443	5	manra7an	21	manra'an; maiziza 52
+Saisiat	xsy	to stand	1442	52	miriri7i7	1?	miririʔi'
+Saisiat	xsy	mother	1216	59	7oia7	2?
+Saisiat	xsy	road/path	667	6	ra7an	1	ra'an
+Saisiat	xsy	father	1217	60	iaba7	14
+Saisiat	xsy	house	1252	61	tw7n	21
+Saisiat	xsy	name	1405	63	raro7o7	2?
+Saisiat	xsy	rope	1218	65	sin7is	1?
+Saisiat	xsy	to sew	1457	67	som7is	1
+Saisiat	xsy	to shoot	1172	70	ponn7	1
+Saisiat	xsy	to die, be dead	1494	75	masai	1
+Saisiat	xsy	to scratch	1436	77	koma7ka7aw	1	koma'ka'aw
+Saisiat	xsy	stick/wood	1295	79	khi	1
+Saisiat	xsy	to hold	1448	89	mari7	4?
+Saisiat	xsy	to swim	1439	9	lalaNoi	1
+Saisiat	xsy	to dig	1418	90	komowih	1?
+Saisiat	xsy	dog	2009	96	7h7	1
+Saisiat	xsy	egg	744	98	73sizo7	1?	ʔəsizo'
+Sediq (Sakura)	trv	hand	1277	1	bawa7	36
+Sediq (Sakura)	trv	wing	1257	100	palit	2
+Sediq (Sakura)	trv	rat	1490	102	qolit	2
+Sediq (Sakura)	trv	fat/grease	1282	104	si7aN	3	sí'aŋ
+Sediq (Sakura)	trv	tail	1220	105	NuNu7	2
+Sediq (Sakura)	trv	snake	730	106	quiu7	3	kuzu 3
+Sediq (Sakura)	trv	worm (earthworm)	1219	107	ku7i7	26	ku'íʔ
+Sediq (Sakura)	trv	louse	1392	108	Tumiq	2	qúheŋ 9
+Sediq (Sakura)	trv	leaf	628	114	wasau	10
+Sediq (Sakura)	trv	root	670	115	wamil	21
+Sediq (Sakura)	trv	flower	239	116	papah	2
+Sediq (Sakura)	trv	earth/soil	1228	119	d3h3ral	2
+Sediq (Sakura)	trv	skin	763	12	q3raqil	3
+Sediq (Sakura)	trv	stone	857	120	b3tunuh	1	batunuch 1
+Sediq (Sakura)	trv	sand	671	121	b3naqi7	2	bənáqi'; bnaqqail 2; banakail 2
+Sediq (Sakura)	trv	water	948	122	qsi7a7	3	qsi'aʔ; kasia 3
+Sediq (Sakura)	trv	to flow	2003	123	q3lului	1
+Sediq (Sakura)	trv	sea	1474	124	uTiluN	3	chilung timu 3
+Sediq (Sakura)	trv	salt	1274	125	Timu7	2	timu 2
+Sediq (Sakura)	trv	lake	624	126	uTiluN	2
+Sediq (Sakura)	trv	moon	1313	129	7idas	2	idass 2
+Sediq (Sakura)	trv	back	1291	13	bukwi7	33
+Sediq (Sakura)	trv	cloud	1489	131	ruluN	35	rulung 35
+Sediq (Sakura)	trv	fog	249	132	p3kukuN	2
+Sediq (Sakura)	trv	lightning	1654	135	taqaliwaq	24
+Sediq (Sakura)	trv	wind	960	136	bwihur	3
+Sediq (Sakura)	trv	to blow	175	137	mi7uk	1	mi'uk
+Sediq (Sakura)	trv	warm	1232	138	mu7uhul	2	mu'úhul
+Sediq (Sakura)	trv	cold	1287	139	m3skui7	2	masekuich 2
+Sediq (Sakura)	trv	dry	1398	140	m3d3Nu7	30?
+Sediq (Sakura)	trv	wet	1726	141	m3horiq	2
+Sediq (Sakura)	trv	fire	221	143	puniq	1	hapunek 1
+Sediq (Sakura)	trv	ash	646	146	q3bulit	1
+Sediq (Sakura)	trv	black	163	147	m3qaluh	3	makaluch 3
+Sediq (Sakura)	trv	short	1645	154	butul	30?
+Sediq (Sakura)	trv	wide	1243	159	d3labaN	22
+Sediq (Sakura)	trv	new	1231	163	bu7urah	1?	bu'urah
+Sediq (Sakura)	trv	bad, evil	1292	165	naqah	24	nakach 24
+Sediq (Sakura)	trv	when?	1238	170	k3nu7an	2	kənú'an; kanuan 2
+Sediq (Sakura)	trv	in, inside	1606	174	ruma7	18
+Sediq (Sakura)	trv	above	1741	175	balau	2
+Sediq (Sakura)	trv	this	1214	177	ni7	1	ni'
+Sediq (Sakura)	trv	near	1942	179	dalix	1
+Sediq (Sakura)	trv	breast	1402	18	nunuh	3
+Sediq (Sakura)	trv	far	1406	180	t3h37aq	3	təhə́'aq
+Sediq (Sakura)	trv	where?	1237	181	7inu7	1
+Sediq (Sakura)	trv	I	1209	182	iaku7	1	yako 1
+Sediq (Sakura)	trv	thou	1215	183	7isu7	1	issu 1
+Sediq (Sakura)	trv	he/she	262	184	hi7a7	1	hí'aʔ
+Sediq (Sakura)	trv	we	1212	185	ita7	1	yámi 2; yamo 2
+Sediq (Sakura)	trv	you	1213	186	iamu7	1
+Sediq (Sakura)	trv	what?	1236	188	manu7	2
+Sediq (Sakura)	trv	who?	1235	189	ima7	2
+Sediq (Sakura)	trv	to count	1420	196	s3mpu7	3	səmpú'
+Sediq (Sakura)	trv	Two	1498	198	daha7	1	daha 1
+Sediq (Sakura)	trv	Three	492	199	t3ru7	1	teru 1
+Sediq (Sakura)	trv	left	244	2	7iril	2?
+Sediq (Sakura)	trv	Four	1500	200	spat	1	sŭpŭt 1
+Sediq (Sakura)	trv	Five	493	201	rima	1	limaʔ 1
+Sediq (Sakura)	trv	Six	1703	202	mat3ru7	2	mataru 2
+Sediq (Sakura)	trv	Seven	1704	203	7mpitu7	1	pitu 1
+Sediq (Sakura)	trv	Eight	1705	204	maspat	1	mŭssupat 1
+Sediq (Sakura)	trv	Nine	1483	205	m3Nari7	3
+Sediq (Sakura)	trv	Ten	1515	206	nahal	2	máhal 2; máhal 2; nahal 2
+Sediq (Sakura)	trv	Twenty	1710	207	7mpusal	1
+Sediq (Sakura)	trv	to think	2271	21	l3m3NluN	2
+Sediq (Sakura)	trv	blood	946	23	dara7	1
+Sediq (Sakura)	trv	head	1256	24	tunuh	35	tunuch 35
+Sediq (Sakura)	trv	neck	1333	25	waru7	2?	wáru'
+Sediq (Sakura)	trv	hair	1040	26	s3nunuh	2
+Sediq (Sakura)	trv	nose	1221	27	muhiN	26?	mohing 26?
+Sediq (Sakura)	trv	to sniff, smell	375	29	sq3nuh	2
+Sediq (Sakura)	trv	mouth	674	30	qo7aq	30	qó'aq; koak 30
+Sediq (Sakura)	trv	tooth	1380	31	rupun	1
+Sediq (Sakura)	trv	tongue	1205	32	h3ma7	1	hema 1
+Sediq (Sakura)	trv	to cry	1839	34	l3miNis	15	leminish 15
+Sediq (Sakura)	trv	to spit	1440	36	tuioq	2
+Sediq (Sakura)	trv	to eat	1336	37	m3kan	1	manakamakan 1
+Sediq (Sakura)	trv	leg/foot	2098	4	qaqai	1	papuk 2
+Sediq (Sakura)	trv	to drink	1401	40	mimah	2	nimah 2
+Sediq (Sakura)	trv	eye	1248	45	doriq	2	dourŭk 2
+Sediq (Sakura)	trv	to see	1409	46	kmita7	1
+Sediq (Sakura)	trv	to walk	1443	5	m3ksa7	52	makakaisa 52
+Sediq (Sakura)	trv	to sit	1416	51	t3luN	1?
+Sediq (Sakura)	trv	person/human being	683	53	s3diq	2?	seʔediq 2?; sa:ḍiq 2?
+Sediq (Sakura)	trv	woman/female	962	55	q3lidil	2?	makaidil 2?
+Sediq (Sakura)	trv	child	2099	56	laqi7	34	lakai 34
+Sediq (Sakura)	trv	father	1217	60	tama7	1
+Sediq (Sakura)	trv	name	1405	63	haNan	1
+Sediq (Sakura)	trv	to tie up, fasten	1094	66	l3mutut	30
+Sediq (Sakura)	trv	to sew	1457	67	s3ma7is	1
+Sediq (Sakura)	trv	to hunt	1435	69	maduk	1
+Sediq (Sakura)	trv	to kill	1417	74	p3hoqil	3
+Sediq (Sakura)	trv	to die, be dead	1494	75	m3hoqil	2	mahokal 2
+Sediq (Sakura)	trv	to cut, hack	1432	78	t3matak	39
+Sediq (Sakura)	trv	stick/wood	1295	79	q3huni7	1	kahoni 1
+Sediq (Sakura)	trv	dull, blunt	379	82	7inik3huNul	52
+Sediq (Sakura)	trv	to hold	1448	89	maNal	2
+Sediq (Sakura)	trv	to swim	1439	9	l3maNui	1
+Sediq (Sakura)	trv	to dig	1418	90	kmari7	1
+Sediq (Sakura)	trv	dog	2009	96	huliN	2?	hulin 2?
+Sediq (Sakura)	trv	bird	937	97	q3b3x3ni7	3	bahani 3
+Sediq (Sakura)	trv	feather	1201	99	palit	2
+Siraya	fos	hand	1277	1	rima	1	li-ma 1
+Siraya	fos	wing	1257	100	papalis	2	paparyl 2
+Siraya	fos	fat/grease	1282	104	gimaTh	2	jmagh 2
+Siraya	fos	tail	1220	105	ikog	1
+Siraya	fos	snake	730	106	vouli	29	vaulei 29; bulai 29; voulei 29
+Siraya	fos	worm (earthworm)	1219	107	qaloqot	20?	kourey 27
+Siraya	fos	louse	1392	108	Touto	1
+Siraya	fos	mosquito	1509	109	rikig	2
+Siraya	fos	spider	843	110	rauwa	1
+Siraya	fos	fish	227	111	tging	30	thung 30; dhyng 30; tug 30; thing 30
+Siraya	fos	fruit	1507	117	voa	1	voua 1
+Siraya	fos	earth/soil	1228	119	nai	31	n\C3 i
+Siraya	fos	skin	763	12	validt	2,  29
+Siraya	fos	stone	857	120	wattu	1
+Siraya	fos	water	948	122	salom	1	ralaum 1; dalum 1; rarum 1
+Siraya	fos	sea	1474	124	vaong	5	baung 5
+Siraya	fos	sky	1732	128	vullum	21
+Siraya	fos	moon	1313	129	vourel	1	vaural 1; buran 1
+Siraya	fos	back	1291	13	riTos	1
+Siraya	fos	rain	658	133	audal	1	udau 1; oudal 1
+Siraya	fos	thunder	1150	134	singding	3?	dungdung 3?
+Siraya	fos	lightning	1654	135	riTkat	1
+Siraya	fos	wind	960	136	vare	2
+Siraya	fos	to blow	175	137	mioup	1
+Siraya	fos	dry	1398	140	maskag	32
+Siraya	fos	heavy	1210	142	maTkdoung	3
+Siraya	fos	fire	221	143	apoi	1	apui 1
+Siraya	fos	ash	646	146	avo	1
+Siraya	fos	black	163	147	maoudim	26	æudim 26
+Siraya	fos	white	1335	148	mapoule	1	-pule 1
+Siraya	fos	bone	1394	15	toural	1
+Siraya	fos	big	1202	153	isang	2	maizang 2
+Siraya	fos	thin	1400	156	pulipig	1?
+Siraya	fos	new	1231	163	vaho	1	vahæu 1
+Siraya	fos	day	1225	168	wai	17	w\C3 i; wagi 17
+Siraya	fos	year	1226	169	tawil	22
+Siraya	fos	when?	1238	170	manno	10?
+Siraya	fos	above	1741	175	vavau	2
+Siraya	fos	that	78	178	ana	1
+Siraya	fos	breast	1402	18	oho	1
+Siraya	fos	I	1209	182	iao	1	ya-u 1
+Siraya	fos	thou	1215	183	inuhu	1
+Siraya	fos	who?	1235	189	timang	2
+Siraya	fos	and	1577	192	ka	1
+Siraya	fos	how?	1239	194	mamang	23?
+Siraya	fos	no, not	1269	195	asi	1	assey 1
+Siraya	fos	One	1493	197	sat	1?	sasat 1?; sasaab 1?
+Siraya	fos	Two	1498	198	rauha	1	duha 1
+Siraya	fos	Three	492	199	tauro	1	toutouro 1; turu 1
+Siraya	fos	to know, be knowledgeable	1410	20	mouvana	2
+Siraya	fos	Four	1500	200	hpat	1	tahat 1
+Siraya	fos	Five	493	201	turima	1	rima 1; rima 1; ririma 1
+Siraya	fos	Six	1703	202	nnum	1	ninnam 1; tunum 1
+Siraya	fos	Seven	1704	203	pipito	1	pytto 1; pitu 1
+Siraya	fos	Eight	1705	204	kaughpa	1	k\C3 ughpa; kougipat 1
+Siraya	fos	Nine	1483	205	matauda	7	kuda 7?
+Siraya	fos	Ten	1515	206	kitti	3	sat keteang 3?; keteng 3?
+Siraya	fos	Twenty	1710	207	sosoaketeang	14?
+Siraya	fos	One Hundred	1634	209	kagatougant	4
+Siraya	fos	to fear	1419	22	mattaTot	1
+Siraya	fos	head	1256	24	vaungo	2	vongo 2; bungu 2; uho 2?
+Siraya	fos	hair	1040	26	voukig	1	vaukugh 1; bukaun 1
+Siraya	fos	tooth	1380	31	walig	2	walit 2; wali 2
+Siraya	fos	tongue	1205	32	dadila	4	dadilah 4
+Siraya	fos	to laugh	1355	33	mattauwa	1	matawa 1; mattawa 1
+Siraya	fos	to suck	1421	42	smippsip	1
+Siraya	fos	ear	1247	43	tangira	1	tangela 1
+Siraya	fos	eye	1248	45	matta	1	mata 1
+Siraya	fos	to see	1409	46	kmitta	1
+Siraya	fos	woman/female	962	55	ina	30	inina 30
+Siraya	fos	child	2099	56	allaTk	1	allak 1
+Siraya	fos	mother	1216	59	sena	1	rena 1; jena 1; dena 1; ina 1
+Siraya	fos	road/path	667	6	darang	1
+Siraya	fos	father	1217	60	sama	1	rama 1; dama 1; ya-ma 1
+Siraya	fos	name	1405	63	nanana	1	nanang 1
+Siraya	fos	rope	1218	65	tariTh	1
+Siraya	fos	to sew	1457	67	tmahi	1
+Siraya	fos	to hunt	1435	69	malup	1
+Siraya	fos	to kill	1417	74	papakei	2?
+Siraya	fos	to die, be dead	1494	75	mapatei	1	kapatei 1
+Siraya	fos	stick/wood	1295	79	Taiou	1
+Siraya	fos	dull, blunt	379	82	mangihit	26
+Siraya	fos	to swim	1439	9	lmangoi	1
+Siraya	fos	to dig	1418	90	kari	1	kmari 1
+Siraya	fos	dog	2009	96	assou	1	asu 1
+Siraya	fos	bird	937	97	aiam	2	aiam 2; ajajam 2
+Kavalan	ckv	hand	1277	1	rima	1
+Kavalan	ckv	louse	1392	108	qutu	1
+Kavalan	ckv	stone	857	120	btu	1
+Kavalan	ckv	moon	1313	129	buran	1
+Kavalan	ckv	rain	658	133	uzan	1
+Kavalan	ckv	thunder	1150	134	zengzeng	3?
+Kavalan	ckv	wind	960	136	bari	2	rikaw- 2
+Kavalan	ckv	above	1741	175	babaw	2
+Kavalan	ckv	that	78	178	nai	1
+Kavalan	ckv	breast	1402	18	sisu	1
+Kavalan	ckv	I	1209	182	aiku	1
+Kavalan	ckv	thou	1215	183	aisu	1
+Kavalan	ckv	we	1212	185	aita	1	aimi 2
+Kavalan	ckv	what?	1236	188	niana	2	nianu 2; quni 2
+Kavalan	ckv	other	197	190	zuma	1
+Kavalan	ckv	if	1459	193	anu	2	si 2
+Kavalan	ckv	to count	1420	196	bilang	1
+Kavalan	ckv	One	1493	197	issa	1	sa 1
+Kavalan	ckv	Three	492	199	turu	1
+Kavalan	ckv	left	244	2	wiri	1
+Kavalan	ckv	Four	1500	200	spat	1
+Kavalan	ckv	Five	493	201	rima	1
+Kavalan	ckv	Seven	1704	203	pitu	1
+Kavalan	ckv	Eight	1705	204	waru	3
+Kavalan	ckv	Nine	1483	205	siwa	5
+Kavalan	ckv	head	1256	24	uru	1
+Kavalan	ckv	nose	1221	27	unung	1
+Kavalan	ckv	right	1019	3	wanan	1
+Kavalan	ckv	tongue	1205	32	rilam	3
+Kavalan	ckv	to laugh	1355	33	tawa	1
+Kavalan	ckv	to chew	321	38	kemkem	21	ngangngar- 21; samsam 21
+Kavalan	ckv	eye	1248	45	mata	1
+Kavalan	ckv	mother	1216	59	tina	1	na 1
+Kavalan	ckv	father	1217	60	tama	1
+Kavalan	ckv	to die, be dead	1494	75	patai	1
+Kavalan	ckv	to swim	1439	9	nangui	1
+Kavalan	ckv	dog	2009	96	wasu	1
+Saaroa	sxr	tongue	1205	32	7avas3	5
+Favorlang	bzg	stone	857	120	bato	1
+Favorlang	bzg	ash	646	146	abo	1
+Favorlang	bzg	tongue	1205	32	tatsira	4	tazirra 4
+Central Amis	ami	hand	1277	1	kamai	28
+Central Amis	ami	wing	1257	100	sapikpik	33
+Central Amis	ami	rat	1490	102	kulafaw	1
+Central Amis	ami	meat/flesh	634	103	titi	32	heci 1
+Central Amis	ami	fat/grease	1282	104	simar	2
+Central Amis	ami	tail	1220	105	wikor	1
+Central Amis	ami	louse	1392	108	kuto	1
+Central Amis	ami	mosquito	1509	109	likes	2
+Central Amis	ami	branch	1531	113	Taqang	1,  9?
+Central Amis	ami	root	670	115	lamit	3	limit 3
+Central Amis	ami	earth/soil	1228	119	serah	48
+Central Amis	ami	skin	763	12	fanges	26	faŋes 26
+Central Amis	ami	water	948	122	nanum	1
+Central Amis	ami	salt	1274	125	Tirah	1	cilah 1
+Central Amis	ami	sky	1732	128	kakaraian	2	kakalayan 2
+Central Amis	ami	moon	1313	129	fulal	1?	fulaL
+Central Amis	ami	cloud	1489	131	lulem	35	LuLem
+Central Amis	ami	rain	658	133	olad	1
+Central Amis	ami	wind	960	136	fari	2	fali 2; feli 2
+Central Amis	ami	to blow	175	137	miiuf	1	jof 1
+Central Amis	ami	belly	1251	14	tial	1	tiaL; ti(j)aL 1
+Central Amis	ami	dry	1398	140	maiTaN	33
+Central Amis	ami	fire	221	143	namar	14	lamar 14
+Central Amis	ami	white	1335	148	fuheTelai	37
+Central Amis	ami	bone	1394	15	ukak	19	okak 19; ukak 19
+Central Amis	ami	small	1246	152	kiqkiq	1?	kiʔkiʔ 1?
+Central Amis	ami	long	1203	155	mamutuq	1
+Central Amis	ami	thin	1400	156	kuhpiTai	1?
+Central Amis	ami	wide	1243	159	kakahal	1	kakahaL
+Central Amis	ami	intestines	1991	16	tinaiq	1	tina(j)iʕ 1
+Central Amis	ami	old	1229	162	matuqas	1	ma-tuʔas 1
+Central Amis	ami	new	1231	163	faqluh	1
+Central Amis	ami	liver	1224	17	atai	1	ʕatay 1
+Central Amis	ami	when?	1238	170	hakua	18?
+Central Amis	ami	at	1461	173	i	1
+Central Amis	ami	in, inside	1606	174	lalumaq	18	i 19
+Central Amis	ami	where?	1237	181	iTua	23	icu(w)a 23
+Central Amis	ami	I	1209	182	aku	1	k-ako 1
+Central Amis	ami	thou	1215	183	kisu	1
+Central Amis	ami	we	1212	185	kita	1	k-ita 1; kami 2
+Central Amis	ami	you	1213	186	isu	1	k-amu 1; amu 1
+Central Amis	ami	who?	1235	189	Tima	2
+Central Amis	ami	shoulder	1482	19	afala	1	ʔafala 1
+Central Amis	ami	other	197	190	uluma7atamdaw	1
+Central Amis	ami	and	1577	192	a	21
+Central Amis	ami	if	1459	193	anu	2	ano 2
+Central Amis	ami	no, not	1269	195	Taqai	20	naʔaj 20; caʔaj 20; awa 20
+Central Amis	ami	One	1493	197	TeTai	1	ccaj 1; cecaj 1
+Central Amis	ami	Two	1498	198	tusa	1
+Central Amis	ami	Three	492	199	tulu	1
+Central Amis	ami	left	244	2	kawili	1
+Central Amis	ami	to know, be knowledgeable	1410	20	mafanaq	2	ma-fanaʔ 2
+Central Amis	ami	Four	1500	200	sepat	1	s(e)pat 1
+Central Amis	ami	Five	493	201	lima	1	lima 1
+Central Amis	ami	Six	1703	202	7enem	1	'enem; qenem 1
+Central Amis	ami	Seven	1704	203	pitu	1	pito 1
+Central Amis	ami	Eight	1705	204	falu	3	falo 3
+Central Amis	ami	Nine	1483	205	siwa	5	siwa 5
+Central Amis	ami	Ten	1515	206	polo	5	polô 5; tosa a polô 5
+Central Amis	ami	to fear	1419	22	matalaw	34
+Central Amis	ami	head	1256	24	tangar	37	fuŋoh 2
+Central Amis	ami	neck	1333	25	liqer	1	liʕer 1
+Central Amis	ami	hair	1040	26	fukes	1
+Central Amis	ami	nose	1221	27	ngusuq	27	ŋosoʕ 27
+Central Amis	ami	to sniff, smell	375	29	sanek	1	hanek 1
+Central Amis	ami	right	1019	3	kawanan	1
+Central Amis	ami	tooth	1380	31	walis	2	waLis
+Central Amis	ami	tongue	1205	32	sema	1
+Central Amis	ami	to cry	1839	34	tumangiT	1	t<um>aŋic 1
+Central Amis	ami	to vomit	1278	35	mutaq	1	ma-utaʕ 1
+Central Amis	ami	to spit	1440	36	ngalai	3
+Central Amis	ami	to eat	1336	37	kaqen	1	k<um>aʔen 1
+Central Amis	ami	leg/foot	2098	4	waqai	1	wa'ay 1
+Central Amis	ami	to bite	1403	41	mikarat	1	mi-kalat 1
+Central Amis	ami	ear	1247	43	tangila	1	taŋila 1
+Central Amis	ami	to hear	1408	44	mitengir	1?	mi-teŋir 1?
+Central Amis	ami	eye	1248	45	mata	1
+Central Amis	ami	to yawn	1028	47	masuwaf	1
+Central Amis	ami	to walk	1443	5	lumakat	40	r-um-akat 40
+Central Amis	ami	woman/female	962	55	fafahian	1	fafahijan 1
+Central Amis	ami	mother	1216	59	ina	1
+Central Amis	ami	road/path	667	6	lalan	1
+Central Amis	ami	father	1217	60	mama	1
+Central Amis	ami	house	1252	61	lumaq	1	lumaʕ 1
+Central Amis	ami	name	1405	63	NaNan	1
+Central Amis	ami	needle	1382	68	rinum	22	linum 22
+Central Amis	ami	to shoot	1172	70	pana7	1
+Central Amis	ami	to stab, pierce	1434	71	iTuTuk	1	cucuk 1
+Central Amis	ami	to hit	1433	72	palu	1	mi-palo 1
+Central Amis	ami	to steal	713	73	takaw	1
+Central Amis	ami	to die, be dead	1494	75	patai	1
+Central Amis	ami	to scratch	1436	77	mikuskus	27	kuskus 27
+Central Amis	ami	to plant	1486	84	paluma7	23	paluma'
+Central Amis	ami	to swell	1573	87	malifawa	26
+Central Amis	ami	to swim	1439	9	langui	1	Languy; mi-Laŋuy 1
+Central Amis	ami	to dig	1418	90	mikarkar	18
+Central Amis	ami	dog	2009	96	waTu	1
+Basai	byq	rat	1490	102	moton	31
+Basai	byq	meat/flesh	634	103	tsyi	1
+Basai	byq	fat/grease	1282	104	sitSi	29
+Basai	byq	louse	1392	108	kutu	1
+Basai	byq	spider	843	110	pakau	22
+Basai	byq	fish	227	111	baute	27
+Basai	byq	rotten	1728	112	pulu	1
+Basai	byq	leaf	628	114	bela	2
+Basai	byq	root	670	115	lebosse	11
+Basai	byq	water	948	122	nanom	1
+Basai	byq	salt	1274	125	tasse	20
+Basai	byq	moon	1313	129	butsan	1
+Basai	byq	rain	658	133	maulan	1
+Basai	byq	belly	1251	14	tiyan	1
+Basai	byq	fire	221	143	namad7	14?	na:maD'
+Basai	byq	ash	646	146	abu	1
+Basai	byq	black	163	147	mutsum	27
+Basai	byq	bone	1394	15	tolal	1
+Basai	byq	intestines	1991	16	tenai	1
+Basai	byq	night	1233	167	labe	21
+Basai	byq	this	1214	177	atsou	14
+Basai	byq	breast	1402	18	tsyitsu	1
+Basai	byq	where?	1237	181	ainu	1
+Basai	byq	I	1209	182	yaku	1
+Basai	byq	thou	1215	183	isu	1
+Basai	byq	One	1493	197	tsa	1
+Basai	byq	Two	1498	198	lusa	1
+Basai	byq	Three	492	199	tsu	1
+Basai	byq	to know, be knowledgeable	1410	20	masopul	32
+Basai	byq	Four	1500	200	s3pat	1
+Basai	byq	Five	493	201	tsyima	1
+Basai	byq	Six	1703	202	an3m	1
+Basai	byq	Seven	1704	203	pitu	1
+Basai	byq	Eight	1705	204	wasu	3
+Basai	byq	Nine	1483	205	siwa	5
+Basai	byq	Ten	1515	206	labatan	6
+Basai	byq	blood	946	23	tsala	1
+Basai	byq	head	1256	24	utsu	1
+Basai	byq	hair	1040	26	buk3s	1
+Basai	byq	nose	1221	27	Nutsutsye	27?
+Basai	byq	to breathe	1407	28	suNasuNal7	28	suŋasuŋal'
+Basai	byq	to sniff, smell	375	29	siNute	4,  26
+Basai	byq	mouth	674	30	NaNa	24
+Basai	byq	tongue	1205	32	lilam	3
+Basai	byq	to cry	1839	34	tomaNetse	1
+Basai	byq	to vomit	1278	35	uta	1
+Basai	byq	to spit	1440	36	tap3s	33
+Basai	byq	to eat	1336	37	kuman	1
+Basai	byq	to drink	1401	40	seloppe	18
+Basai	byq	to bite	1403	41	haratte	1	%haratte
+Basai	byq	to suck	1421	42	tsuptsup	1
+Basai	byq	eye	1248	45	mata	1
+Basai	byq	to walk	1443	5	ts	3	ts/um/akatsakai
+Basai	byq	child	2099	56	uanake	1
+Basai	byq	mother	1216	59	tina	1
+Basai	byq	father	1217	60	tama	1
+Basai	byq	name	1405	63	Nanan	1
+Basai	byq	to come	1446	7	moali	1
+Basai	byq	to hit	1433	72	toktok	8	pukon 33
+Basai	byq	to scratch	1436	77	kus	27
+Basai	byq	to plant	1486	84	paluma	23
+Basai	byq	to swim	1439	9	nanui	1
+Basai	byq	to open, uncover	1156	92	taNa	22
+Basai	byq	to throw	1456	94	pana	3
+Basai	byq	dog	2009	96	uatsu	1
+Basai	byq	bird	937	97	manuk	1	manuk(ə)
