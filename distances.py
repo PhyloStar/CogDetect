@@ -5,6 +5,27 @@ import numpy as np
 def sigmoid(score):
     return 1.0/(1.0+np.exp(score))
 
+def dice(a, b):
+    la = len(a) - 1;lb = len(b) - 1
+    overlap = 0
+    dicta = defaultdict(int)
+    dictb = defaultdict(int)
+    for i in range(len(a) - 1):
+        tmp = ",".join(map(str, a[i:i + 2]))
+        dicta[tmp] += 1
+    for j in range(len(b) - 1):
+        tmp = ",".join(map(str, b[j:j + 2]))
+        dictb[tmp] += 1
+    for entry in dicta:
+        if(dictb.has_key(entry)):
+            overlap = overlap + min(dicta.get(entry), dictb.get(entry))
+    total = la + lb
+    if total == 0:
+        return 0
+    if UNNORM:
+        return float(2.0*overlap)
+    return float(total) - float(2.0*overlap)
+
 def ldn(a, b):
     """
     Leventsthein distance normalized
@@ -136,3 +157,24 @@ def nw(x,y,lodict=None,gp1=-2.5,gp2=-1.75):
             j-=1
             alg = [['-',y[j]]]+alg
     return dp[-1,-1], alg
+
+def prefix(a,b):
+    la = len(a); lb = len(b)
+    minl = min(la,lb)
+    maxl = max(la,lb)
+    pref = 0
+    for i in range(minl):
+        if a[i] == b[i]:
+            pref += 1
+    if UNNORM:
+        return float(pref)
+    return float(maxl) - float(pref)
+
+def ident(a,b):
+    overlap = 0
+    if a == b :
+        overlap = 1
+    else:
+        overlap = 0
+    return 1.0 - float(overlap)
+
