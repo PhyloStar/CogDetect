@@ -3,9 +3,9 @@ import itertools as it
 import sys, distances, igraph, utils
 import numpy as np
 import random, codecs
-import DistanceMeasures as DM
+import Clustering as clust
 from sklearn import metrics
-from lingpy import *
+#from lingpy import *
 random.seed(1234)
 
 ##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
@@ -92,110 +92,7 @@ def read_data_ielex_type(fname):
     print(list(data_dict.keys()))
     return (data_dict, cogid_dict, words_dict, langs_list)
 
-def igraph_clustering(matrix, threshold, method='labelprop'):
-    """
-    Method computes Infomap clusters from pairwise distance data.
-    """
 
-    G = igraph.Graph()
-    vertex_weights = []
-    for i in range(len(matrix)):
-        G.add_vertex(i)
-        vertex_weights += [0]
-    
-    # variable stores edge weights, if they are not there, the network is
-    # already separated by the threshold
-    weights = None
-    for i,row in enumerate(matrix):
-        for j,cell in enumerate(row):
-            if i < j:
-                if cell <= threshold:
-                    G.add_edge(i, j, weight=1-cell, distance=cell)
-                    weights = 'weight'
-
-    if method == 'infomap':
-        comps = G.community_infomap(edge_weights=weights,
-                vertex_weights=None)
-        
-    elif method == 'labelprop':
-        comps = G.community_label_propagation(weights=weights,
-                initial=None, fixed=None)
-
-    elif method == 'ebet':
-        dg = G.community_edge_betweenness(weights=weights)
-        oc = dg.optimal_count
-        comps = False
-        while oc <= len(G.vs):
-            try:
-                comps = dg.as_clustering(dg.optimal_count)
-                break
-            except:
-                oc += 1
-        if not comps:
-            print('Failed...')
-            comps = list(range(len(G.sv)))
-            input()
-    elif method == 'multilevel':
-        comps = G.community_multilevel(return_levels=False)
-    elif method == 'spinglass':
-        comps = G.community_spinglass()
-
-    D = {}
-    for i,comp in enumerate(comps.subgraphs()):
-        vertices = [v['name'] for v in comp.vs]
-        for vertex in vertices:
-            D[vertex] = i+1
-
-    return D
-    
-def infomap_concept_evaluate_scores(d, lodict, gop, gep):
-    #fout = open("output.txt","w")
-    average_fscore = []
-    f_scores = []#defaultdict(list)
-    bin_mat, n_clusters = None, 0
-    for concept in d:
-        ldn_dist_dict = defaultdict(lambda: defaultdict(float))
-        langs = list(d[concept].keys())
-        if len(langs) == 1:
-            print(concept)
-            continue
-        scores, cognates = [], []
-        #ex_langs = list(set(lang_list) - set(langs))
-        for l1, l2 in it.combinations(langs, r=2):
-            if d[concept][l1].startswith("-") or d[concept][l2].startswith("-"): continue
-            w1, w2 = d[concept][l1], d[concept][l2]
-            score = distances.nw(w1, w2, lodict=lodict, gp1=gop, gp2=gep)[0]
-            score = 1.0 - (1.0/(1.0+np.exp(-score)))
-            ldn_dist_dict[l1][l2] = score
-            ldn_dist_dict[l2][l1] = ldn_dist_dict[l1][l2]
-        distMat = np.array([[ldn_dist_dict[ka][kb] for kb in langs] for ka in langs])
-        clust = igraph_clustering(distMat, infomap_threshold, method='labelprop')
-        
-        
-        predicted_labels = defaultdict()
-        predicted_labels_words = defaultdict()
-        for k, v in clust.items():
-            predicted_labels[langs[k]] = v
-            predicted_labels_words[langs[k],d[concept][langs[k]]] = v
-        
-        print(concept,"\n",predicted_labels_words)
-        predl, truel = [], []
-        for l in langs:
-            truel.append(cogid_dict[concept][l])
-            predl.append(predicted_labels[l])
-        scores = DM.b_cubed(truel, predl)
-        
-        #scores = metrics.f1_score(truel, predl, average="micro")
-        print(concept, len(langs), scores, len(set(clust.values())), len(set(truel)), "\n")
-        f_scores.append(list(scores))
-        n_clusters += len(set(clust.values()))
-        #t = utils.dict2binarynexus(predicted_labels, ex_langs, lang_list)
-        #print(concept, "\n",t)
-        #print("No. of clusters ", n_clusters)
-    #print(np.mean(np.array(f_scores), axis=0))
-    f_scores = np.mean(np.array(f_scores), axis=0)
-    print(f_scores[0], f_scores[1], 2.0*f_scores[0]*f_scores[1]/(f_scores[0]+f_scores[1]))
-    return bin_mat
 
 def calc_pmi(alignment_dict, char_list, scores, initialize=False):
     sound_dict = defaultdict(float)
@@ -330,7 +227,7 @@ for n_iter in range(MAX_ITER):
 
 #for k, v in pmidict.items():
 #    print(k, v)
-bin_mat = infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75)
+bin_mat = clust.infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)
 #nchar, nlangs = np.array(bin_mat).shape
 
 sys.exit(1)
