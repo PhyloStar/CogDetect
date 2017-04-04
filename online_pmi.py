@@ -237,6 +237,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--reader",
         choices=list(readers.keys()),
+        default="ielex",
         help="Data file format")
     args = parser.parse_args()
                         
