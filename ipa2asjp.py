@@ -5,7 +5,7 @@ import os
 from collections import defaultdict
 import codecs
 import glob
-from lingpy import ipa2tokens
+from lingpy import ipa2tokens, tokens2class
 
 
 def read_ipa_to_asjp(
@@ -31,11 +31,10 @@ ipa_to_asjp = read_ipa_to_asjp()
 def ipa2asjp(ipa):
     """Convert an IPA string into a ASJP token string."""
     tokenized_word = ipa2tokens(ipa)
-    asjp_list = [ipa_to_asjp[x] for x in tokenized_word]
-    asjp_word = ""
-    for k in asjp_list:
-        k = k.replace("0", "")
-        asjp_word += k
+    asjp_list = [''.join([i for i in ipa_to_asjp.get(x, tokens2class(x, 'asjp'))])
+                 for x in tokenized_word]
+    print(''.join(asjp_list))
+    return ''.join(asjp_list)
 
 
 def read_convert_ipa_asjp():

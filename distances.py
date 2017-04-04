@@ -26,7 +26,7 @@ def dice(a, b):
         return float(2.0*overlap)
     return float(total) - float(2.0*overlap)
 
-def ldn(a, b):
+def normalized_leventsthein(a, b):
     """
     Leventsthein distance normalized
     :param a: word
@@ -60,7 +60,7 @@ def LD(x,y,lodict=None):
     with affine gap penalties.
     'lodict' must be a dictionary with all symbol pairs as keys
     and match scores as values.
-    gp1 and gp2 are gap penalties for opening/extending a gap.
+    gp1 and gep are gap penalties for opening/extending a gap.
     Returns the alignment score and one optimal alignment.
     """
     n,m = len(x),len(y)
@@ -110,35 +110,36 @@ def LD(x,y,lodict=None):
     return dp[-1,-1], alg
 
 
-def nw(x,y,lodict=None,gp1=-2.5,gp2=-1.75):
-    """
-    Needleman-Wunsch algorithm for pairwise string alignment
-    with affine gap penalties.
-    'lodict' must be a dictionary with all symbol pairs as keys
-    and match scores as values.
-    gp1 and gp2 are gap penalties for opening/extending a gap.
+def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75):
+    """Needleman-Wunsch algorithm with affine gaps penalties.
+
+    This code implements the NW algorithm for pairwise string
+    alignment with affine gap penalties.
+
+    'lodict' must be a dictionary with all symbol pairs as keys and
+    match scores as values, or a False value (including an empty
+    dictionary) to denote (-1, 1) scores. gop and gep are gap
+    penalties for opening/extending a gap.
+
     Returns the alignment score and one optimal alignment.
+
     """
     n,m = len(x),len(y)
     dp = np.zeros((n+1,m+1))
     pointers = np.zeros((n+1,m+1),np.int32)
     for i in range(1,n+1):
-        dp[i,0] = dp[i-1,0]+(gp2 if i>1 else gp1)
+        dp[i,0] = dp[i-1,0]+(gep if i>1 else gop)
         pointers[i,0]=1
     for j in range(1,m+1):
-        dp[0,j] = dp[0,j-1]+(gp2 if j>1 else gp1)
+        dp[0,j] = dp[0,j-1]+(gep if j>1 else gop)
         pointers[0,j]=2
     for i in range(1,n+1):
         for j in range(1,m+1):
-            if not lodict:
-                if x[i-1] == y[j-1]:
-                    match = dp[i-1,j-1]+1
-                else:
-                    match = dp[i-1,j-1]-1
-            else:
-                match = dp[i-1,j-1]+lodict[x[i-1],y[j-1]]
-            insert = dp[i-1,j]+(gp2 if pointers[i-1,j]==1 else gp1)
-            delet = dp[i,j-1]+(gp2 if pointers[i,j-1]==2 else gp1)
+            match = dp[i-1, j-1] + lodict.get(
+                (x[i-1], y[j-1]),
+                1 if x[i-1] == y[j-1] else -1)
+            insert = dp[i-1,j]+(gep if pointers[i-1,j]==1 else gop)
+            delet = dp[i,j-1]+(gep if pointers[i,j-1]==2 else gop)
             max_score = max([match,insert,delet])
             dp[i,j] = max_score
             pointers[i,j] = [match,insert,delet].index(max_score)

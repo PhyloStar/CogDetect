@@ -80,7 +80,8 @@ def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
         for l1, l2 in it.combinations(langs, r=2):
             if d[concept][l1].startswith("-") or d[concept][l2].startswith("-"): continue
             w1, w2 = d[concept][l1], d[concept][l2]
-            score = distances.nw(w1, w2, lodict=lodict, gp1=gop, gp2=gep)[0]
+            score = distances.needleman_wunsch(
+                w1, w2, lodict=lodict, gop=gop, gep=gep)[0]
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
             ldn_dist_dict[l1][l2] = score
             ldn_dist_dict[l2][l1] = ldn_dist_dict[l1][l2]
