@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from collections import defaultdict
 import itertools as it
 import sys, distances, igraph, utils
@@ -5,22 +7,7 @@ import numpy as np
 import random, codecs
 import Clustering as clust
 from sklearn import metrics
-#from lingpy import *
-random.seed(1234)
 
-##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
-##Separate clustering code.
-##Add doculect distance as regularization
-
-MAX_ITER = 15
-tolerance = 0.001
-infomap_threshold = 0.5
-min_batch = 256
-margin = 1.0
-
-dataname = sys.argv[1]
-#fname = sys.argv[2]
-char_list = []
 
 def clean_word(w):
     w = w.replace("-","")
@@ -51,8 +38,10 @@ def clean_word(w):
     w = w.replace("T","t")
     return w
 
+
 def ipa2sca(w):
     return "".join(tokens2class(ipa2tokens(w), 'asjp')).replace("0","")
+
 
 def read_data_ielex_type(fname):
     line_id = 0
@@ -91,7 +80,6 @@ def read_data_ielex_type(fname):
     f.close()
     print(list(data_dict.keys()))
     return (data_dict, cogid_dict, words_dict, langs_list)
-
 
 
 def calc_pmi(alignment_dict, char_list, scores, initialize=False):
@@ -137,6 +125,24 @@ def calc_pmi(alignment_dict, char_list, scores, initialize=False):
         count_dict[a] = val
     
     return count_dict
+
+
+random.seed(1234)
+
+##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
+##Separate clustering code.
+##Add doculect distance as regularization
+
+MAX_ITER = 15
+tolerance = 0.001
+infomap_threshold = 0.5
+min_batch = 256
+margin = 1.0
+
+dataname = sys.argv[1]
+#fname = sys.argv[2]
+char_list = []
+
 
 data_dict, cogid_dict, words_dict, langs_list = read_data_ielex_type(dataname)
 print("Character list \n\n", char_list)
@@ -239,8 +245,3 @@ for row, lang in zip(np.array(bin_mat).T, lang_list):
     rowx = "".join([str(x) for x in row])
     print(lang, "\t", rowx.replace("2","?"))
 print(";\nend;")
-
-    
-    
-    
-    
