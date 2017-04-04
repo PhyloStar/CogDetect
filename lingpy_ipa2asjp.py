@@ -1,17 +1,22 @@
+#!/usr/bin/env python3
+
+import os
+
 from collections import defaultdict
 import codecs
 import glob
-from lingpy import *
+from lingpy import ipa2tokens
+
 
 def read_convert_ipa_asjp():
     ipa2asjp_dict = defaultdict(str)
-    f = codecs.open("/home/taraka/trama/cognate_identification/scripts/ipa2asjp.txt", "r", encoding="utf-8")
+    f = codecs.open(os.path.join(os.path.dirname(__file__),
+                                 "ipa2asjp.txt"),
+                    "r", encoding="utf-8")
     for line in f:
-        #print line
         line = line.replace("\n", "")
         line = line.replace("\r", "")
         temp = line.split(" ")
-        #print temp
         ipa = temp[0]
         asjp = ""
         if temp[1] == "":
@@ -36,14 +41,15 @@ def read_convert_ipa_asjp():
             asjp_list = [ipa2asjp_dict[x] for x in ipa_word]
             asjp_word = ""
             for k in asjp_list:
-                k = k.replace("0","")
+                k = k.replace("0", "")
                 if k == "0":
-                    f_trace.write(ipa_word+"\t"+ "".join(asjp_list)+"\n")
+                    f_trace.write(ipa_word+"\t" + "".join(asjp_list)+"\n")
                     continue
                 else:
                     asjp_word += k
-#            print lang, ipa_word, asjp_word
-            fout.write("\t".join(arr[:5])+"\t"+asjp_word+"\t"+"\t".join(arr[6:]))
+            arr[5] = asjp_word
+            fout.write(
+                "\t".join(arr))
         f.close()
         fout.close()
     f_trace.close()
