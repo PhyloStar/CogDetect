@@ -8,6 +8,8 @@ import random, codecs
 import Clustering as clust
 from sklearn import metrics
 
+import argparse
+
 
 def clean_word(w):
     w = w.replace("-","")
@@ -128,19 +130,57 @@ def calc_pmi(alignment_dict, char_list, scores, initialize=False):
 
 
 if __name__ == "__main__":
-    random.seed(1234)
 
     ##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
     ##Separate clustering code.
     ##Add doculect distance as regularization
 
-    MAX_ITER = 15
-    tolerance = 0.001
-    infomap_threshold = 0.5
-    min_batch = 256
-    margin = 1.0
+    parser = argparse.ArgumentParser(
+        description="Calculate pmi scores, or something.")
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=1234,
+        help="Random seed")
+    parser.add_argument(
+        "--max-iter",
+        type=int,
+        default=15,
+        help="Maximum number of iterations")
+    parser.add_argument(
+        "--tolerance",
+        type=float,
+        default=0.001,
+        help="TODO tolerance")
+    parser.add_argument(
+        "--infomap-threshold",
+        type=float,
+        default = 0.5,
+        help="Threshold for the INFOMAP algorithm")
+    parser.add_argument(
+        "--min-batch",
+        type=int,
+        default=256,
+        help="TODO min batch")
+    parser.add_argument(
+        "--margin",
+        type=float,
+        default=1.0,
+        help="TODO margin")
+    parser.add_argument(
+        "data",
+        type=str, # But should become argparse.FileType("r")
+        help="IELex-style data file to read")
+    args = parser.parse_args()
+                        
+    random.seed(args.seed)
+    MAX_ITER = args.max_iter
+    tolerance = args.tolerance
+    infomap_threshold = args.infomap_threshold
+    min_batch = args.min_batch
+    margin = args.margin
 
-    dataname = sys.argv[1]
+    dataname = args.data
     #fname = sys.argv[2]
     char_list = []
 
