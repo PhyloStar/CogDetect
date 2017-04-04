@@ -68,7 +68,7 @@ def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
     #fout = open("output.txt","w")
     average_fscore = []
     f_scores = []#defaultdict(list)
-    bin_mat, n_clusters = None, 0
+    n_clusters = None
     for concept in d:
         ldn_dist_dict = defaultdict(lambda: defaultdict(float))
         langs = list(d[concept].keys())
@@ -112,7 +112,7 @@ def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
     #print(np.mean(np.array(f_scores), axis=0))
     f_scores = np.mean(np.array(f_scores), axis=0)
     print(f_scores[0], f_scores[1], 2.0*f_scores[0]*f_scores[1]/(f_scores[0]+f_scores[1]))
-    return bin_mat
+
 
 def upgma(distmat, threshold, names):
     """

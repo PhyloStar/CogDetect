@@ -12,6 +12,7 @@ import Clustering as clust
 import argparse
 
 import csv
+import pickle
 
 from ipa2asjp import ipa2asjp
 
@@ -83,7 +84,6 @@ def read_data_ielex_type(datafile):
             langs_list.append(lang)
         line_id += 1
     
-    print(list(data_dict.keys()))
     return (data_dict, cogid_dict, words_dict, langs_list)
 
 
@@ -119,7 +119,6 @@ def read_data_cldf(datafile, sep="\t", char_list=set()):
         cogid_dict[concept][line, lang] = cogid
         words_dict[concept].setdefault(lang, []).append(asjp_word)
 
-    print(list(data_dict.keys()))
     return (data_dict, cogid_dict, words_dict, list(langs))
 
 
@@ -154,7 +153,6 @@ def read_data_lingpy(datafile, sep="\t", char_list=set()):
         cogid_dict[concept][line, lang] = cogid
         words_dict[concept].setdefault(lang, []).append(asjp_word)
 
-    print(list(data_dict.keys()))
     return (data_dict, cogid_dict, words_dict, list(langs))
 
 
@@ -192,7 +190,6 @@ def calc_pmi(alignment_dict, char_list, scores, initialize=False):
     
     for a in count_dict.keys():
         m = count_dict[a]
-        if m <=0: print(a, m)
         assert m>0
 
         num = np.log(m)-np.log(relative_align_freq)
@@ -256,6 +253,10 @@ if __name__ == "__main__":
         "data",
         type=argparse.FileType("r"),
         help="IELex-style data file to read")
+    parser.add_argument(
+        "--pmidict",
+        type=argparse.FileType("wb"),
+        help="Write PMI dictionary to this (pickle) file.")
     parser.add_argument(
         "--reader",
         choices=list(readers.keys()),
@@ -322,9 +323,7 @@ if __name__ == "__main__":
         print(pmidict)
         word_list = pruned_wl
 
-    bin_mat = clust.infomap_concept_evaluate_scores(
+    pickle.dump(pmidict,
+                args.pmidict)
+    clust.infomap_concept_evaluate_scores(
         data_dict, pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)
-
-    for row, lang in zip(np.array(bin_mat).T, langs_list):
-        rowx = "".join([str(x) for x in row])
-        print(lang, "\t", rowx.replace("2", "?"))

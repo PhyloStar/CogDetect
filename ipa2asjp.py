@@ -2,7 +2,8 @@
 
 import os
 
-from collections import defaultdict
+import itertools
+
 import codecs
 import glob
 from lingpy import ipa2tokens, tokens2class
@@ -29,15 +30,44 @@ ipa_to_asjp = read_ipa_to_asjp()
 
 
 def ipa2asjp(ipa):
-    """Convert an IPA string into a ASJP token string."""
-    tokenized_word = ipa2tokens(ipa)
-    asjp_list = [''.join([i for i in ipa_to_asjp.get(x, tokens2class(x, 'asjp'))])
-                 for x in tokenized_word]
-    print(''.join(asjp_list))
+    """Convert an IPA string into a ASJP token string.
+
+    This function tries to preserve the len of the token string.
+
+    """
+    tokenized_word = ipa2tokens(ipa, merge_vowels=False)
+    token = 0
+    index = 0
+    for i in ipa:
+        try:
+            tokenized_word[token][index]
+        except IndexError:
+            token += 1
+            index = 0
+        try:
+            if i != tokenized_word[token][index]:
+                if index == 0:
+                    tokenized_word.insert(token, i)
+                else:
+                    tokenized_word[token] = (
+                        tokenized_word[token][:index] +
+                        i +
+                        tokenized_word[token][index:])
+        except IndexError:
+            tokenized_word.append(i)
+        index += 1
+    assert ''.join(tokenized_word) == ipa
+
+    asjp_list = [t for x in tokenized_word
+                 for t, char in itertools.zip_longest(
+                         tokens2class(x, 'asjp'),
+                         "0")]
+    assert len(''.join(asjp_list)) == len(ipa)
     return ''.join(asjp_list)
 
 
 def read_convert_ipa_asjp():
+    """Convert IPA IELex files to ASJP."""
     f_trace = codecs.open("test_ipa2asjp.txt", "w", encoding="utf-8")
     for file_name in glob.iglob("data/*tsv"):
         f_trace.write(file_name+"\n")
