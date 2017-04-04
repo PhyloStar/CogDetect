@@ -127,121 +127,122 @@ def calc_pmi(alignment_dict, char_list, scores, initialize=False):
     return count_dict
 
 
-random.seed(1234)
+if __name__ == "__main__":
+    random.seed(1234)
 
-##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
-##Separate clustering code.
-##Add doculect distance as regularization
+    ##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
+    ##Separate clustering code.
+    ##Add doculect distance as regularization
 
-MAX_ITER = 15
-tolerance = 0.001
-infomap_threshold = 0.5
-min_batch = 256
-margin = 1.0
+    MAX_ITER = 15
+    tolerance = 0.001
+    infomap_threshold = 0.5
+    min_batch = 256
+    margin = 1.0
 
-dataname = sys.argv[1]
-#fname = sys.argv[2]
-char_list = []
-
-
-data_dict, cogid_dict, words_dict, langs_list = read_data_ielex_type(dataname)
-print("Character list \n\n", char_list)
-print("Length of character list ", len(char_list))
-
-word_list = []
-
-for concept in data_dict:
-    print(concept)
-    words = []
-    for idx in data_dict[concept]:
-        words.append(data_dict[concept][idx])
-    for x, y in it.combinations(words, r=2):
-        #if distances.nw(x, y, lodict=None, gp1=-2.5,gp2=-1.75)[0] > 0.0:
-        if distances.ldn(x, y) <=0.5:
-            word_list += [[x,y]]
-
-#word_list = [line.strip().split()[0:2] for line in open(fname).readlines()]
-#char_list = [line.strip() for line in open("sounds41.txt").readlines()]
+    dataname = sys.argv[1]
+    #fname = sys.argv[2]
+    char_list = []
 
 
-pmidict = None
-n_examples, n_updates, alpha = len(word_list), 0, 0.75
-n_wl = len(word_list)
-print("Size of initial list ", n_wl)
+    data_dict, cogid_dict, words_dict, langs_list = read_data_ielex_type(dataname)
+    print("Character list \n\n", char_list)
+    print("Length of character list ", len(char_list))
 
-#for n_iter in range(MAX_ITER):
-#    print("Iteration ", n_iter)
-#    algn_list, scores, pruned_wl = [], [], []
-#    n_zero = 0.0
-#    for w1, w2 in word_list:
-#        if n_iter == 0:
-#            s, alg = distances.nw(w1, w2, lodict=pmidict, gp1=-1.0,gp2=-0.5)
-#        else:
-#            s, alg = distances.nw(w1, w2, lodict=pmidict)
-#        s = s/max(len(w1), len(w2))
-#        if s <=0.0:
-#            n_zero += 1.0
-#            continue
-#        algn_list.append(alg)
-#        scores.append(s)
-#        pruned_wl.append([w1, w2])
-#    word_list = pruned_wl[:]
-#    n_wl = len(word_list)
-#    pmidict = calc_pmi(algn_list, char_list, scores, initialize=True)
-#    print("Non zero examples ", n_wl, n_wl-n_zero)
+    word_list = []
 
-#bin_mat = infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75)
-#sys.exit(1)
-#for k, v in pmidict.items():
-#    print(k, v)
+    for concept in data_dict:
+        print(concept)
+        words = []
+        for idx in data_dict[concept]:
+            words.append(data_dict[concept][idx])
+        for x, y in it.combinations(words, r=2):
+            #if distances.nw(x, y, lodict=None, gp1=-2.5,gp2=-1.75)[0] > 0.0:
+            if distances.ldn(x, y) <=0.5:
+                word_list += [[x,y]]
+
+    #word_list = [line.strip().split()[0:2] for line in open(fname).readlines()]
+    #char_list = [line.strip() for line in open("sounds41.txt").readlines()]
 
 
-pmidict = defaultdict(float)
-
-for n_iter in range(MAX_ITER):
-    random.shuffle(word_list)
-    pruned_wl = []
-    n_zero = 0.0
-    print("Iteration ", n_iter)
-    for idx in range(0, n_wl, min_batch):
-        wl = word_list[idx:idx+min_batch]
-        eta = np.power(n_updates+2, -alpha)
-        algn_list, scores = [], []
-        for w1, w2 in wl:
-            #print(w1,w2,sc)
-            if not pmidict:
-                s, alg = distances.nw(w1, w2, lodict=None, gp1=-2.5, gp2=-1.75)
-            else:
-                s, alg = distances.nw(w1, w2, lodict=pmidict, gp1=-2.5, gp2=-1.75)
-            if s <= margin:
-                n_zero += 1.0
-                continue
-            #s = s/max(len(w1), len(w2))
-            algn_list.append(alg)
-            scores.append(s)
-            #pruned_wl.append([w1[::-1], w2[::-1], s])	  
-            pruned_wl.append([w1, w2])	  
-        mb_pmi_dict = calc_pmi(algn_list, char_list, scores, initialize=True)
-        for k, v in mb_pmi_dict.items():
-            pmidict_val = pmidict[k]
-            pmidict[k] = (eta*v) + ((1.0-eta)*pmidict_val)
-        n_updates += 1
-    print("Non zero examples ", n_wl, n_wl-n_zero, " number of updates ", n_updates)
-    word_list = pruned_wl[:]
+    pmidict = None
+    n_examples, n_updates, alpha = len(word_list), 0, 0.75
     n_wl = len(word_list)
-    #infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75)
+    print("Size of initial list ", n_wl)
 
-#for k, v in pmidict.items():
-#    print(k, v)
-bin_mat = clust.infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)
-#nchar, nlangs = np.array(bin_mat).shape
+    #for n_iter in range(MAX_ITER):
+    #    print("Iteration ", n_iter)
+    #    algn_list, scores, pruned_wl = [], [], []
+    #    n_zero = 0.0
+    #    for w1, w2 in word_list:
+    #        if n_iter == 0:
+    #            s, alg = distances.nw(w1, w2, lodict=pmidict, gp1=-1.0,gp2=-0.5)
+    #        else:
+    #            s, alg = distances.nw(w1, w2, lodict=pmidict)
+    #        s = s/max(len(w1), len(w2))
+    #        if s <=0.0:
+    #            n_zero += 1.0
+    #            continue
+    #        algn_list.append(alg)
+    #        scores.append(s)
+    #        pruned_wl.append([w1, w2])
+    #    word_list = pruned_wl[:]
+    #    n_wl = len(word_list)
+    #    pmidict = calc_pmi(algn_list, char_list, scores, initialize=True)
+    #    print("Non zero examples ", n_wl, n_wl-n_zero)
 
-sys.exit(1)
-print("begin data;")
-print("   dimensions ntax=", str(nlangs), "nchar=", str(nchar), ";\nformat datatype=restriction interleave=no missing= ? gap=-;\nmatrix\n")
+    #bin_mat = infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75)
+    #sys.exit(1)
+    #for k, v in pmidict.items():
+    #    print(k, v)
 
-for row, lang in zip(np.array(bin_mat).T, lang_list):
-    #print(row,len(row), "\n")
-    rowx = "".join([str(x) for x in row])
-    print(lang, "\t", rowx.replace("2","?"))
-print(";\nend;")
+
+    pmidict = defaultdict(float)
+
+    for n_iter in range(MAX_ITER):
+        random.shuffle(word_list)
+        pruned_wl = []
+        n_zero = 0.0
+        print("Iteration ", n_iter)
+        for idx in range(0, n_wl, min_batch):
+            wl = word_list[idx:idx+min_batch]
+            eta = np.power(n_updates+2, -alpha)
+            algn_list, scores = [], []
+            for w1, w2 in wl:
+                #print(w1,w2,sc)
+                if not pmidict:
+                    s, alg = distances.nw(w1, w2, lodict=None, gp1=-2.5, gp2=-1.75)
+                else:
+                    s, alg = distances.nw(w1, w2, lodict=pmidict, gp1=-2.5, gp2=-1.75)
+                if s <= margin:
+                    n_zero += 1.0
+                    continue
+                #s = s/max(len(w1), len(w2))
+                algn_list.append(alg)
+                scores.append(s)
+                #pruned_wl.append([w1[::-1], w2[::-1], s])	  
+                pruned_wl.append([w1, w2])	  
+            mb_pmi_dict = calc_pmi(algn_list, char_list, scores, initialize=True)
+            for k, v in mb_pmi_dict.items():
+                pmidict_val = pmidict[k]
+                pmidict[k] = (eta*v) + ((1.0-eta)*pmidict_val)
+            n_updates += 1
+        print("Non zero examples ", n_wl, n_wl-n_zero, " number of updates ", n_updates)
+        word_list = pruned_wl[:]
+        n_wl = len(word_list)
+        #infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75)
+
+    #for k, v in pmidict.items():
+    #    print(k, v)
+    bin_mat = clust.infomap_concept_evaluate_scores(data_dict, pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)
+    #nchar, nlangs = np.array(bin_mat).shape
+
+    sys.exit(1)
+    print("begin data;")
+    print("   dimensions ntax=", str(nlangs), "nchar=", str(nchar), ";\nformat datatype=restriction interleave=no missing= ? gap=-;\nmatrix\n")
+
+    for row, lang in zip(np.array(bin_mat).T, lang_list):
+        #print(row,len(row), "\n")
+        rowx = "".join([str(x) for x in row])
+        print(lang, "\t", rowx.replace("2","?"))
+    print(";\nend;")
