@@ -6,10 +6,10 @@ import sys, distances, igraph, utils
 import numpy as np
 import random, codecs
 import Clustering as clust
-from sklearn import metrics
 
 import argparse
 
+import csv
 
 def clean_word(w):
     w = w.replace("-","")
@@ -45,21 +45,20 @@ def ipa2sca(w):
     return "".join(tokens2class(ipa2tokens(w), 'asjp')).replace("0","")
 
 
-def read_data_ielex_type(fname):
+def read_data_ielex_type(datafile):
+    """Read an IELex style TSV file."""
     line_id = 0
     data_dict = defaultdict(lambda : defaultdict())
     cogid_dict = defaultdict(lambda : defaultdict())
     words_dict = defaultdict(lambda : defaultdict(list))
     langs_list = []
-    #f = codecs.open(fname, "r", "utf8")
-    f = open(fname)
-    f.readline()
-    for line in f:
+    
+    datafile.readline()
+    for line in datafile:
         line = line.strip()
         arr = line.split("\t")
         lang = arr[0]
-        #if lang in ["ELFDALIAN", "GUTNISH_LAU", "STAVANGERSK"]:
-        #    continue
+
         concept = arr[2]
         cogid = arr[6]
         cogid = cogid.replace("-","")
@@ -79,9 +78,67 @@ def read_data_ielex_type(fname):
         if lang not in langs_list:
             langs_list.append(lang)
         line_id += 1
-    f.close()
+    
     print(list(data_dict.keys()))
     return (data_dict, cogid_dict, words_dict, langs_list)
+
+
+def read_data_cldf(datafile, sep="\t", char_list=set()):
+    """Read a CLDF file in TSV or CSV format."""
+    reader = csv.DictReader(
+        datafile,
+        dialect='excel' if sep == ',' else 'excel-tab')
+    langs = set()
+    for line, row in enumerate(reader):
+        lang = row["Language ID"]
+        langs.add(lang)
+
+        asjp_word = clean_word(row["ASJP"])
+        if not asjp_word:
+            continue
+
+        for ch in asjp_word:
+            if ch not in char_list:
+                char_list.append(ch)
+
+        concept = row["Feature ID"]
+        cogid = row["Cognate Class"]
+
+        data_dict[concept][line, lang] = asjp_word
+        cogid_dict[concept][line, lang] = cogid
+        words_dict[concept].setdefault(lang, []).append(asjp_word)
+
+    print(list(data_dict.keys()))
+    return (data_dict, cogid_dict, words_dict, list(langs))
+
+
+def read_data_lingpy(datafile, sep="\t", char_list=set()):
+    """Read a Lingpy file in TSV or CSV format."""
+    reader = csv.DictReader(
+        datafile,
+        dialect='excel' if sep == ',' else 'excel-tab')
+    langs = set()
+    for line, row in enumerate(reader):
+        lang = row["DOCULECT"]
+        langs.add(lang)
+
+        asjp_word = clean_word(row["ASJP"])
+        if not asjp_word:
+            continue
+
+        for ch in asjp_word:
+            if ch not in char_list:
+                char_list.append(ch)
+
+        concept = row["CONCEPT"]
+        cogid = row["COGID"]
+
+        data_dict[concept][line, lang] = asjp_word
+        cogid_dict[concept][line, lang] = cogid
+        words_dict[concept].setdefault(lang, []).append(asjp_word)
+
+    print(list(data_dict.keys()))
+    return (data_dict, cogid_dict, words_dict, list(langs))
 
 
 def calc_pmi(alignment_dict, char_list, scores, initialize=False):
@@ -129,6 +186,12 @@ def calc_pmi(alignment_dict, char_list, scores, initialize=False):
     return count_dict
 
 
+readers = {
+    "ielex": read_data_ielex_type,
+    "cldf": read_data_cldf,
+    "lingpy": read_data_lingpy,
+    }
+
 if __name__ == "__main__":
 
     ##TODO: Add a ML based estimation of distance or a JC model for distance between two sequences
@@ -169,8 +232,12 @@ if __name__ == "__main__":
         help="TODO margin")
     parser.add_argument(
         "data",
-        type=str, # But should become argparse.FileType("r")
+        type=argparse.FileType("r"),
         help="IELex-style data file to read")
+    parser.add_argument(
+        "--reader",
+        choices=list(readers.keys()),
+        help="Data file format")
     args = parser.parse_args()
                         
     random.seed(args.seed)
@@ -181,11 +248,11 @@ if __name__ == "__main__":
     margin = args.margin
 
     dataname = args.data
-    #fname = sys.argv[2]
+
     char_list = []
 
-
-    data_dict, cogid_dict, words_dict, langs_list = read_data_ielex_type(dataname)
+    data_dict, cogid_dict, words_dict, langs_list = (
+        readers[args.reader](dataname))
     print("Character list \n\n", char_list)
     print("Length of character list ", len(char_list))
 
