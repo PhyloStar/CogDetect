@@ -29,10 +29,12 @@ def read_ipa_to_asjp(
 ipa_to_asjp = read_ipa_to_asjp()
 
 
-def ipa2asjp(ipa):
-    """Convert an IPA string into a ASJP token string.
+def tokenize_word_reversibly(ipa):
+    """Reversibly convert an IPA string into a list of tokens.
 
-    This function tries to preserve the len of the token string.
+    In contrast to LingPy's tokenize_word, do this without removing
+    symbols. This means that the original IPA string can be recovered
+    from the tokens.
 
     """
     tokenized_word = ipa2tokens(ipa, merge_vowels=False)
@@ -57,8 +59,16 @@ def ipa2asjp(ipa):
             tokenized_word.append(i)
         index += 1
     assert ''.join(tokenized_word) == ipa
+    return tokenized_word
 
-    asjp_list = [t for x in tokenized_word
+
+def ipa2asjp(ipa):
+    """Convert an IPA string into a ASJP token string.
+
+    This function tries to preserve the len of the token string.
+
+    """
+    asjp_list = [t for x in tokenize_word_reversibly(ipa)
                  for t, char in itertools.zip_longest(
                          tokens2class(x, 'asjp'),
                          "0")]
