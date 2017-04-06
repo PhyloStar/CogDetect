@@ -10,7 +10,7 @@ from lingpy import ipa2tokens, tokens2class
 
 
 def read_ipa_to_asjp(
-        filename=os.path.join(os.path.dirname(__file__),
+        filename=os.path.join(os.path.dirname(__file__), "../data",
                               "ipa2asjp.txt")):
     """Read a SSV mapping IPA symbols to ASJP classes."""
     ipa_to_asjp = {}
