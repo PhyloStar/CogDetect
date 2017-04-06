@@ -7,7 +7,7 @@ import distances
 import igraph, utils
 import numpy as np
 import random, codecs
-import Clustering as clust
+import infomapcog.clustering as clust
 
 import argparse
 

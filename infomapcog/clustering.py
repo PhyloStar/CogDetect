@@ -4,7 +4,8 @@ import itertools as it
 import numpy as np
 import igraph
 from collections import defaultdict
-import distances
+
+from . import distances
 
 
 

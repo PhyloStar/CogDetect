@@ -1,10 +1,15 @@
+"""A non-iterated cognate quality comparer, similar to online_pmi."""
+
 from collections import defaultdict
 import itertools as it
-import sys, distances, igraph, utils
+import sys, igraph, utils
 import numpy as np
 import random, codecs
 import DistanceMeasures as DM
 from sklearn import metrics
+
+from . import distances
+
 random.seed(1234)
 
 MAX_ITER = 10
