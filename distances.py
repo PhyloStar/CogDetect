@@ -55,7 +55,7 @@ def normalized_leventsthein(a, b):
 
 
 def LD(x, y, lodict={}):
-    """Standard NW alignment
+    """Standard NW alignment.
 
     Needleman-Wunsch algorithm for pairwise string alignment with
     default gap penalties.

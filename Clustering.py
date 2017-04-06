@@ -65,21 +65,28 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
     return D
     
 def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
+    """Calculate Infomap scores.
+
+    d: A dict-like mapping concepts to a map from languages to forms
+
+    lodict: A similarity matrix, a dict mapping pairs of characters to similarity scores
+    
+    """
     #fout = open("output.txt","w")
     average_fscore = []
     f_scores = []#defaultdict(list)
     n_clusters = 0
-    for concept in d:
+    for concept, forms_by_language in d.items():
         ldn_dist_dict = defaultdict(lambda: defaultdict(float))
-        langs = list(d[concept].keys())
+        langs = list(forms_by_language.keys())
         if len(langs) == 1:
             print(concept)
             continue
         scores, cognates = [], []
         #ex_langs = list(set(lang_list) - set(langs))
         for l1, l2 in it.combinations(langs, r=2):
-            if d[concept][l1].startswith("-") or d[concept][l2].startswith("-"): continue
-            w1, w2 = d[concept][l1], d[concept][l2]
+            if forms_by_language[l1].startswith("-") or forms_by_language[l2].startswith("-"): continue
+            w1, w2 = forms_by_language[l1], forms_by_language[l2]
             score = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)[0]
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
@@ -93,7 +100,7 @@ def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
         predicted_labels_words = defaultdict()
         for k, v in clust.items():
             predicted_labels[langs[k]] = v
-            predicted_labels_words[langs[k],d[concept][langs[k]]] = v
+            predicted_labels_words[langs[k], forms_by_language[langs[k]]] = v
         
         print(concept,"\n",predicted_labels_words)
         predl, truel = [], []
