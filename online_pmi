@@ -263,7 +263,7 @@ if __name__ == "__main__":
         default="ielex",
         help="Data file format")
     args = parser.parse_args()
-                        
+
     random.seed(args.seed)
     MAX_ITER = args.max_iter
     tolerance = args.tolerance
@@ -323,7 +323,8 @@ if __name__ == "__main__":
         print(pmidict)
         word_list = pruned_wl
 
-    pickle.dump(pmidict,
-                args.pmidict)
+    if args.pmidict:
+        pickle.dump(pmidict,
+                    args.pmidict)
     clust.infomap_concept_evaluate_scores(
         data_dict, pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)

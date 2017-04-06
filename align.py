@@ -36,28 +36,32 @@ def main():
         default="COGID",
         help="Name of the column containing the cognate classes to use")
     args = parser.parse_args()
-    
+
     data = pandas.read_csv(
         args.input, sep="\t")
 
-    scoredict = pickle.load(args.scoredict)
-    
+    try:
+        scoredict = pickle.load(args.scoredict)
+    except TypeError:
+        scoredict = args.scoredict
+
     data[args.alignment_column] = ""
     for cogid, block in data.groupby(args.cogid_column):
         try:
             forms = [clean_word(w) for w in block["ASJP"]]
         except KeyError:
-            forms = [ipa2asjp(w) for w in block["IPA"]]
+            forms = [lingpy.tokens2class(w, 'asjp')
+                     for w in block["IPA"]]
         aligned = lingpy.align.multiple.mult_align(
             forms,
             gop=-2.0,
             scale=0.8,
             scoredict=scoredict,
-            tree_calc='neighbor')
-        data[
-            data[args.cogid_column] == cogid][
-                args.alignment_column] = aligned
-        print(aligned)
+            tree_calc='upgma')
+        for a, (row, value) in zip(aligned, block.iterrows()):
+            data.set_value(row, args.alignment_column, ' '.join(a))
+
+    data.to_csv(args.output, sep='\t')
 
 if __name__ == "__main__":
     main()

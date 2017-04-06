@@ -68,7 +68,7 @@ def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
     #fout = open("output.txt","w")
     average_fscore = []
     f_scores = []#defaultdict(list)
-    n_clusters = None
+    n_clusters = 0
     for concept in d:
         ldn_dist_dict = defaultdict(lambda: defaultdict(float))
         langs = list(d[concept].keys())
