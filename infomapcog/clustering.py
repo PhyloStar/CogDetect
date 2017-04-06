@@ -107,6 +107,10 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
     return codes
 
 def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
+    """Compare two different cognate codings of the same data by F scores.
+
+    Calculate the F-scores of how well two cognate codings match each other.
+    """
     f_scores = []
     n_clusters = 0
     for concept, forms_by_language in true_cogid_dict:
@@ -128,10 +132,18 @@ def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
     #print(np.mean(np.array(f_scores), axis=0))
     f_scores = np.mean(np.array(f_scores), axis=0)
     print(f_scores[0], f_scores[1], 2.0*f_scores[0]*f_scores[1]/(f_scores[0]+f_scores[1]))
+    return f_scores
 
 
 def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict,
                                     ignore_forms_starting="-"):
+    """Compare Infomap cognate coding to a gold standard.
+
+    Calculate the F-scores of how well the automatic cognate code
+    described by the parameters (using Needleman-Wunsch and Infomap)
+    matches the gold standard “true” coding supplied as cogid_dict.
+
+    """
     return compare_cognate_codings(
         cogid_dict,
         cognate_code_infomap(
