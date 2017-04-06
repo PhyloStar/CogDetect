@@ -18,8 +18,8 @@ setup(
     classifiers=[
         'Programming Language :: Python',
     ],
-    scripts=['online_pmi'],
-    py_modules=['ipa2asjp'],
-    requires=['lingpy'],
+    scripts=["online_pmi"],
+    packages=["infomapcog"],
+    requires=["lingpy", "igraph"],
     install_requires=[]
 )
