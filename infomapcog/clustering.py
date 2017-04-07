@@ -4,7 +4,8 @@ import itertools as it
 import numpy as np
 import igraph
 from collections import defaultdict
-import distances
+
+from . import distances
 
 
 
@@ -63,46 +64,67 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
             D[vertex] = i+1
 
     return D
+
+
+def cognate_code_infomap(d, lodict, gop, gep, threshold,
+                         ignore_forms_starting="-"):
+    """Cluster cognates automatically.
+
+    Calculate Needleman-Wunsch distances between forms and cluster
+    them into cognate classes using the Infomap algorithm.
+
+    d: A dict-like mapping concepts to a map from languages to forms
+
+    lodict: A similarity matrix, a dict mapping pairs of characters to similarity scores
     
-def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
-    #fout = open("output.txt","w")
-    average_fscore = []
-    f_scores = []#defaultdict(list)
-    bin_mat, n_clusters = None, 0
-    for concept in d:
-        ldn_dist_dict = defaultdict(lambda: defaultdict(float))
-        langs = list(d[concept].keys())
-        if len(langs) == 1:
-            print(concept)
+    ignore_forms_starting: A string. Forms starting with this string will be ignored.
+
+    """
+    codes = {}
+    for concept, forms_by_language in d.items():
+        if len(forms_by_language) == 1:
+            # This concept is only given in one language, no
+            # clustering to do.
             continue
-        scores, cognates = [], []
-        #ex_langs = list(set(lang_list) - set(langs))
-        for l1, l2 in it.combinations(langs, r=2):
-            if d[concept][l1].startswith("-") or d[concept][l2].startswith("-"): continue
-            w1, w2 = d[concept][l1], d[concept][l2]
-            score = distances.nw(w1, w2, lodict=lodict, gp1=gop, gp2=gep)[0]
+
+        # Calculate the Needleman-Wunsch distance for every pair of
+        # forms.
+        distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
+        scores = []
+        for (l1, w1), (l2, w2) in it.combinations(
+                enumerate(forms_by_language.values()), r=2):
+            if (w1.startswith(ignore_forms_starting) or
+                    w2.startswith(ignore_forms_starting)):
+                continue
+            score, align = distances.needleman_wunsch(
+                w1, w2, lodict=lodict, gop=gop, gep=gep)
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
-            ldn_dist_dict[l1][l2] = score
-            ldn_dist_dict[l2][l1] = ldn_dist_dict[l1][l2]
-        distMat = np.array([[ldn_dist_dict[ka][kb] for kb in langs] for ka in langs])
-        clust = igraph_clustering(distMat, threshold, method='labelprop')
-        
-        
-        predicted_labels = defaultdict()
-        predicted_labels_words = defaultdict()
-        for k, v in clust.items():
-            predicted_labels[langs[k]] = v
-            predicted_labels_words[langs[k],d[concept][langs[k]]] = v
-        
-        print(concept,"\n",predicted_labels_words)
+            distmat[l2, l1] = distmat[l1, l2] = score
+        clust = igraph_clustering(distmat, threshold, method='labelprop')
+
+        codes[concept] = {
+            l: v
+            for l, (k, v) in zip(forms_by_language.keys(), clust.items())}
+    return codes
+
+def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
+    """Compare two different cognate codings of the same data by F scores.
+
+    Calculate the F-scores of how well two cognate codings match each other.
+    """
+    f_scores = []
+    n_clusters = 0
+    for concept, forms_by_language in true_cogid_dict:
+        langs = list(forms_by_language.keys())
+
         predl, truel = [], []
         for l in langs:
-            truel.append(cogid_dict[concept][l])
-            predl.append(predicted_labels[l])
+            truel.append(true_cogid_dict[concept][l])
+            predl.append(other_cogid_dict[concept][l])
         scores = b_cubed(truel, predl)
         
         #scores = metrics.f1_score(truel, predl, average="micro")
-        print(concept, len(langs), scores, len(set(clust.values())), len(set(truel)), "\n")
+        print(concept, len(langs), scores, len(set(truel)), "\n")
         f_scores.append(list(scores))
         n_clusters += len(set(clust.values()))
         #t = utils.dict2binarynexus(predicted_labels, ex_langs, lang_list)
@@ -111,7 +133,23 @@ def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict):
     #print(np.mean(np.array(f_scores), axis=0))
     f_scores = np.mean(np.array(f_scores), axis=0)
     print(f_scores[0], f_scores[1], 2.0*f_scores[0]*f_scores[1]/(f_scores[0]+f_scores[1]))
-    return bin_mat
+    return f_scores
+
+
+def infomap_concept_evaluate_scores(d, lodict, gop, gep, threshold, cogid_dict,
+                                    ignore_forms_starting="-"):
+    """Compare Infomap cognate coding to a gold standard.
+
+    Calculate the F-scores of how well the automatic cognate code
+    described by the parameters (using Needleman-Wunsch and Infomap)
+    matches the gold standard “true” coding supplied as cogid_dict.
+
+    """
+    return compare_cognate_codings(
+        cogid_dict,
+        cognate_code_infomap(
+            d, lodict, gop, gep, threshold, ignore_forms_starting))
+
 
 def upgma(distmat, threshold, names):
     """
