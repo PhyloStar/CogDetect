@@ -120,9 +120,6 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
     lodict: A similarity matrix, a dict mapping pairs of characters to
     similarity scores
 
-    ignore_forms_starting: A sequence of strings. Forms starting with
-    this string will be ignored.
-
     Returns: A list of sets of (language, concept, form) triples.
     """
     codes = []
@@ -137,9 +134,6 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
         distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
         for (l1, w1), (l2, w2) in it.combinations(
                 enumerate(forms_by_language.values()), r=2):
-            for begin in ignore_forms_starting:
-                if (w1.startswith(begin) or w2.startswith(begin)):
-                    continue
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
