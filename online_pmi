@@ -156,63 +156,69 @@ def read_data_lingpy(datafile, sep="\t", char_list=set()):
     return (data_dict, cogid_dict, words_dict, list(langs), char_list)
 
 
-def calc_pmi(alignment_dict, char_list, scores, initialize=False):
+def calc_pmi(alignments, scores):
     sound_dict = defaultdict(float)
     relative_align_freq = 0.0
     relative_sound_freq = 0.0
     count_dict = defaultdict(float)
     
-    if initialize == True:
-        for c1, c2 in it.product(char_list, repeat=2):
-            if c1 == "" or c2 == "":
-                continue
-            count_dict[c1,c2] += 0.001
-            count_dict[c2,c1] += 0.001
-            sound_dict[c1] += 0.001
-            sound_dict[c2] += 0.001
-            relative_align_freq += 0.001
-            relative_sound_freq += 0.002
-
-    for alignment, score in zip(alignment_dict, scores):
-        score = 1.0
+    for alignment, score in zip(alignments, scores):
         for a1, a2 in alignment:
             if a1 == "" or a2 == "":
                 continue
-            count_dict[a1,a2] += 1.0*score
-            count_dict[a2,a1] += 1.0*score
+            count_dict[a1, a2] += 1.0*score
+            count_dict[a2, a1] += 1.0*score
             sound_dict[a1] += 2.0*score
             sound_dict[a2] += 2.0*score
-            #relative_align_freq += 2.0
-            #relative_sound_freq += 2.0
 
     relative_align_freq = sum(list(count_dict.values()))
     relative_sound_freq = sum(list(sound_dict.values()))
     
     for a in count_dict.keys():
         m = count_dict[a]
-        assert m>0
+        assert m > 0
 
         num = np.log(m)-np.log(relative_align_freq)
-        denom = np.log(sound_dict[a[0]])+np.log(sound_dict[a[1]])-(2.0*np.log(relative_sound_freq))
+        denom = (np.log(sound_dict[a[0]]) +
+                 np.log(sound_dict[a[1]]) -
+                 (2.0 * np.log(relative_sound_freq)))
         val = num - denom
         count_dict[a] = val
     
     return count_dict
 
 
-def align_pairs(wl, pmidict, margin=1):
-    algn_list, scores = [], []
-    n_zero = 0
-    for w1, w2 in wl:
-        s, alg = distances.needleman_wunsch(
-            w1, w2, gop=-2.5, gep=-1.75, lodict=pmidict)
-        if s <= margin:
-            n_zero += 1
-            continue
-        algn_list.append(alg)
-        scores.append(s)
-        pruned_wl.append([w1, w2])
-    return pruned_wl, n_zero
+class OnlinePMIIterator:
+    """A persistent object able to run multiple alignment iterations."""
+
+    def __init__(self, margin=1, alpha=0.75, char_list=[]):
+        self.margin = margin
+        self.alpha = alpha
+        self.n_updates = 0
+        self.pmidict = {}
+
+    def align_pairs(self, word_pairs):
+        """Align a list of word pairs, removing those that align badly."""
+        algn_list, scores = [], []
+        n_zero = 0
+        for w in range(len(word_pairs)-1, -1, -1):
+            w1, w2 = wl[w]
+            s, alg = distances.needleman_wunsch(
+                w1, w2, gop=-2.5, gep=-1.75, lodict=self.pmidict)
+            if s <= self.margin:
+                n_zero += 1
+                word_pairs.pop(w)
+                continue
+            algn_list.append(alg)
+            scores.append(s)
+        self.update_pmi_dict(algn_list, scores)
+        return algn_list, n_zero
+
+    def update_pmi_dict(self, algn_list, scores):
+        eta = (self.n_updates + 2) ** (-self.alpha)
+        for k, v in calc_pmi(algn_list, scores).items():
+            pmidict_val = self.pmidict.get(k, 0.0)
+            self.pmidict[k] = (eta * v) + ((1.0 - eta) * pmidict_val)
 
 
 readers = {
@@ -252,10 +258,10 @@ if __name__ == "__main__":
         default=0.5,
         help="Threshold for the INFOMAP algorithm")
     parser.add_argument(
-        "--min-batch",
+        "--max-batch",
         type=int,
         default=256,
-        help="TODO min batch")
+        help="Maximum number of word pairs to align in one updating step")
     parser.add_argument(
         "--margin",
         type=float,
@@ -293,7 +299,6 @@ if __name__ == "__main__":
     MAX_ITER = args.max_iter
     tolerance = args.tolerance
     infomap_threshold = args.infomap_threshold
-    min_batch = args.min_batch
     alpha = args.alpha
     data = args.data
 
@@ -313,33 +318,28 @@ if __name__ == "__main__":
 
     print("Size of initial list ", len(word_pairs))
 
-    pmidict = {}
-    n_updates = 0
+    online = OnlinePMIIterator(
+        alpha=args.alpha,
+        margin=args.margin)
+
     for n_iter in range(MAX_ITER):
         random.shuffle(word_pairs)
-        pruned_wl = []
-        print("Iteration ", n_iter)
-        algn_list, scores = [], []
-        for idx in range(0, len(word_pairs), min_batch):
-            mb_pmi_dict = calc_pmi(algn_list, char_list, scores)
-            eta = (n_updates + 2) ** (-alpha)
-            for k, v in mb_pmi_dict.items():
-                pmidict_val = pmidict.get(k, 0.0)
-                pmidict[k] = (eta * v) + ((1.0 - eta) * pmidict_val)
-            wl = word_pairs[idx:idx+min_batch]
-            n_updates += 1
-            algn_list, scores, pruned_wl = align_pairs(
-                wl, pmidict, args.margin)
-            for x in algn_list:
-                print(x)
+        print("Iteration", n_iter)
+        for idx in range(0, len(word_pairs), args.max_batch):
+            wl = word_pairs[idx:idx+args.max_batch]
+            algn_list, n_zero = online.align_pairs(wl)
+            word_pairs[idx:idx+args.max_batch] = wl
+            # The index operations should be fixed. The way it's
+            # currently implemented, removing some items will protect
+            # that many items from removal from the next batch.
 
+            for pair in algn_list:
+                print(pair)
         print("Non zero examples ", len(word_pairs), len(word_pairs)-n_zero,
-              " number of updates ", n_updates)
-        print(pmidict)
-        word_pairs = pruned_wl
+              " number of updates ", online.n_updates)
+        print(online.pmidict)
 
     if args.pmidict:
-        pickle.dump(pmidict,
-                    args.pmidict)
+        pickle.dump(online.pmidict, args.pmidict)
     clust.infomap_concept_evaluate_scores(
-        data_dict, pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)
+        data_dict, online.pmidict, -2.5, -1.75, infomap_threshold, cogid_dict)
