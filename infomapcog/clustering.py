@@ -90,7 +90,6 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
         # Calculate the Needleman-Wunsch distance for every pair of
         # forms.
         distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
-        scores = []
         for (l1, w1), (l2, w2) in it.combinations(
                 enumerate(forms_by_language.values()), r=2):
             if (w1.startswith(ignore_forms_starting) or

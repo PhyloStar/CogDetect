@@ -78,40 +78,40 @@ def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75):
     Returns the alignment score and one optimal alignment.
 
     """
-    n,m = len(x),len(y)
-    dp = np.zeros((n+1,m+1))
-    pointers = np.zeros((n+1,m+1),np.int32)
-    for i in range(1,n+1):
+    n, m = len(x), len(y)
+    dp = np.zeros((n + 1, m + 1))
+    pointers = np.zeros((n + 1, m + 1), np.int32)
+    for i in range(1, n + 1):
         dp[i,0] = dp[i-1,0]+(gep if i>1 else gop)
         pointers[i,0]=1
     for j in range(1,m+1):
         dp[0,j] = dp[0,j-1]+(gep if j>1 else gop)
         pointers[0,j]=2
-    for i in range(1,n+1):
-        for j in range(1,m+1):
+    for i in range(1, n+1):
+        for j in range(1, m+1):
             match = dp[i-1, j-1] + lodict.get(
                 (x[i-1], y[j-1]),
                 1 if x[i-1] == y[j-1] else -1)
             insert = dp[i-1,j]+(gep if pointers[i-1,j]==1 else gop)
             delet = dp[i,j-1]+(gep if pointers[i,j-1]==2 else gop)
-            max_score = max([match,insert,delet])
-            dp[i,j] = max_score
-            pointers[i,j] = [match,insert,delet].index(max_score)
+            max_score = max([match, insert, delet])
+            dp[i, j] = max_score
+            pointers[i, j] = [match, insert, delet].index(max_score)
     alg = []
-    i,j = n,m
-    while(i>0 or j>0):
-        pt = pointers[i,j]
-        if pt==0:
-            i-=1
-            j-=1
-            alg = [[x[i],y[j]]]+alg
-        if pt==1:
-            i-=1
-            alg = [[x[i],'-']]+alg
-        if pt==2:
-            j-=1
-            alg = [['-',y[j]]]+alg
-    return dp[-1,-1], alg
+    i, j = n, m
+    while (i > 0 or j > 0):
+        pt = pointers[i, j]
+        if pt == 0:
+            i -= 1
+            j -= 1
+            alg = [(x[i], y[j])] + alg
+        if pt == 1:
+            i -= 1
+            alg = [(x[i], '')] + alg
+        if pt == 2:
+            j -= 1
+            alg = [('', y[j])] + alg
+    return dp[-1, -1], alg
 
 def prefix(a,b):
     la = len(a); lb = len(b)
