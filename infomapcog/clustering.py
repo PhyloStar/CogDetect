@@ -141,9 +141,10 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
         clust = igraph_clustering(distmat, threshold, method='labelprop')
 
         cognatesets = {}
-        for language, form in forms_by_language.items():
-            c = clust[form]
-            cognatesets.setdefault(c, set()).add(language, concept, form)
+        for language, forms in forms_by_language.items():
+            for form in forms:
+                c = clust[form]
+                cognatesets.setdefault(c, set()).add(language, concept, form)
         codes += list(cognatesets.values())
     return codes
 
