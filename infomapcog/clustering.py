@@ -58,10 +58,10 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
         comps = G.community_spinglass()
 
     D = {}
-    for i,comp in enumerate(comps.subgraphs()):
+    for i, comp in enumerate(comps.subgraphs()):
         vertices = [v['name'] for v in comp.vs]
         for vertex in vertices:
-            D[vertex] = i+1
+            D[vertex] = i
 
     return D
 
@@ -107,6 +107,52 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
             l: v
             for l, (k, v) in zip(forms_by_language.keys(), clust.items())}
     return codes
+
+
+def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
+    """Cluster cognates automatically.
+
+    Calculate Needleman-Wunsch distances between forms and cluster
+    them into cognate classes using the Infomap algorithm.
+
+    d: A dict-like mapping concepts to a map from languages to forms
+
+    lodict: A similarity matrix, a dict mapping pairs of characters to
+    similarity scores
+
+    ignore_forms_starting: A sequence of strings. Forms starting with
+    this string will be ignored.
+
+    Returns: A list of sets of (language, concept, form) triples.
+    """
+    codes = []
+    for concept, forms_by_language in d.items():
+        if len(forms_by_language) == 1:
+            # This concept is only given in one language, no
+            # clustering to do.
+            continue
+
+        # Calculate the Needleman-Wunsch distance for every pair of
+        # forms.
+        distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
+        for (l1, w1), (l2, w2) in it.combinations(
+                enumerate(forms_by_language.values()), r=2):
+            for begin in ignore_forms_starting:
+                if (w1.startswith(begin) or w2.startswith(begin)):
+                    continue
+            score, align = distances.needleman_wunsch(
+                w1, w2, lodict=lodict, gop=gop, gep=gep)
+            score = 1.0 - (1.0/(1.0+np.exp(-score)))
+            distmat[l2, l1] = distmat[l1, l2] = score
+        clust = igraph_clustering(distmat, threshold, method='labelprop')
+
+        cognatesets = {}
+        for language, form in forms_by_language.items():
+            c = clust[form]
+            cognatesets.setdefault(c, set()).add(language, concept, form)
+        codes += list(cognatesets.values())
+    return codes
+
 
 def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
     """Compare two different cognate codings of the same data by F scores.
