@@ -335,16 +335,39 @@ if __name__ == "__main__":
         alpha=args.alpha,
         margin=args.margin)
 
-    for n_iter in range(MAX_ITER):
+    # We might miss some cognate pairs because they look dissimilar,
+    # but they are actually connected strongly when taking regular
+    # sound correspondences into account. So we run the iterator once
+    # on the reduced word list to obtain an initial PMI score
+    # matrix. Then we split the word list again into chunks that are
+    # similar according to *that* scorer.
+
+    random.shuffle(word_pairs)
+    idx = 0
+    while idx < len(word_pairs):
+        wl = word_pairs[idx:idx+args.max_batch]
+        algn_list, n_zero = online.align_pairs(wl)
+        idx += len(wl)
+
+    word_pairs = []
+    for concept in data_dict:
+        print(concept, end=", ")
+        words = data_dict[concept].values()
+        for w1, w2 in it.combinations(words, r=2):
+            s, alg = distances.needleman_wunsch(
+                w1, w2, gop=-2.5, gep=-1.75, lodict=online.pmidict)
+            if s >= args.margin:
+                word_pairs.append((w1, w2))
+
+    for n_iter in range(1, MAX_ITER):
         random.shuffle(word_pairs)
         print("Iteration", n_iter)
-        for idx in range(0, len(word_pairs), args.max_batch):
+        idx = 0
+        while idx < len(word_pairs):
             wl = word_pairs[idx:idx+args.max_batch]
             algn_list, n_zero = online.align_pairs(wl)
             word_pairs[idx:idx+args.max_batch] = wl
-            # The index operations should be fixed. The way it's
-            # currently implemented, removing some items will protect
-            # that many items from removal from the next batch.
+            idx += len(wl)
 
             for pair in algn_list:
                 print(pair)
