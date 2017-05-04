@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Align words based on stepwise EM alignments with PMI scores."""
+
 from collections import defaultdict
 import itertools as it
 import sys
@@ -248,7 +250,7 @@ if __name__ == "__main__":
     # - Add doculect distance as regularization
 
     parser = argparse.ArgumentParser(
-        description="Calculate pmi scores, or something.")
+        description=__doc__)
     parser.add_argument(
         "--seed",
         type=int,
@@ -353,7 +355,10 @@ if __name__ == "__main__":
     if args.pmidict:
         pickle.dump(online.pmidict, args.pmidict)
 
-    codes = clust.cognate_code_infomap(
-        data_dict, online.pmidict, -2.5, -1.75, args.infomap_threshold)
-    print(codes)
+    codes = clust.cognate_code_infomap2(
+        words_dict, online.pmidict, -2.5, -1.75, args.infomap_threshold)
+    for similar in codes:
+        print("====")
+        for (language, concept, form) in similar:
+            print(language, concept, form)
     print(clust.compare_cognate_codings(cogid_dict, codes))
