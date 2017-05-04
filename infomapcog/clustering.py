@@ -130,6 +130,8 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
         for language, forms in forms_by_language.items():
             for form in forms:
                 lookup.append((language, concept, form))
+        if len(lookup) <= 1:
+            continue
         distmat = np.zeros((len(lookup), len(lookup)))
         for (l1, w1), (l2, w2) in it.combinations(
                 enumerate(lookup), r=2):
