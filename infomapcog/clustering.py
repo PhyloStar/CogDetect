@@ -124,28 +124,24 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
     """
     codes = []
     for concept, forms_by_language in d.items():
-        if len(forms_by_language) == 1:
-            # This concept is only given in one language, no
-            # clustering to do.
-            continue
-
         # Calculate the Needleman-Wunsch distance for every pair of
         # forms.
-        distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
-        for (l1, w1), (l2, w2) in it.combinations(
-                enumerate(forms_by_language.values()), r=2):
-            score, align = distances.needleman_wunsch(
-                w1, w2, lodict=lodict, gop=gop, gep=gep)
-            score = 1.0 - (1.0/(1.0+np.exp(-score)))
-            distmat[l2, l1] = distmat[l1, l2] = score
-        clust = igraph_clustering(distmat, threshold, method='labelprop')
-
-        cognatesets = {}
+        lookup = []
         for language, forms in forms_by_language.items():
             for form in forms:
-                c = clust[form]
-                cognatesets.setdefault(c, set()).add(language, concept, form)
-        codes += list(cognatesets.values())
+                lookup.append((language, concept, form))
+        distmat = np.zeros((len(lookup), len(lookup)))
+        for (l1, w1), (l2, w2) in it.combinations(
+                enumerate(lookup), r=2):
+            score, align = distances.needleman_wunsch(
+                w1, w2, lodict=lodict, gop=gop, gep=gep)
+            distmat[l2, l1] = distmat[l1, l2] = 1 - (1/(1 + np.exp(-score)))
+        clust = igraph_clustering(distmat, threshold, method='labelprop')
+
+        similaritygroups = {}
+        for entry, group in clust.items():
+            similaritygroups.setdefault(group, set()).add(lookup[entry])
+        codes += list(similaritygroups.values())
     return codes
 
 

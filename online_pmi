@@ -420,7 +420,6 @@ if __name__ == "__main__":
         raise ValueError("ALPHA must be in (0.5, 1].")
 
     random.seed(args.seed)
-    MAX_ITER = args.max_iter
     tolerance = args.tolerance
     infomap_threshold = args.infomap_threshold
     alpha = args.alpha
@@ -461,7 +460,6 @@ if __name__ == "__main__":
 
     word_pairs = []
     for concept in data_dict:
-        print(concept, end=", ")
         words = data_dict[concept].values()
         for w1, w2 in it.combinations(words, r=2):
             s, alg = distances.needleman_wunsch(
@@ -469,7 +467,7 @@ if __name__ == "__main__":
             if s >= args.margin:
                 word_pairs.append((w1, w2))
 
-    for n_iter in range(1, MAX_ITER):
+    for n_iter in range(1, args.max_iter):
         random.shuffle(word_pairs)
         print("Iteration", n_iter)
         idx = 0
@@ -479,8 +477,6 @@ if __name__ == "__main__":
             word_pairs[idx:idx+args.max_batch] = wl
             idx += len(wl)
 
-            for pair in algn_list:
-                print(pair)
         print("Non zero examples ", len(word_pairs), len(word_pairs)-n_zero,
               " number of updates ", online.n_updates)
         print(online.pmidict)
