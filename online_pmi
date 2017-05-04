@@ -397,7 +397,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--guide-tree",
         type=argparse.FileType("r"),
-        help="""A guide tree to combine multiple alignments""")
+        help="""A Newick file containing a single guide tree to combine multiple
+        alignments. (Separate guide trees for different families are
+        not supported yet.)""")
     parser.add_argument(
         "data",
         type=argparse.FileType("r"),
