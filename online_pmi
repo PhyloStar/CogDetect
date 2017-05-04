@@ -486,13 +486,14 @@ if __name__ == "__main__":
     if args.pmidict:
         pickle.dump(online.pmidict, args.pmidict)
 
-    tree = newick.load(args.guide_tree)
     codes = clust.cognate_code_infomap2(
         words_dict, online.pmidict, -2.5, -1.75, args.infomap_threshold)
 
-    for group, (languages, concepts, alignmnent) in multi_align(
-            codes, tree,
-            lodict=MinPairDict(online.pmidict), gop=-2.5, gep=-1.75).items():
-        print(languages)
-        print(concepts)
-        print(alignment)
+    if args.guide_tree:
+        tree = newick.load(args.guide_tree)[0]
+        for group, (languages, concepts, alignmnent) in multi_align(
+                codes, tree,
+                lodict=MinPairDict(online.pmidict), gop=-2.5, gep=-1.75).items():
+            print(languages)
+            print(concepts)
+            print(alignment)
