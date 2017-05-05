@@ -19,7 +19,7 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
     for i in range(len(matrix)):
         G.add_vertex(i)
         vertex_weights += [0]
-    
+
     # variable stores edge weights, if they are not there, the network is
     # already separated by the threshold
     weights = None
@@ -33,7 +33,7 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
     if method == 'infomap':
         comps = G.community_infomap(edge_weights=weights,
                 vertex_weights=None)
-        
+
     elif method == 'labelprop':
         comps = G.community_label_propagation(weights=weights,
                 initial=None, fixed=None)
@@ -58,16 +58,16 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
         comps = G.community_spinglass()
 
     D = {}
-    for i,comp in enumerate(comps.subgraphs()):
+    for i, comp in enumerate(comps.subgraphs()):
         vertices = [v['name'] for v in comp.vs]
         for vertex in vertices:
-            D[vertex] = i+1
+            D[vertex] = i
 
     return D
 
 
 def cognate_code_infomap(d, lodict, gop, gep, threshold,
-                         ignore_forms_starting="-"):
+                         ignore_forms_starting=[]):
     """Cluster cognates automatically.
 
     Calculate Needleman-Wunsch distances between forms and cluster
@@ -75,9 +75,11 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
 
     d: A dict-like mapping concepts to a map from languages to forms
 
-    lodict: A similarity matrix, a dict mapping pairs of characters to similarity scores
-    
-    ignore_forms_starting: A string. Forms starting with this string will be ignored.
+    lodict: A similarity matrix, a dict mapping pairs of characters to
+    similarity scores
+
+    ignore_forms_starting: A sequence of strings. Forms starting with
+    this string will be ignored.
 
     """
     codes = {}
@@ -90,12 +92,11 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
         # Calculate the Needleman-Wunsch distance for every pair of
         # forms.
         distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
-        scores = []
         for (l1, w1), (l2, w2) in it.combinations(
                 enumerate(forms_by_language.values()), r=2):
-            if (w1.startswith(ignore_forms_starting) or
-                    w2.startswith(ignore_forms_starting)):
-                continue
+            for begin in ignore_forms_starting:
+                if (w1.startswith(begin) or w2.startswith(begin)):
+                    continue
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
@@ -107,6 +108,45 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
             for l, (k, v) in zip(forms_by_language.keys(), clust.items())}
     return codes
 
+
+def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
+    """Cluster cognates automatically.
+
+    Calculate Needleman-Wunsch distances between forms and cluster
+    them into cognate classes using the Infomap algorithm.
+
+    d: A dict-like mapping concepts to a map from languages to forms
+
+    lodict: A similarity matrix, a dict mapping pairs of characters to
+    similarity scores
+
+    Returns: A list of sets of (language, concept, form) triples.
+    """
+    codes = []
+    for concept, forms_by_language in d.items():
+        # Calculate the Needleman-Wunsch distance for every pair of
+        # forms.
+        lookup = []
+        for language, forms in forms_by_language.items():
+            for form in forms:
+                lookup.append((language, concept, form))
+        if len(lookup) <= 1:
+            continue
+        distmat = np.zeros((len(lookup), len(lookup)))
+        for (l1, w1), (l2, w2) in it.combinations(
+                enumerate(lookup), r=2):
+            score, align = distances.needleman_wunsch(
+                w1, w2, lodict=lodict, gop=gop, gep=gep)
+            distmat[l2, l1] = distmat[l1, l2] = 1 - (1/(1 + np.exp(-score)))
+        clust = igraph_clustering(distmat, threshold, method='labelprop')
+
+        similaritygroups = {}
+        for entry, group in clust.items():
+            similaritygroups.setdefault(group, set()).add(lookup[entry])
+        codes += list(similaritygroups.values())
+    return codes
+
+
 def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
     """Compare two different cognate codings of the same data by F scores.
 
@@ -114,7 +154,7 @@ def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
     """
     f_scores = []
     n_clusters = 0
-    for concept, forms_by_language in true_cogid_dict:
+    for concept, forms_by_language in true_cogid_dict.items():
         langs = list(forms_by_language.keys())
 
         predl, truel = [], []
@@ -122,7 +162,7 @@ def compare_cognate_codings(true_cogid_dict, other_cogid_dict):
             truel.append(true_cogid_dict[concept][l])
             predl.append(other_cogid_dict[concept][l])
         scores = b_cubed(truel, predl)
-        
+
         #scores = metrics.f1_score(truel, predl, average="micro")
         print(concept, len(langs), scores, len(set(truel)), "\n")
         f_scores.append(list(scores))
@@ -171,7 +211,7 @@ def upgma(distmat, threshold, names):
 
     # call internal upgma
     clust = upgma_int(clusters, distmat, threshold)
-    
+
     # assign names to the clusters
     for key in clust:
         clust[key] = [names[i] for i in clust[key]]

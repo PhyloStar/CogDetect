@@ -76,6 +76,20 @@ def ipa2asjp(ipa):
     return ''.join(asjp_list)
 
 
+def ipa2sca(ipa):
+    """Convert an IPA string into a SCA token string.
+
+    This function tries to preserve the len of the token string.
+
+    """
+    sca_list = [t for x in tokenize_word_reversibly(ipa)
+                 for t, char in itertools.zip_longest(
+                         tokens2class(x, 'sca'),
+                         "0")]
+    assert len(''.join(sca_list)) == len(ipa)
+    return ''.join(sca_list)
+
+
 def read_convert_ipa_asjp():
     """Convert IPA IELex files to ASJP."""
     f_trace = codecs.open("test_ipa2asjp.txt", "w", encoding="utf-8")
