@@ -37,7 +37,8 @@ def tokenize_word_reversibly(ipa):
     from the tokens.
 
     """
-    tokenized_word = ipa2tokens(ipa, merge_vowels=False)
+    tokenized_word = ipa2tokens(
+        ipa, merge_vowels=False, merge_geminates=False)
     token = 0
     index = 0
     for i in ipa:

@@ -2,7 +2,7 @@
 
 """Align words based on stepwise EM alignments with PMI scores."""
 
-from collections import defaultdict
+from collections import defaultdict, Counter
 import itertools as it
 import sys
 import igraph, utils
@@ -10,12 +10,14 @@ import numpy as np
 import random, codecs
 import infomapcog.clustering as clust
 import infomapcog.distances as distances
-from infomapcog.ipa2asjp import ipa2asjp
 
 import argparse
 
 import csv
 import pickle
+
+import lingpy
+import infomapcog.ipa2asjp as ipa2asjp
 
 import newick
 
@@ -28,7 +30,6 @@ def clean_word(w):
     w = w.replace("*","")
     w = w.replace("$","")
     w = w.replace("\"","")
-    w = w.replace("K","k")
     w = w.replace("|","")
     w = w.replace(".","")
     w = w.replace("+","")
@@ -44,14 +45,19 @@ def clean_word(w):
     w = w.replace("‐","")
     w = w.replace("ᶢ","")
     w = w.replace("C","c")
+    w = w.replace("K","k")
     w = w.replace("L","l")
     w = w.replace("W","w")
     w = w.replace("T","t")
+    w = w.replace('dʒ͡', 'd͡ʒ')
+    w = w.replace('ʤ', 'd͡ʒ')
+    w = w.replace('Ɂ', 'Ɂ')
     return w
 
 
 def read_data_ielex_type(datafile, char_list=set(),
-                         cogids_are_cross_semantically_unique=False):
+                         cogids_are_cross_semantically_unique=False,
+                         data='ASJP'):
     """Read an IELex style TSV file."""
     line_id = 0
     data_dict = defaultdict(lambda : defaultdict())
@@ -70,7 +76,10 @@ def read_data_ielex_type(datafile, char_list=set(),
         cogid = arr[6]
         cogid = cogid.replace("-","")
         cogid = cogid.replace("?","")
-        asjp_word = clean_word(arr[5].split(",")[0])
+        if data=='ASJP':
+            asjp_word = clean_word(arr[5].split(",")[0])
+        else:
+            raise NotImplementedError
 
         for ch in asjp_word:
             if ch not in char_list:
@@ -97,7 +106,8 @@ def read_data_ielex_type(datafile, char_list=set(),
 
 
 def read_data_cldf(datafile, sep="\t", char_list=set(),
-                   cogids_are_cross_semantically_unique=True):
+                   cogids_are_cross_semantically_unique=True,
+                   data='ASJP'):
     """Read a CLDF file in TSV or CSV format."""
     reader = csv.DictReader(
         datafile,
@@ -110,10 +120,15 @@ def read_data_cldf(datafile, sep="\t", char_list=set(),
         lang = row["Language ID"]
         langs.add(lang)
 
-        try:
-            asjp_word = clean_word(row["ASJP"])
-        except KeyError:
-            asjp_word = ipa2asjp(row["IPA"])
+        if data == 'ASJP':
+            try:
+                asjp_word = clean_word(row["ASJP"])
+            except KeyError:
+                asjp_word = ipa2asjp.ipa2asjp(row["IPA"])
+        elif data == 'IPA':
+            asjp_word = tuple(lingpy.ipa2tokens(row["IPA"], merge_vowels=False))
+        else:
+            asjp_word = row[data]
 
         if not asjp_word:
             continue
@@ -140,7 +155,8 @@ def read_data_cldf(datafile, sep="\t", char_list=set(),
 
 
 def read_data_lingpy(datafile, sep="\t", char_list=set(),
-                     cogids_are_cross_semantically_unique=True):
+                     cogids_are_cross_semantically_unique=True,
+                     data='ASJP'):
     """Read a Lingpy file in TSV or CSV format."""
     reader = csv.DictReader(
         datafile,
@@ -153,10 +169,17 @@ def read_data_lingpy(datafile, sep="\t", char_list=set(),
         lang = row.get("DOCULECT_ID", row["DOCULECT"])
         langs.add(lang)
 
-        try:
-            asjp_word = clean_word(row["ASJP"])
-        except KeyError:
-            asjp_word = ipa2asjp(row["IPA"])
+        if data == 'ASJP':
+            try:
+                asjp_word = clean_word(row["ASJP"])
+            except KeyError:
+                asjp_word = ipa2asjp.ipa2asjp(row["IPA"])
+        elif data == 'IPA':
+            asjp_word = tuple(ipa2asjp.tokenize_word_reversibly(
+                clean_word(row["IPA"])))
+        else:
+            asjp_word = row[data]
+
         if not asjp_word:
             continue
 
@@ -182,7 +205,7 @@ def read_data_lingpy(datafile, sep="\t", char_list=set(),
 
 
 def calc_pmi(alignments, scores=None):
-    """Calculate a pairwise mutual information dictionary from alignments.
+    """Calculate a pointwise mutual information dictionary from alignments.
 
     Given a sequence of pairwaise alignments and their relative
     weights, calculate the logarithmic pairwise mutual information
@@ -199,26 +222,23 @@ def calc_pmi(alignments, scores=None):
 
     for alignment, score in zip(alignments, scores):
         for a1, a2 in alignment:
-            if a1 == "" or a2 == "":
-                continue
             count_dict[a1, a2] += 1.0*score
             count_dict[a2, a1] += 1.0*score
             sound_dict[a1] += 2.0*score
             sound_dict[a2] += 2.0*score
 
-    relative_align_freq = sum(list(count_dict.values()))
-    relative_sound_freq = sum(list(sound_dict.values()))
+    log_weight = 2 * np.log(sum(list(
+        sound_dict.values()))) - np.log(sum(list(
+            count_dict.values())))
 
-    for a in count_dict.keys():
-        m = count_dict[a]
+    for (c1, c2) in count_dict.keys():
+        m = count_dict[c1, c2]
         assert m > 0
 
-        num = np.log(m)-np.log(relative_align_freq)
-        denom = (np.log(sound_dict[a[0]]) +
-                 np.log(sound_dict[a[1]]) -
-                 (2.0 * np.log(relative_sound_freq)))
-        val = num - denom
-        count_dict[a] = val
+        num = np.log(m)
+        denom = np.log(sound_dict[c1]) + np.log(sound_dict[c2])
+        val = num - denom + log_weight
+        count_dict[c1, c2] = val
 
     return count_dict
 
@@ -232,24 +252,29 @@ class OnlinePMIIterator:
         self.n_updates = 0
         self.pmidict = {}
 
-    def align_pairs(self, word_pairs):
+    def align_pairs(self, word_pairs, local=False):
         """Align a list of word pairs, removing those that align badly."""
         algn_list, scores = [], []
         n_zero = 0
         for w in range(len(word_pairs)-1, -1, -1):
-            w1, w2 = wl[w]
+            ((c1, l1, w1), (c2, l2, w2)) = wl[w]
             s, alg = distances.needleman_wunsch(
-                w1, w2, gop=-2.5, gep=-1.75, lodict=self.pmidict)
-            if s <= self.margin:
+                w1, w2, gop=None, gep=-1.75, lodict=self.pmidict,
+                local=local)
+            margin = max(
+                sum([self.pmidict.get((x, ''), -1.75) for x in w1]) + len(w1),
+                sum([self.pmidict.get(('', x), -1.75) for x in w2]) + len(w2))
+            print(w1, w2, s, margin)
+            if self.margin * s < margin:
                 n_zero += 1
                 word_pairs.pop(w)
                 continue
             algn_list.append(alg)
             scores.append(s)
-        self.update_pmi_dict(algn_list, scores)
+        self.update_pmi_dict(algn_list, scores=None)
         return algn_list, n_zero
 
-    def update_pmi_dict(self, algn_list, scores):
+    def update_pmi_dict(self, algn_list, scores=None):
         eta = (self.n_updates + 2) ** (-self.alpha)
         for k, v in calc_pmi(algn_list, scores).items():
             pmidict_val = self.pmidict.get(k, 0.0)
@@ -395,6 +420,9 @@ if __name__ == "__main__":
         sufficient statistics decay. This can lead to swift progress
         but also generates instability.""")
     parser.add_argument(
+        "--method",
+        default='infomap')
+    parser.add_argument(
         "--guide-tree",
         type=argparse.FileType("r"),
         help="""A Newick file containing a single guide tree to combine multiple
@@ -404,6 +432,10 @@ if __name__ == "__main__":
         "data",
         type=argparse.FileType("r"),
         help="IELex-style data file to read")
+    parser.add_argument(
+        "--transcription",
+        default='ASJP',
+        help="The transcription convention (IPA, ASJP, …) used in the data file")
     parser.add_argument(
         "--pmidict",
         type=argparse.FileType("wb"),
@@ -423,26 +455,25 @@ if __name__ == "__main__":
     tolerance = args.tolerance
     infomap_threshold = args.infomap_threshold
     alpha = args.alpha
-    data = args.data
 
     data_dict, cogid_dict, words_dict, langs_list, char_list = (
-        readers[args.reader](data))
+        readers[args.reader](args.data, data=args.transcription))
     print("Character list:", char_list, "({:d})".format(len(char_list)))
 
     word_pairs = []
     for concept in data_dict:
         print(concept, end=", ")
-        words = data_dict[concept].values()
-        for x, y in it.combinations(words, r=2):
-            if distances.normalized_leventsthein(x, y) <= 0.5:
-                word_pairs.append((x, y))
+        words = data_dict[concept].items()
+        for ((i1, l1), w1), ((i2, l2), w2) in it.combinations(words, r=2):
+            if distances.normalized_leventsthein(w1, w2) <= 0.5:
+                word_pairs.append(((concept, l1, w1), (concept, l2, w2)))
     print()
 
     print("Size of initial list ", len(word_pairs))
 
     online = OnlinePMIIterator(
         alpha=args.alpha,
-        margin=args.margin)
+        margin=0.79)
 
     # We might miss some cognate pairs because they look dissimilar,
     # but they are actually connected strongly when taking regular
@@ -451,21 +482,26 @@ if __name__ == "__main__":
     # matrix. Then we split the word list again into chunks that are
     # similar according to *that* scorer.
 
+    print("Calculating PMIs from very similar words.")
     random.shuffle(word_pairs)
     idx = 0
     while idx < len(word_pairs):
+        print(len(word_pairs), idx)
         wl = word_pairs[idx:idx+args.max_batch]
         algn_list, n_zero = online.align_pairs(wl)
+        word_pairs[idx:idx+args.max_batch] = wl
         idx += len(wl)
+
+    print(Counter(online.pmidict).most_common())
 
     word_pairs = []
     for concept in data_dict:
-        words = data_dict[concept].values()
-        for w1, w2 in it.combinations(words, r=2):
+        words = data_dict[concept].items()
+        for ((i1, l1), w1), ((i2, l2), w2) in it.combinations(words, r=2):
             s, alg = distances.needleman_wunsch(
-                w1, w2, gop=-2.5, gep=-1.75, lodict=online.pmidict)
-            if s >= args.margin:
-                word_pairs.append((w1, w2))
+                w1, w2, gop=None, gep=-1.75, lodict=online.pmidict)
+            if s >= args.margin + args.margin * len(alg):
+                word_pairs.append(((concept, l1, w1), (concept, l2, w2)))
 
     for n_iter in range(1, args.max_iter):
         random.shuffle(word_pairs)
@@ -476,22 +512,75 @@ if __name__ == "__main__":
             algn_list, n_zero = online.align_pairs(wl)
             word_pairs[idx:idx+args.max_batch] = wl
             idx += len(wl)
+        for (c1, l1, w1), (c2, l2, w2) in word_pairs:
+            if distances.normalized_leventsthein(
+                    w1, w2) > 0.5:
+                print(''.join(w1), ''.join(w2))
 
         print("Non zero examples ", len(word_pairs), len(word_pairs)-n_zero,
               " number of updates ", online.n_updates)
-        print(online.pmidict)
+        print(Counter(online.pmidict).most_common())
 
     if args.pmidict:
         pickle.dump(online.pmidict, args.pmidict)
 
-    codes = clust.cognate_code_infomap2(
-        words_dict, online.pmidict, -2.5, -1.75, args.infomap_threshold)
+    nodes = []
+    G = igraph.Graph()
+    for concept, words in data_dict.items():
+        for (i, l), w in words.items():
+            G.add_vertex(len(nodes))
+            nodes.append((concept, l, w))
 
+    G.add_edges([(nodes.index(i), nodes.index(j))
+                 for i, j in word_pairs])
+
+    groups = []
+    for cluster in G.clusters(igraph.WEAK):
+        subgraph = G.subgraph(cluster)
+        if len(subgraph.vs) <= 2:
+            comps = subgraph
+
+        elif args.method == 'infomap':
+            comps = G.community_infomap(vertex_weights=None)
+
+        elif args.method == 'labelprop':
+            comps = G.community_label_propagation(initial=None, fixed=None)
+
+        elif args.method == 'ebet':
+            dg = G.community_edge_betweenness()
+            oc = dg.optimal_count
+            comps = False
+            while oc <= len(G.vs):
+                try:
+                    comps = dg.as_clustering(dg.optimal_count)
+                    break
+                except:
+                    oc += 1
+            if not comps:
+                print('Failed...')
+                comps = list(range(len(G.sv)))
+                input()
+        elif args.method == 'multilevel':
+            comps = G.community_multilevel(return_levels=False)
+        elif args.method == 'spinglass':
+            comps = G.community_spinglass()
+        else:
+            raise ValueError("Not a valid clustering algorithm")
+
+        groups = groups + [[nodes[v['name']] for v in sims.vs]
+                for sims in comps.subgraphs()]
+
+    for group in groups:
+        print(len(group))
+        print(group)
+        
     if args.guide_tree:
         tree = newick.load(args.guide_tree)[0]
-        for group, (languages, concepts, alignmnent) in multi_align(
-                codes, tree,
-                lodict=MinPairDict(online.pmidict), gop=-2.5, gep=-1.75).items():
-            print(languages)
-            print(concepts)
-            print(alignment)
+        for group, (languages, concepts, alignment) in multi_align(
+                groups, tree,
+                lodict=MinPairDict(online.pmidict),
+                gop=None, gep=-1.75).items():
+            if len(languages) > 1:
+                print(languages)
+                print(concepts)
+                print(alignment)
