@@ -64,15 +64,28 @@ if args.all_languages:
             code = by_lang[CONCEPT].unique()[1]
         i = 0
         while True:
+            i += 1
             correspondence = by_lang[ALIGNMENT].str[i]
-            if pandas.isnull(correspondence).all():
+            not_null = correspondence[~pandas.isnull(correspondence)]
+            if len(not_null) == 0:
+                # This and all further alignment columns are empty.
                 break
-            if sum(~pandas.isnull(correspondence)) == 1:
+            if len(not_null) == 1:
+                # This alignment contains only one form
+                break
+            if len(set(not_null) - {"'", '-', ' '}) < 2 and args.quiet:
+                # This alignment column is boring
                 continue
             correspondences.setdefault(
                 tuple(correspondence), []).append(
                     (code, i))
-            i += 1
+    print(", ".join(languages))
+    for key, val in sorted(correspondences.items(),
+                           key=lambda x: len(x[1])):
+        print(len(val), end=", ")
+        print(", ".join(["" if pandas.isnull(i) else str(i)
+                         for i in key]), end=", ")
+        print("; ".join(["{:s}[{:d}]".format(c, i) for c, i in val]))
 else:
     for simid, sims in data.groupby(SIMID):
         relevant_colums = sims[[CONCEPT, LANG, ALIGNMENT]]
@@ -102,6 +115,6 @@ else:
                 correspondences.setdefault(
                     (l1, s1, l2, s2), []).append((c1, a1, c2, a2))
 
-for key, val in sorted(correspondences.items(),
+    for key, val in sorted(correspondences.items(),
                        key=lambda x: len(x[1])):
-    print(key, len(val), val)
+        print(key, len(val), val)
