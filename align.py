@@ -65,6 +65,17 @@ if __name__ == "__main__":
         choices=list(readers.keys()),
         default="ielex",
         help="Data file format")
+    parser.add_argument(
+        "--gop",
+        type=float,
+        default=None,
+        help="""Gap opening penalty in alignments (Default is to use
+        character-dependent gap penalties.)""")
+    parser.add_argument(
+        "--gep",
+        type=float,
+        default=-1.75,
+        help="""Gap extension penalty in alignments.""")
 
     args = parser.parse_args()
 
@@ -82,8 +93,9 @@ if __name__ == "__main__":
     for group, (languages, concepts, alignment) in multi_align(
             cogid_dict, tree,
             lodict=MaxPairDict(pmidict),
-            gop=None, gep=-1.75).items():
-        if len(languages) > 1:
+            gop=args.gop, gep=args.gep).items():
+        if len(set(languages)) > 1:
             print(languages)
             print(concepts)
             print(alignment)
+
