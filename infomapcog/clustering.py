@@ -66,8 +66,7 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
     return D
 
 
-def cognate_code_infomap(d, lodict, gop, gep, threshold,
-                         ignore_forms_starting=[]):
+def cognate_code_infomap(d, lodict, gop, gep, threshold):
     """Cluster cognates automatically.
 
     Calculate Needleman-Wunsch distances between forms and cluster
@@ -94,9 +93,6 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
         distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
         for (l1, w1), (l2, w2) in it.combinations(
                 enumerate(forms_by_language.values()), r=2):
-            for begin in ignore_forms_starting:
-                if (w1.startswith(begin) or w2.startswith(begin)):
-                    continue
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
