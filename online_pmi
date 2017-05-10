@@ -80,7 +80,9 @@ if __name__ == "__main__":
         but also generates instability.""")
     parser.add_argument(
         "--method",
-        default='infomap')
+        default='labelprop',
+        choices=['infomap', 'labelprop', 'ebet', 'multilevel', 'spinglass'],
+        help="Use this clustering method to find similar forms")
     parser.add_argument(
         "--gop",
         type=float,
@@ -168,6 +170,7 @@ if __name__ == "__main__":
         print(collections.Counter(online.pmidict).most_common(8)[::2])
 
     if args.pmidict:
+        print(collections.Counter(online.pmidict).most_common()[::2])
         pickle.dump(online.pmidict, args.pmidict)
 
     codes = clust.cognate_code_infomap2(
