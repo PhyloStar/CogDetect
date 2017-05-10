@@ -55,7 +55,7 @@ if __name__ == "__main__":
         default=0.001,
         help="TODO tolerance")
     parser.add_argument(
-        "--infomap-threshold",
+        "--threshold",
         type=float,
         default=0.5,
         help="Threshold for the INFOMAP algorithm")
@@ -81,6 +81,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--method",
         default='infomap')
+    parser.add_argument(
+        "--gop",
+        type=float,
+        default=None,
+        help="""Gap opening penalty in alignments (Default is to use
+        character-dependent gap penalties.)""")
+    parser.add_argument(
+        "--gep",
+        type=float,
+        default=-1.75,
+        help="""Gap extension penalty in alignments.""")
     parser.add_argument(
         "--guide-tree",
         type=argparse.FileType("r"),
@@ -112,7 +123,6 @@ if __name__ == "__main__":
 
     random.seed(args.seed)
     tolerance = args.tolerance
-    infomap_threshold = args.infomap_threshold
     alpha = args.alpha
 
     data_dict, cogid_dict, words_dict, langs_list, char_list = (
@@ -161,5 +171,9 @@ if __name__ == "__main__":
         pickle.dump(online.pmidict, args.pmidict)
 
     codes = clust.cognate_code_infomap2(
-        words_dict, online.pmidict, gop=None, gep=-1.75, threshold=0.5)
-    print(codes)
+        words_dict, online.pmidict,
+        gop=args.gop, gep=args.gep, threshold=args.threshold, method=args.method)
+    for similarityset in codes:
+        print("=================")
+        for entry in similarityset:
+            print(entry)

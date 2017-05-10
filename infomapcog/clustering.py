@@ -105,7 +105,8 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold):
     return codes
 
 
-def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
+def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75,
+                          threshold=0.5, method='labelprop'):
     """Cluster cognates automatically.
 
     Calculate Needleman-Wunsch distances between forms and cluster
@@ -134,7 +135,7 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             distmat[l2, l1] = distmat[l1, l2] = 1 - (1/(1 + np.exp(-score)))
-        clust = igraph_clustering(distmat, threshold, method='labelprop')
+        clust = igraph_clustering(distmat, threshold, method=method)
 
         similaritygroups = {}
         for entry, group in clust.items():
