@@ -64,7 +64,7 @@ def LD(x, y, lodict={}):
     return needleman_wunsch(x, y, lodict=lodict, gop=-1, gep=-1)
 
 
-def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75, local=False):
+def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75, local=False, indel=''):
     """Needleman-Wunsch algorithm with affine gaps penalties.
 
     This code implements the NW algorithm for pairwise string
@@ -75,9 +75,10 @@ def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75, local=False):
     dictionary) to denote (-1, 1) scores. gop and gep are gap
     penalties for opening/extending a gap; alternatively, you can set
     'gop' to None and provide element/gap alignment costs.
+    indel takes the character used to denote an indel.
 
     Returns the alignment score and one optimal alignment.
-    
+
     >>> needleman_wunsch("AAAAABBBB", "AACAABBCB")
     (5.0, [('A', 'A'), ('A', 'A'), ('A', 'C'), ('A', 'A'), ('A', 'A'), ('B', 'B'), ('B', 'B'), ('B', 'C'), ('B', 'B')])
     >>> needleman_wunsch("banana", "mancala", local=True)
@@ -92,27 +93,27 @@ def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75, local=False):
     if not local:
         for i1, c1 in enumerate(x):
             if gop is None:
-                dp[i1 + 1, 0] = lodict.get((x[i1 + 1-1], ''), gep)
+                dp[i1 + 1, 0] = lodict.get((c1, indel), gep)
             else:
-                dp[i1 + 1, 0] = dp[i1 + 1-1, 0]+(gep if i1 + 1 > 1 else gop)
+                dp[i1 + 1, 0] = dp[i1, 0]+(gep if i1 + 1 > 1 else gop)
             pointers[i1 + 1, 0] = 1
         for i2, c2 in enumerate(y):
             if gop is None:
-                dp[0, i2 + 1] = lodict.get(('', y[i2 + 1-1]), gep)
+                dp[0, i2 + 1] = lodict.get((indel, c2), gep)
             else:
-                dp[0, i2 + 1] = dp[0, i2 + 1-1]+(gep if i2 + 1 > 1 else gop)
+                dp[0, i2 + 1] = dp[0, i2]+(gep if i2 + 1 > 1 else gop)
             pointers[0, i2 + 1] = 2
     for i1, c1 in enumerate(x):
         for i2, c2 in enumerate(y):
-            match = dp[i1 + 1-1, i2 + 1-1] + lodict.get(
-                (x[i1 + 1-1], y[i2 + 1-1]),
-                1 if x[i1 + 1-1] == y[i2 + 1-1] else -1)
-            insert = dp[i1 + 1-1, i2 + 1] + (
-                lodict.get((x[i1 + 1-1], ''), gep) if gop is None else
-                gep if pointers[i1 + 1-1,i2 + 1]==1 else gop)
-            delet = dp[i1 + 1,i2 + 1-1] + (
-                lodict.get(('', y[i2 + 1-1]), gep) if gop is None else
-                           gep if pointers[i1 + 1,i2 + 1-1]==2 else gop)
+            match = dp[i1, i2] + lodict.get(
+                (c1, c2),
+                1 if c1 == c2 else -1)
+            insert = dp[i1, i2 + 1] + (
+                lodict.get((c1, indel), gep) if gop is None else
+                gep if pointers[i1, i2 + 1] == 1 else gop)
+            delet = dp[i1 + 1, i2] + (
+                lodict.get((indel, c2), gep) if gop is None else
+                gep if pointers[i1 + 1, i2] == 2 else gop)
             pointers[i1 + 1, i2 + 1] = p = np.argmax([match, insert, delet])
             max_score = [match, insert, delet][p]
             if local and max_score < 0:
@@ -132,10 +133,10 @@ def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75, local=False):
             alg = [(x[i], y[j])] + alg
         if pt == 1:
             i -= 1
-            alg = [(x[i], '')] + alg
+            alg = [(x[i], indel)] + alg
         if pt == 2:
             j -= 1
-            alg = [('', y[j])] + alg
+            alg = [(indel, y[j])] + alg
         if local and dp[i, j] == 0:
             break
     return score, alg
