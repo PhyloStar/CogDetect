@@ -1,4 +1,6 @@
 
+import pandas
+
 import collections
 import itertools as it
 import numpy as np
@@ -126,15 +128,19 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75,
         lookup = []
         for language, forms in forms_by_language.items():
             for form in forms:
-                lookup.append((language, concept, form))
+                lookup.append((concept, language, form))
         if len(lookup) <= 1:
             continue
         distmat = np.zeros((len(lookup), len(lookup)))
-        for (l1, w1), (l2, w2) in it.combinations(
+        for (i1, (c1, l1, w1)), (i2, (c2, l2, w2)) in it.combinations(
                 enumerate(lookup), r=2):
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
-            distmat[l2, l1] = distmat[l1, l2] = 1 - (1/(1 + np.exp(-score)))
+            distmat[i2, i1] = distmat[i1, i2] = 1 - (1/(1 + np.exp(-score)))
+
+        with open(concept.replace('/', ''), 'w') as datafile:
+            pandas.DataFrame(index=lookup, columns=lookup, data=distmat).to_csv(datafile)
+        
         clust = igraph_clustering(distmat, threshold, method=method)
 
         similaritygroups = {}
