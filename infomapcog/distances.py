@@ -91,37 +91,33 @@ def needleman_wunsch(x, y, lodict={}, gop=-2.5, gep=-1.75, local=False):
     pointers = np.zeros((n + 1, m + 1), np.int32)
     if not local:
         for i1, c1 in enumerate(x):
-            i = i1 + 1
             if gop is None:
-                dp[i, 0] = lodict.get((x[i-1], ''), gep)
+                dp[i1 + 1, 0] = lodict.get((x[i1 + 1-1], ''), gep)
             else:
-                dp[i, 0] = dp[i-1, 0]+(gep if i > 1 else gop)
-            pointers[i, 0] = 1
+                dp[i1 + 1, 0] = dp[i1 + 1-1, 0]+(gep if i1 + 1 > 1 else gop)
+            pointers[i1 + 1, 0] = 1
         for i2, c2 in enumerate(y):
-            j = i2 + 1
             if gop is None:
-                dp[0, j] = lodict.get(('', y[j-1]), gep)
+                dp[0, i2 + 1] = lodict.get(('', y[i2 + 1-1]), gep)
             else:
-                dp[0, j] = dp[0, j-1]+(gep if j > 1 else gop)
-            pointers[0, j] = 2
+                dp[0, i2 + 1] = dp[0, i2 + 1-1]+(gep if i2 + 1 > 1 else gop)
+            pointers[0, i2 + 1] = 2
     for i1, c1 in enumerate(x):
-        i = i1 + 1
         for i2, c2 in enumerate(y):
-            j = i2 + 1
-            match = dp[i-1, j-1] + lodict.get(
-                (x[i-1], y[j-1]),
-                1 if x[i-1] == y[j-1] else -1)
-            insert = dp[i-1, j] + (
-                lodict.get((x[i-1], ''), gep) if gop is None else
-                gep if pointers[i-1,j]==1 else gop)
-            delet = dp[i,j-1] + (
-                lodict.get(('', y[j-1]), gep) if gop is None else
-                           gep if pointers[i,j-1]==2 else gop)
-            pointers[i, j] = p = np.argmax([match, insert, delet])
+            match = dp[i1 + 1-1, i2 + 1-1] + lodict.get(
+                (x[i1 + 1-1], y[i2 + 1-1]),
+                1 if x[i1 + 1-1] == y[i2 + 1-1] else -1)
+            insert = dp[i1 + 1-1, i2 + 1] + (
+                lodict.get((x[i1 + 1-1], ''), gep) if gop is None else
+                gep if pointers[i1 + 1-1,i2 + 1]==1 else gop)
+            delet = dp[i1 + 1,i2 + 1-1] + (
+                lodict.get(('', y[i2 + 1-1]), gep) if gop is None else
+                           gep if pointers[i1 + 1,i2 + 1-1]==2 else gop)
+            pointers[i1 + 1, i2 + 1] = p = np.argmax([match, insert, delet])
             max_score = [match, insert, delet][p]
             if local and max_score < 0:
                 max_score = 0
-            dp[i, j] = max_score
+            dp[i1 + 1, i2 + 1] = max_score
     alg = []
     if local:
         i, j = np.unravel_index(dp.argmax(), dp.shape)
