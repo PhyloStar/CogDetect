@@ -138,9 +138,6 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75,
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             distmat[i2, i1] = distmat[i1, i2] = 1 - (1/(1 + np.exp(-score)))
 
-        with open(concept.replace('/', ''), 'w') as datafile:
-            pandas.DataFrame(index=lookup, columns=lookup, data=distmat).to_csv(datafile)
-        
         clust = igraph_clustering(distmat, threshold, method=method)
 
         similaritygroups = {}
