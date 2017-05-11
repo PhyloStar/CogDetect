@@ -2,7 +2,7 @@
 
 """Align words based on stepwise EM alignments with PMI scores."""
 
-from collections import defaultdict
+import collections
 import itertools as it
 import sys
 import igraph, utils
@@ -10,334 +10,18 @@ import numpy as np
 import random, codecs
 import infomapcog.clustering as clust
 import infomapcog.distances as distances
-from infomapcog.ipa2asjp import ipa2asjp
 
 import argparse
 
 import csv
 import pickle
 
+import lingpy
+import infomapcog.ipa2asjp as ipa2asjp
+from infomapcog.dataio import (read_data_cldf, read_data_lingpy,
+                               read_data_ielex_type, OnlinePMITrainer)
+
 import newick
-
-
-def clean_word(w):
-    w = w.replace("-","")
-    w = w.replace(" ", "")
-    w = w.replace("%","")
-    w = w.replace("~","")
-    w = w.replace("*","")
-    w = w.replace("$","")
-    w = w.replace("\"","")
-    w = w.replace("K","k")
-    w = w.replace("|","")
-    w = w.replace(".","")
-    w = w.replace("+","")
-    w = w.replace("·","")
-    w = w.replace("?","")
-    w = w.replace("’","")
-    w = w.replace("]","")
-    w = w.replace("[","")
-    w = w.replace("=","")
-    w = w.replace("_","")
-    w = w.replace("<","")
-    w = w.replace(">","")
-    w = w.replace("‐","")
-    w = w.replace("ᶢ","")
-    w = w.replace("C","c")
-    w = w.replace("L","l")
-    w = w.replace("W","w")
-    w = w.replace("T","t")
-    return w
-
-
-def read_data_ielex_type(datafile, char_list=set(),
-                         cogids_are_cross_semantically_unique=False):
-    """Read an IELex style TSV file."""
-    line_id = 0
-    data_dict = defaultdict(lambda : defaultdict())
-    cogid_dict = {}
-    words_dict = defaultdict(lambda : defaultdict(list))
-    langs_list = []
-
-    # Ignore the header line of the data file.
-    datafile.readline()
-    for line in datafile:
-        line = line.strip()
-        arr = line.split("\t")
-        lang = arr[0]
-
-        concept = arr[2]
-        cogid = arr[6]
-        cogid = cogid.replace("-","")
-        cogid = cogid.replace("?","")
-        asjp_word = clean_word(arr[5].split(",")[0])
-
-        for ch in asjp_word:
-            if ch not in char_list:
-                char_list.add(ch)
-
-        if len(asjp_word) < 1:
-            continue
-
-        data_dict[concept][line_id,lang] = asjp_word
-        cogid_dict.setdefault(cogid
-                              if cogids_are_cross_semantically_unique
-                              else (cogid, concept), set()).add(
-            (lang, concept, asjp_word))
-        words_dict[concept][lang].append(asjp_word)
-        if lang not in langs_list:
-            langs_list.append(lang)
-        line_id += 1
-
-    return (data_dict,
-            list(cogid_dict.values()),
-            words_dict,
-            langs_list,
-            char_list)
-
-
-def read_data_cldf(datafile, sep="\t", char_list=set(),
-                   cogids_are_cross_semantically_unique=True):
-    """Read a CLDF file in TSV or CSV format."""
-    reader = csv.DictReader(
-        datafile,
-        dialect='excel' if sep == ',' else 'excel-tab')
-    langs = set()
-    data_dict = defaultdict(lambda : defaultdict())
-    cogid_dict = defaultdict(lambda : defaultdict())
-    words_dict = defaultdict(lambda : defaultdict(list))
-    for line, row in enumerate(reader):
-        lang = row["Language ID"]
-        langs.add(lang)
-
-        try:
-            asjp_word = clean_word(row["ASJP"])
-        except KeyError:
-            asjp_word = ipa2asjp(row["IPA"])
-
-        if not asjp_word:
-            continue
-
-        for ch in asjp_word:
-            if ch not in char_list:
-                char_list.add(ch)
-
-        concept = row["Feature ID"]
-        cogid = row["Cognate Class"]
-
-        data_dict[concept][line, lang] = asjp_word
-        cogid_dict.setdefault(cogid
-                              if cogids_are_cross_semantically_unique
-                              else (cogid, concept), set()).add(
-            (lang, concept, asjp_word))
-        words_dict[concept].setdefault(lang, []).append(asjp_word)
-
-    return (data_dict,
-            list(cogid_dict.values()),
-            words_dict,
-            list(langs),
-            char_list)
-
-
-def read_data_lingpy(datafile, sep="\t", char_list=set(),
-                     cogids_are_cross_semantically_unique=True):
-    """Read a Lingpy file in TSV or CSV format."""
-    reader = csv.DictReader(
-        datafile,
-        dialect='excel' if sep == ',' else 'excel-tab')
-    langs = set()
-    data_dict = defaultdict(defaultdict)
-    cogid_dict = {}
-    words_dict = defaultdict(lambda : defaultdict(list))
-    for line, row in enumerate(reader):
-        lang = row.get("DOCULECT_ID", row["DOCULECT"])
-        langs.add(lang)
-
-        try:
-            asjp_word = clean_word(row["ASJP"])
-        except KeyError:
-            asjp_word = ipa2asjp(row["IPA"])
-        if not asjp_word:
-            continue
-
-        for ch in asjp_word:
-            if ch not in char_list:
-                char_list.add(ch)
-
-        concept = row["CONCEPT"]
-        cogid = row["COGID"]
-
-        data_dict[concept][line, lang] = asjp_word
-        cogid_dict.setdefault(cogid
-                              if cogids_are_cross_semantically_unique
-                              else (cogid, concept), set()).add(
-            (lang, concept, asjp_word))
-        words_dict[concept].setdefault(lang, []).append(asjp_word)
-
-    return (data_dict,
-            list(cogid_dict.values()),
-            words_dict,
-            list(langs),
-            char_list)
-
-
-def calc_pmi(alignments, scores=None):
-    """Calculate a pairwise mutual information dictionary from alignments.
-
-    Given a sequence of pairwaise alignments and their relative
-    weights, calculate the logarithmic pairwise mutual information
-    encoded for the character pairs in the alignments.
-
-    """
-    if scores is None:
-        scores = it.cycle([1])
-
-    sound_dict = defaultdict(float)
-    relative_align_freq = 0.0
-    relative_sound_freq = 0.0
-    count_dict = defaultdict(float)
-
-    for alignment, score in zip(alignments, scores):
-        for a1, a2 in alignment:
-            if a1 == "" or a2 == "":
-                continue
-            count_dict[a1, a2] += 1.0*score
-            count_dict[a2, a1] += 1.0*score
-            sound_dict[a1] += 2.0*score
-            sound_dict[a2] += 2.0*score
-
-    relative_align_freq = sum(list(count_dict.values()))
-    relative_sound_freq = sum(list(sound_dict.values()))
-
-    for a in count_dict.keys():
-        m = count_dict[a]
-        assert m > 0
-
-        num = np.log(m)-np.log(relative_align_freq)
-        denom = (np.log(sound_dict[a[0]]) +
-                 np.log(sound_dict[a[1]]) -
-                 (2.0 * np.log(relative_sound_freq)))
-        val = num - denom
-        count_dict[a] = val
-
-    return count_dict
-
-
-class OnlinePMIIterator:
-    """A persistent object able to run multiple alignment iterations."""
-
-    def __init__(self, margin=1, alpha=0.75, char_list=[]):
-        self.margin = margin
-        self.alpha = alpha
-        self.n_updates = 0
-        self.pmidict = {}
-
-    def align_pairs(self, word_pairs):
-        """Align a list of word pairs, removing those that align badly."""
-        algn_list, scores = [], []
-        n_zero = 0
-        for w in range(len(word_pairs)-1, -1, -1):
-            w1, w2 = wl[w]
-            s, alg = distances.needleman_wunsch(
-                w1, w2, gop=-2.5, gep=-1.75, lodict=self.pmidict)
-            if s <= self.margin:
-                n_zero += 1
-                word_pairs.pop(w)
-                continue
-            algn_list.append(alg)
-            scores.append(s)
-        self.update_pmi_dict(algn_list, scores)
-        return algn_list, n_zero
-
-    def update_pmi_dict(self, algn_list, scores):
-        eta = (self.n_updates + 2) ** (-self.alpha)
-        for k, v in calc_pmi(algn_list, scores).items():
-            pmidict_val = self.pmidict.get(k, 0.0)
-            self.pmidict[k] = (eta * v) + ((1.0 - eta) * pmidict_val)
-
-
-class MinPairDict(dict):
-    def __getitem__(self, key):
-        key1, key2 = key
-        max_val = -float('inf')
-        if type(key1) != tuple:
-            key1 = [key1]
-        if type(key2) != tuple:
-            key2 = [key2]
-        for k1 in key1:
-            for k2 in key2:
-                v = dict.__getitem__(self, (k1, k2))
-                if v > max_val:
-                    max_val = v
-            return max_val
-    def get(self, key, default=None):
-        try:
-            return self[key]
-        except KeyError:
-            return default
-
-
-def multi_align(
-        similarity_sets, guide_tree, pairwise=distances.needleman_wunsch,
-        **kwargs):
-    """Align multiple sequences according to a give guide tree."""
-    languages = {leaf.name: leaf for leaf in guide_tree.get_leaves()}
-    for s, similarityset in enumerate(similarity_sets):
-        for (language, concept, form) in similarityset:
-            try:
-                leaf = languages[language]
-            except KeyError:
-                continue
-            try:
-                leaf.forms
-            except AttributeError:
-                leaf.forms = {}
-            leaf.forms.setdefault(s, []).append(
-                    ((language,), (concept,), tuple((x,) for x in form)))
-
-    for node in guide_tree.walk('postorder'):
-        print(node.name)
-        try:
-            entries_by_group = node.forms
-        except AttributeError:
-            entries_by_group = {}
-            for child in node.descendants:
-                try:
-                    for group, alignment in child.alignment.items():
-                        entries_by_group.setdefault(group, []).append(alignment)
-                except AttributeError:
-                    pass
-        aligned_groups = {}
-        for group in entries_by_group:
-            forms = entries_by_group[group]
-
-            already_aligned = None
-            for (new_languages, new_concepts, new_alignment) in forms:
-                if not already_aligned:
-                    languages = new_languages
-                    concepts = new_concepts
-                    already_aligned = new_alignment
-                else:
-                    gap1 = ('',) * len(languages)
-                    gap2 = ('',) * len(new_alignment[0])
-
-                    languages += new_languages
-                    concepts += new_concepts
-
-                    print("Aligning:")
-                    print(already_aligned)
-                    print(new_alignment)
-                    s, combined_alignment = pairwise(
-                        already_aligned, new_alignment, **kwargs)
-                    print(combined_alignment)
-                    already_aligned = tuple(
-                        (x if x else gap1) + (y if y else gap2)
-                        for x, y in combined_alignment)
-                    print(already_aligned)
-            aligned_groups[group] = languages, concepts, already_aligned
-        node.alignment = aligned_groups
-    return node.alignment
-
 
 readers = {
     "ielex": read_data_ielex_type,
@@ -371,7 +55,7 @@ if __name__ == "__main__":
         default=0.001,
         help="TODO tolerance")
     parser.add_argument(
-        "--infomap-threshold",
+        "--threshold",
         type=float,
         default=0.5,
         help="Threshold for the INFOMAP algorithm")
@@ -395,6 +79,22 @@ if __name__ == "__main__":
         sufficient statistics decay. This can lead to swift progress
         but also generates instability.""")
     parser.add_argument(
+        "--method",
+        default='labelprop',
+        choices=['infomap', 'labelprop', 'ebet', 'multilevel', 'spinglass'],
+        help="Use this clustering method to find similar forms")
+    parser.add_argument(
+        "--gop",
+        type=float,
+        default=None,
+        help="""Gap opening penalty in alignments (Default is to use
+        character-dependent gap penalties.)""")
+    parser.add_argument(
+        "--gep",
+        type=float,
+        default=-1.75,
+        help="""Gap extension penalty in alignments.""")
+    parser.add_argument(
         "--guide-tree",
         type=argparse.FileType("r"),
         help="""A Newick file containing a single guide tree to combine multiple
@@ -404,6 +104,10 @@ if __name__ == "__main__":
         "data",
         type=argparse.FileType("r"),
         help="IELex-style data file to read")
+    parser.add_argument(
+        "--transcription",
+        default='ASJP',
+        help="The transcription convention (IPA, ASJP, …) used in the data file")
     parser.add_argument(
         "--pmidict",
         type=argparse.FileType("wb"),
@@ -421,26 +125,23 @@ if __name__ == "__main__":
 
     random.seed(args.seed)
     tolerance = args.tolerance
-    infomap_threshold = args.infomap_threshold
     alpha = args.alpha
-    data = args.data
 
     data_dict, cogid_dict, words_dict, langs_list, char_list = (
-        readers[args.reader](data))
-    print("Character list:", char_list, "({:d})".format(len(char_list)))
+        readers[args.reader](args.data, data=args.transcription))
+    print("Character set:", char_list, "({:d})".format(len(char_list)))
 
     word_pairs = []
     for concept in data_dict:
-        print(concept, end=", ")
-        words = data_dict[concept].values()
-        for x, y in it.combinations(words, r=2):
-            if distances.normalized_leventsthein(x, y) <= 0.5:
-                word_pairs.append((x, y))
+        words = data_dict[concept].items()
+        for ((i1, l1), w1), ((i2, l2), w2) in it.combinations(words, r=2):
+            if distances.normalized_leventsthein(w1, w2) <= 0.5:
+                word_pairs.append(((concept, l1, w1), (concept, l2, w2)))
     print()
 
     print("Size of initial list ", len(word_pairs))
 
-    online = OnlinePMIIterator(
+    online = OnlinePMITrainer(
         alpha=args.alpha,
         margin=args.margin)
 
@@ -451,47 +152,31 @@ if __name__ == "__main__":
     # matrix. Then we split the word list again into chunks that are
     # similar according to *that* scorer.
 
-    random.shuffle(word_pairs)
-    idx = 0
-    while idx < len(word_pairs):
-        wl = word_pairs[idx:idx+args.max_batch]
-        algn_list, n_zero = online.align_pairs(wl)
-        idx += len(wl)
-
-    word_pairs = []
-    for concept in data_dict:
-        words = data_dict[concept].values()
-        for w1, w2 in it.combinations(words, r=2):
-            s, alg = distances.needleman_wunsch(
-                w1, w2, gop=-2.5, gep=-1.75, lodict=online.pmidict)
-            if s >= args.margin:
-                word_pairs.append((w1, w2))
-
-    for n_iter in range(1, args.max_iter):
+    print("Calculating PMIs from very similar words.")
+    for n_iter in range(0, args.max_iter):
         random.shuffle(word_pairs)
         print("Iteration", n_iter)
         idx = 0
+        n_zero = 0
         while idx < len(word_pairs):
             wl = word_pairs[idx:idx+args.max_batch]
-            algn_list, n_zero = online.align_pairs(wl)
+            algn_list, z = online.align_pairs(wl)
+            n_zero += z
             word_pairs[idx:idx+args.max_batch] = wl
             idx += len(wl)
 
-        print("Non zero examples ", len(word_pairs), len(word_pairs)-n_zero,
-              " number of updates ", online.n_updates)
-        print(online.pmidict)
+        print("Non zero examples went down to {:d} (-{:d}). Updates: {:d}".format(
+            len(word_pairs), n_zero, online.n_updates))
+        print(collections.Counter(online.pmidict).most_common(8)[::2])
 
     if args.pmidict:
+        print(collections.Counter(online.pmidict).most_common()[::2])
         pickle.dump(online.pmidict, args.pmidict)
 
     codes = clust.cognate_code_infomap2(
-        words_dict, online.pmidict, -2.5, -1.75, args.infomap_threshold)
-
-    if args.guide_tree:
-        tree = newick.load(args.guide_tree)[0]
-        for group, (languages, concepts, alignmnent) in multi_align(
-                codes, tree,
-                lodict=MinPairDict(online.pmidict), gop=-2.5, gep=-1.75).items():
-            print(languages)
-            print(concepts)
-            print(alignment)
+        words_dict, online.pmidict,
+        gop=args.gop, gep=args.gep, threshold=args.threshold, method=args.method)
+    for similarityset in codes:
+        print("=================")
+        for entry in similarityset:
+            print(entry)

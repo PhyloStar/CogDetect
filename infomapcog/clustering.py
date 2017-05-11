@@ -1,4 +1,6 @@
 
+import pandas
+
 import collections
 import itertools as it
 import numpy as np
@@ -66,8 +68,7 @@ def igraph_clustering(matrix, threshold, method='labelprop'):
     return D
 
 
-def cognate_code_infomap(d, lodict, gop, gep, threshold,
-                         ignore_forms_starting=[]):
+def cognate_code_infomap(d, lodict, gop, gep, threshold):
     """Cluster cognates automatically.
 
     Calculate Needleman-Wunsch distances between forms and cluster
@@ -94,9 +95,6 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
         distmat = np.zeros((len(forms_by_language), len(forms_by_language)))
         for (l1, w1), (l2, w2) in it.combinations(
                 enumerate(forms_by_language.values()), r=2):
-            for begin in ignore_forms_starting:
-                if (w1.startswith(begin) or w2.startswith(begin)):
-                    continue
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             score = 1.0 - (1.0/(1.0+np.exp(-score)))
@@ -109,7 +107,8 @@ def cognate_code_infomap(d, lodict, gop, gep, threshold,
     return codes
 
 
-def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
+def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75,
+                          threshold=0.5, method='labelprop'):
     """Cluster cognates automatically.
 
     Calculate Needleman-Wunsch distances between forms and cluster
@@ -129,16 +128,17 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75, threshold=0.5):
         lookup = []
         for language, forms in forms_by_language.items():
             for form in forms:
-                lookup.append((language, concept, form))
+                lookup.append((concept, language, form))
         if len(lookup) <= 1:
             continue
         distmat = np.zeros((len(lookup), len(lookup)))
-        for (l1, w1), (l2, w2) in it.combinations(
+        for (i1, (c1, l1, w1)), (i2, (c2, l2, w2)) in it.combinations(
                 enumerate(lookup), r=2):
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
-            distmat[l2, l1] = distmat[l1, l2] = 1 - (1/(1 + np.exp(-score)))
-        clust = igraph_clustering(distmat, threshold, method='labelprop')
+            distmat[i2, i1] = distmat[i1, i2] = 1 - (1/(1 + np.exp(-score)))
+
+        clust = igraph_clustering(distmat, threshold, method=method)
 
         similaritygroups = {}
         for entry, group in clust.items():
