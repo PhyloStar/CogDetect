@@ -212,7 +212,7 @@ def calc_pmi(alignments, scores=None):
 
     for alignment, score in zip(alignments, scores):
         for a1, a2 in alignment:
-            if a1 == "-" or a2 == "-":
+            if a1 == "" or a2 == "":
                 continue
             count_dict[a1, a2] += 1.0*score
             count_dict[a2, a1] += 1.0*score
@@ -225,7 +225,7 @@ def calc_pmi(alignments, scores=None):
 
     for (c1, c2) in count_dict.keys():
         m = count_dict[c1, c2]
-        assert m > 0
+        #assert m > 0
 
         num = np.log(m)
         denom = np.log(sound_dict[c1]) + np.log(sound_dict[c2])
@@ -238,7 +238,7 @@ def calc_pmi(alignments, scores=None):
 class OnlinePMITrainer:
     """Train a PMI scorer step-by-step on always improving alignments."""
 
-    def __init__(self, margin=1, alpha=0.75, gop=-2.5, gep=-1.75):
+    def __init__(self, margin=1.0, alpha=0.75, gop=-2.5, gep=-1.75):
         """Create a persistent aligner object.
 
         margin: scaling factor for scores
@@ -262,7 +262,7 @@ class OnlinePMITrainer:
             s, alg = distances.needleman_wunsch(
                 w1, w2, gop=self.gop, gep=self.gep, lodict=self.pmidict,
                 local=local)
-            if s < self.margin:
+            if s <= self.margin:
                 n_zero += 1
                 word_pairs.pop(w)
                 continue

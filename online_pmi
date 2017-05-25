@@ -171,7 +171,7 @@ if __name__ == "__main__":
         print(collections.Counter(online.pmidict).most_common(8)[::2])
 
     if args.pmidict:
-        print(collections.Counter(online.pmidict).most_common(8))
+        print(collections.Counter(online.pmidict))#.most_common(8))
         pickle.dump(online.pmidict, args.pmidict)
 
     codes = clust.cognate_code_infomap2(
