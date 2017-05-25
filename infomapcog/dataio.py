@@ -212,6 +212,8 @@ def calc_pmi(alignments, scores=None):
 
     for alignment, score in zip(alignments, scores):
         for a1, a2 in alignment:
+            if a1 == "-" or a2 == "-":
+                continue
             count_dict[a1, a2] += 1.0*score
             count_dict[a2, a1] += 1.0*score
             sound_dict[a1] += 2.0*score
@@ -247,7 +249,7 @@ class OnlinePMITrainer:
         self.margin = margin
         self.alpha = alpha
         self.n_updates = 0
-        self.pmidict = {}
+        self.pmidict = collections.defaultdict(float)
         self.gep = gep
         self.gop = gop
 
@@ -266,7 +268,7 @@ class OnlinePMITrainer:
                 continue
             algn_list.append(alg)
             scores.append(s)
-        self.update_pmi_dict(algn_list, scores=None)
+        self.update_pmi_dict(algn_list, scores=scores)
         return algn_list, n_zero
 
     def update_pmi_dict(self, algn_list, scores=None):

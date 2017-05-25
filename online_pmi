@@ -86,7 +86,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--gop",
         type=float,
-        default=None,
+        default=-2.5,
         help="""Gap opening penalty in alignments (Default is to use
         character-dependent gap penalties.)""")
     parser.add_argument(
@@ -159,6 +159,7 @@ if __name__ == "__main__":
         idx = 0
         n_zero = 0
         while idx < len(word_pairs):
+            #print("Mini Batch", idx)
             wl = word_pairs[idx:idx+args.max_batch]
             algn_list, z = online.align_pairs(wl)
             n_zero += z
@@ -170,7 +171,7 @@ if __name__ == "__main__":
         print(collections.Counter(online.pmidict).most_common(8)[::2])
 
     if args.pmidict:
-        print(collections.Counter(online.pmidict).most_common()[::2])
+        print(collections.Counter(online.pmidict).most_common(8))
         pickle.dump(online.pmidict, args.pmidict)
 
     codes = clust.cognate_code_infomap2(

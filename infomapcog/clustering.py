@@ -131,12 +131,14 @@ def cognate_code_infomap2(d, lodict={}, gop=-2.5, gep=-1.75,
                 lookup.append((concept, language, form))
         if len(lookup) <= 1:
             continue
+        #print(lookup)
         distmat = np.zeros((len(lookup), len(lookup)))
         for (i1, (c1, l1, w1)), (i2, (c2, l2, w2)) in it.combinations(
                 enumerate(lookup), r=2):
             score, align = distances.needleman_wunsch(
                 w1, w2, lodict=lodict, gop=gop, gep=gep)
             distmat[i2, i1] = distmat[i1, i2] = 1 - (1/(1 + np.exp(-score)))
+            #print(w1, w2, score)
 
         clust = igraph_clustering(distmat, threshold, method=method)
 
